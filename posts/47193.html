@@ -428,7 +428,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    731
+                    738
                 </div>
                 
 
@@ -534,7 +534,7 @@
         System.out.println("Hello World!");
     }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><p>跟链接的语法一样，只是变成了页内锚点<br>[回到顶部](#markdown基础教程)<br><a href="#markdown%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B">回到顶部</a></p>
+<h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><p>跟链接的语法一样，只是变成了页内锚点（可能不支持中文）<br>[回到顶部](#markdown基础教程)<br><a href="#markdown%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B">回到顶部</a></p>
 <h2 id="其他待补充"><a href="#其他待补充" class="headerlink" title="其他待补充"></a>其他待补充</h2><p>如高阶语法，数学公式，流程图等<br>GitHub的emoji表情<br><span class="github-emoji"><span>😊</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
                 
@@ -883,6 +883,43 @@
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 泷少的博客<br />'
+            + '文章作者: 泷少<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
