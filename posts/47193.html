@@ -521,9 +521,9 @@
 </tr>
 </tbody></table>
 <h2 id="段落代码块"><a href="#段落代码块" class="headerlink" title="段落代码块"></a>段落代码块</h2><p>每行缩进4个空格或 1个 Tab表示  </p>
-<pre><code>第一行  
-第二行  
-第三行  
+<pre><code>第一行
+第二行
+第三行
 </code></pre>
 <h2 id="插入高亮代码"><a href="#插入高亮代码" class="headerlink" title="插入高亮代码"></a>插入高亮代码</h2><p>行内用`内容`表示 <code>高亮</code>  </p>
 <p>代码块用```内容```，后面加java或python等表示语法高亮<br>首字母要小写！！！<br>访问<a target="_blank" rel="noopener" href="https://prismjs.com/#supported-languages" title="因为Java首字母大写了以为高亮失效排查了大半天">prismjs官网</a>查看支持高亮的语言及写法</p>
@@ -963,8 +963,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('1'),
-            headingSelector: 'h2, h3, h4, h5, h6'
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
         });
 
         // modify the toc link href to support Chinese.
@@ -976,7 +976,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4, h5, h6').each(function () {
+        $('#articleContent').children('h2, h3, h4').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
