@@ -428,7 +428,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    729
+                    731
                 </div>
                 
 
@@ -485,7 +485,7 @@
 </blockquote>
 </blockquote>
 </blockquote>
-<h2 id="文字修饰"><a href="#文字修饰" class="headerlink" title="文字修饰"></a>文字修饰</h2><p>*或_用来 修饰 <em>斜体</em><br>**或__用来 修饰 <strong>粗体</strong><br>***或者___用来修饰 <em><strong>斜粗体</strong></em><br><del>修饰用来修饰 ~~删减体</del><br>用html语法的 &lt;u&gt;文本内容&lt;/u&gt; 来修饰 <u>下划线</u></p>
+<h2 id="文字修饰"><a href="#文字修饰" class="headerlink" title="文字修饰"></a>文字修饰</h2><p>*或_用来 修饰 <em>斜体</em><br>**或__用来 修饰 <strong>粗体</strong><br>***或者___用来修饰 <em><strong>斜粗体</strong></em><br>~~ 用来修饰 <del>删减体</del><br>用html语法的 &lt;u&gt;文本内容&lt;/u&gt; 来修饰 <u>下划线</u></p>
 <h2 id="字体相关"><a href="#字体相关" class="headerlink" title="字体相关"></a>字体相关</h2><p>通过html语法来改变字体属性，如字体大小、颜色<br>&lt;font face=”黑体”&gt;我是黑体字<br>&lt;font face=”微软雅黑”&gt;我是微软雅黑<br>&lt;font face=”STCAIYUN”&gt;我是华文彩云<br>&lt;font color=#0099ff size=12 face=”黑体”&gt;黑体<br>&lt;font color=gray size=5&gt;gray<br>&lt;font color=#00ffff size=3&gt;null  </p>
 <hr>
 <p>效果如下</p>
@@ -534,8 +534,8 @@
         System.out.println("Hello World!");
     }
 }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><p>跟链接的语法一样，只是变成了业内锚点<br>[回到顶部](#markdown基础教程)<br><a href="#markdown%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B">回到顶部</a></p>
-<h2 id="其他待补充"><a href="#其他待补充" class="headerlink" title="其他待补充"></a>其他待补充</h2><p>如高阶语法，数学公式，流程图等<br><span class="github-emoji"><span>😊</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><p>跟链接的语法一样，只是变成了页内锚点<br>[回到顶部](#markdown基础教程)<br><a href="#markdown%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B">回到顶部</a></p>
+<h2 id="其他待补充"><a href="#其他待补充" class="headerlink" title="其他待补充"></a>其他待补充</h2><p>如高阶语法，数学公式，流程图等<br>GitHub的emoji表情<br><span class="github-emoji"><span>😊</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
                 
             </div>
@@ -928,8 +928,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -941,7 +941,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
