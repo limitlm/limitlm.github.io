@@ -527,11 +527,11 @@
 </code></pre>
 <h2 id="插入高亮代码"><a href="#插入高亮代码" class="headerlink" title="插入高亮代码"></a>插入高亮代码</h2><p>行内用`内容`表示 <code>高亮</code>  </p>
 <p>代码块用```修饰```，后面加Java或python等表示语法高亮</p>
-<pre class="line-numbers language-Java" data-language="Java"><code class="language-Java">public class HelloWorld {
-    public static void main(String[] args){
-        System.out.println("Hello World!");
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="跳转"><a href="#跳转" class="headerlink" title="跳转"></a>跳转</h2><p>跟链接的语法一样，只是变成了页内锚点（可能不支持中文）<br>[回到顶部](#markdown基础教程)<br><a href="#markdown%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B">回到顶部</a></p>
 <h2 id="其他待补充"><a href="#其他待补充" class="headerlink" title="其他待补充"></a>其他待补充</h2><p>如高阶语法，数学公式，流程图等<br>GitHub的emoji表情<br><span class="github-emoji"><span>😊</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f60a.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
 
@@ -1287,17 +1287,16 @@ $(function () {
     
 
     
-        
+
+    <!-- 雪花特效 -->
+     
         <script type="text/javascript">
             // 只在桌面版网页启用特效
             var windowWidth = $(window).width();
             if (windowWidth > 768) {
-                document.write('<script type="text/javascript" src="/libs/others/sakura.js"><\/script>');
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
             }
         </script>
-    
-
-    <!-- 雪花特效 -->
     
 
     <!-- 鼠标星星特效 -->
