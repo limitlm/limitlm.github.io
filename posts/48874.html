@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Java 笔记">
-    <meta name="description" content="抛弃过去的基础重修Java">
+    <meta name="description" content="Java关键字">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>学Java的准备工作 | 泷少的博客</title>
+    <title>Java关键字 | 泷少的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -271,12 +271,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">学Java的准备工作</h1>
+                    <h1 class="description center-align post-title">Java关键字</h1>
                 </div>
             </div>
         </div>
@@ -430,7 +430,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    236
+                    5.8k
                 </div>
                 
 
@@ -450,24 +450,120 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>大学没有ssm框架的课程，找工作必须要会这个，那我自学。</p>
-<p>从最基础的开始，就当复习了。</p>
-<p>视频教程看b站狂神说，动力节点，尚硅谷，黑马的。</p>
-<h1 id="1-搭建环境"><a href="#1-搭建环境" class="headerlink" title="1.搭建环境"></a>1.搭建环境</h1><h2 id="1-1从eclipse到idea"><a href="#1-1从eclipse到idea" class="headerlink" title="1.1从eclipse到idea"></a>1.1从eclipse到idea</h2><p>idea确实比eclipse先进，按照教学选择用idea</p>
-<h3 id="1-1-1安装idea"><a href="#1-1-1安装idea" class="headerlink" title="1.1.1安装idea"></a>1.1.1安装idea</h3><p>去官网下载idea的最新版，不要下载社区版，后续社区版不能用spring</p>
-<h3 id="1-1-2安装无限试用插件"><a href="#1-1-2安装无限试用插件" class="headerlink" title="1.1.2安装无限试用插件"></a>1.1.2安装无限试用插件</h3><p>学生优惠只有一年，还是太贵了，现在也只是个人学习使用，等以后工作用上的时候再补票入正吧。</p>
-<h2 id="1-2安装Java环境"><a href="#1-2安装Java环境" class="headerlink" title="1.2安装Java环境"></a>1.2安装Java环境</h2><p>大一就安装好了</p>
-<h3 id="1-2-1安装jdk"><a href="#1-2-1安装jdk" class="headerlink" title="1.2.1安装jdk"></a>1.2.1安装jdk</h3><p>在官网下载的jdk13</p>
-<h3 id="1-2-2测试是否安装成功"><a href="#1-2-2测试是否安装成功" class="headerlink" title="1.2.2测试是否安装成功"></a>1.2.2测试是否安装成功</h3><p>win+R运行cmd</p>
-<p>输入java -version查看</p>
-<p><img src="https://cdn.jsdelivr.net/gh/limitlm/mypic/img/202111161659540.png" alt="安装成功"></p>
-<h1 id="2开始编程"><a href="#2开始编程" class="headerlink" title="2开始编程"></a>2开始编程</h1><h2 id="2-1写个hello-world吧"><a href="#2-1写个hello-world吧" class="headerlink" title="2.1写个hello world吧"></a>2.1写个hello world吧</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><strong><code>Java入门到入土正式开始了</code></strong></p>
+                <h3 id="详细了解关键字："><a href="#详细了解关键字：" class="headerlink" title="详细了解关键字："></a>详细了解关键字：</h3><h4 id="1-访问控制"><a href="#1-访问控制" class="headerlink" title="1.&nbsp;访问控制"></a>1.&nbsp;访问控制</h4><ol>
+<li><p>private&nbsp;私有的<br>private&nbsp;关键字是访问控制修饰符，可以应用于类、方法或字段（在类中声明的变量）。&nbsp;只能在声明&nbsp;private（内部）类、方法或字段的类中引用这些类、方法或字段。在类的外部或者对于子类而言，它们是不可见的。&nbsp;所有类成员的默认访问范围都是&nbsp;package&nbsp;访问，也就是说，除非存在特定的访问控制修饰符，否则，可以从同一个包中的任何类访问类成员。</p>
+</li>
+<li><p>protected&nbsp;受保护的<br>protected&nbsp;关键字是可以应用于类、方法或字段（在类中声明的变量）的访问控制修饰符。可以在声明&nbsp;protected&nbsp;类、方法或字段的类、同一个包中的其他任何类以及任何子类（无论子类是在哪个包中声明的）中引用这些类、方法或字段。所有类成员的默认访问范围都是&nbsp;package&nbsp;访问，也就是说，除非存在特定的访问控制修饰符，否则，可以从同一个包中的任何类访问类成员。</p>
+</li>
+<li><p>public&nbsp;公共的<br>public&nbsp;关键字是可以应用于类、方法或字段（在类中声明的变量）的访问控制修饰符。&nbsp;可能只会在其他任何类或包中引用&nbsp;public&nbsp;类、方法或字段。所有类成员的默认访问范围都是&nbsp;package&nbsp;访问，也就是说，除非存在特定的访问控制修饰符，否则，可以从同一个包中的任何类访问类成员。</p>
+</li>
+</ol>
+<h4 id="2-类、方法和变量修饰符"><a href="#2-类、方法和变量修饰符" class="headerlink" title="2.&nbsp;类、方法和变量修饰符"></a>2.&nbsp;类、方法和变量修饰符</h4><ol>
+<li><p>abstract&nbsp;声明抽象<br>abstract关键字可以修改类或方法。abstract类可以扩展（增加子类），但不能直接实例化。abstract方法不在声明它的类中实现，但必须在某个子类中重写。采用&nbsp;abstract方法的类本来就是抽象类，并且必须声明为abstract。</p>
+</li>
+<li><p>class类<br>class&nbsp;关键字用来声明新的&nbsp;<a target="_blank" rel="noopener" href="http://lib.csdn.net/base/17">Java</a>&nbsp;类，该类是相关变量和/或方法的集合。类是面向对象的程序设计方法的基本构造单位。类通常代表某种实际实体，如几何形状或人。类是对象的模板。每个对象都是类的一个实例。要使用类，通常使用&nbsp;new&nbsp;操作符将类的对象实例化，然后调用类的方法来访问类的功能。</p>
+</li>
+<li><p>extends&nbsp;继承、扩展<br>extends&nbsp;关键字用在&nbsp;class&nbsp;或&nbsp;interface&nbsp;声明中，用于指示所声明的类或接口是其名称后跟有&nbsp;extends&nbsp;关键字的类或接口的子类。子类继承父类的所有&nbsp;public&nbsp;和&nbsp;protected&nbsp;变量和方法。&nbsp;子类可以重写父类的任何非&nbsp;final&nbsp;方法。一个类只能扩展一个其他类。</p>
+</li>
+<li><p>final&nbsp;最终、不可改变<br>final&nbsp;关键字可以应用于类，以指示不能扩展该类（不能有子类）。final&nbsp;关键字可以应用于方法，以指示在子类中不能重写此方法。一个类不能同时是&nbsp;abstract&nbsp;又是&nbsp;final。abstract&nbsp;意味着必须扩展类，final&nbsp;意味着不能扩展类。一个方法不能同时是&nbsp;abstract&nbsp;又是&nbsp;final。abstract&nbsp;意味着必须重写方法，final&nbsp;意味着不能重写方法。</p>
+</li>
+<li><p>implements实现<br>implements&nbsp;关键字在&nbsp;class&nbsp;声明中使用，以指示所声明的类提供了在&nbsp;implements&nbsp;关键字后面的名称所指定的接口中所声明的所有方法的实现。类必须提供在接口中所声明的所有方法的实现。一个类可以实现多个接口。</p>
+</li>
+<li><p>interface&nbsp;接口<br>interface&nbsp;关键字用来声明新的&nbsp;Java&nbsp;接口，接口是方法的集合。<br>接口是&nbsp;Java&nbsp;语言的一项强大功能。任何类都可声明它实现一个或多个接口，这意味着它实现了在这些接口中所定义的所有方法。&nbsp;<br>实现了接口的任何类都必须提供在该接口中的所有方法的实现。一个类可以实现多个接口。</p>
+</li>
+<li><p>native&nbsp;本地<br>native&nbsp;关键字可以应用于方法，以指示该方法是用&nbsp;Java&nbsp;以外的语言实现的。</p>
+</li>
+<li><p>new&nbsp;新,创建<br>new&nbsp;关键字用于创建类的新实例。&nbsp;<br>new&nbsp;关键字后面的参数必须是类名，并且类名的后面必须是一组构造方法参数（必须带括号）。&nbsp;<br>参数集合必须与类的构造方法的签名匹配。&nbsp;<br>=&nbsp;左侧的变量的类型必须与要实例化的类或接口具有赋值兼容关系。</p>
+</li>
+<li><p>static&nbsp;静态<br>static&nbsp;关键字可以应用于内部类（在另一个类中定义的类）、方法或字段（类的成员变量）。&nbsp;<br>通常，static&nbsp;关键字意味着应用它的实体在声明该实体的类的任何特定实例外部可用。<br>static（内部）类可以被其他类实例化和引用（即使它是顶级类）。在上面的示例中，另一个类中的代码可以实例化&nbsp;MyStaticClass&nbsp;类，方法是用包含它的类名来限定其名称，如&nbsp;MyClass.MyStaticClass。&nbsp;<br>static&nbsp;字段（类的成员变量）在类的所有实例中只存在一次。&nbsp;<br>可以从类的外部调用&nbsp;static&nbsp;方法，而不用首先实例化该类。这样的引用始终包括类名作为方法调用的限定符。<br>模式：public&nbsp;final&nbsp;static&nbsp;&lt;type&gt;&nbsp;varName&nbsp;=&nbsp;&lt;value&gt;;&nbsp;通常用于声明可以在类的外部使用的类常量。在引用这样的类常量时需要用类名加以限定。在上面的示例中，另一个类可以用&nbsp;MyClass.MAX_OBJECTS&nbsp;形式来引用&nbsp;MAX_OBJECTS&nbsp;常量。</p>
+</li>
+<li><p>strictfp&nbsp;严格,精准<br>strictfp的意思是FP-strict，也就是说精确浮点的意思。在Java虚拟机进行浮点运算时，如果没有指定strictfp关键字时，Java的编译器以及运行环境在对浮点运算的表达式是采取一种近似于我行我素的行为来完成这些操作，以致于得到的结果往往无法令人满意。而一旦使用了strictfp来声明一个类、接口或者方法时，那么所声明的范围内Java的编译器以及运行环境会完全依照浮点规范IEEE-754来执行。因此如果想让浮点运算更加精确，而且不会因为不同的硬件平台所执行的结果不一致的话，那就请用关键字strictfp。<br>可以将一个类、接口以及方法声明为strictfp，但是不允许对接口中的方法以及构造函数声明strictfp关键字</p>
+</li>
+<li><p>synchronized线程、同步<br>synchronized&nbsp;关键字可以应用于方法或语句块，并为一次只应由一个线程执行的关键代码段提供保护。&nbsp;<br>synchronized&nbsp;关键字可防止代码的关键代码段一次被多个线程执行。<br>如果应用于静态方法，那么，当该方法一次由一个线程执行时，整个类将被锁定。&nbsp;<br>如果应用于实例方法，那么，当该方法一次由一个线程访问时，该实例将被锁定。&nbsp;<br>如果应用于对象或数组，当关联的代码块一次由一个线程执行时，对象或数组将被锁定。</p>
+</li>
+<li><p>transient&nbsp;短暂<br>transient&nbsp;关键字可以应用于类的成员变量，以便指出该成员变量不应在包含它的类实例已序列化时被序列化。<br>当一个对象被串行化的时候，transient型变量的值不包括在串行化的表示中，然而非transient型的变量是被包括进去的。<br>Java的serialization提供了一种持久化对象实例的机制。当持久化对象时，可能有一个特殊的对象数据成员，我们不想用serialization机制来保存它。为了在一个特定对象的一个域上关闭serialization，可以在这个域前加上关键字transient。<br>transient是Java语言的关键字，用来表示一个域不是该对象串行化的一部分。当一个对象被串行化的时候，transient型变量的值不包括在串行化的表示中，然而非transient型的变量是被包括进去的。</p>
+</li>
+<li><p>volatile&nbsp;易失<br>volatile&nbsp;关键字用于表示可以被多个线程异步修改的成员变量。<br>注意：volatile&nbsp;关键字在许多&nbsp;Java&nbsp;虚拟机中都没有实现。&nbsp;volatile&nbsp;的目标用途是为了确保所有线程所看到的指定变量的值都是相同的。<br>Java&nbsp;语言中的&nbsp;volatile&nbsp;变量可以被看作是一种&nbsp;“程度较轻的&nbsp;synchronized”；与&nbsp;synchronized&nbsp;块相比，volatile&nbsp;变量所需的编码较少，并且运行时开销也较少，但是它所能实现的功能也仅是&nbsp;synchronized&nbsp;的一部分。</p>
+</li>
+</ol>
+<h4 id="3-程序控制语句"><a href="#3-程序控制语句" class="headerlink" title="3.&nbsp;程序控制语句"></a>3.&nbsp;程序控制语句</h4><ol>
+<li><p>break&nbsp;跳出，中断<br>break&nbsp;关键字用于提前退出&nbsp;for、while&nbsp;或&nbsp;do&nbsp;循环，或者在&nbsp;switch&nbsp;语句中用来结束&nbsp;case&nbsp;块。&nbsp;<br>break&nbsp;总是退出最深层的&nbsp;while、for、do&nbsp;或&nbsp;switch&nbsp;语句。</p>
+</li>
+<li><p>continue&nbsp;继续<br>continue&nbsp;关键字用来跳转到&nbsp;for、while&nbsp;或&nbsp;do&nbsp;循环的下一个迭代。<br>continue&nbsp;总是跳到最深层&nbsp;while、for&nbsp;或&nbsp;do&nbsp;语句的下一个迭代。</p>
+</li>
+<li><p>return&nbsp;返回<br>return&nbsp;关键字会导致方法返回到调用它的方法，从而传递与返回方法的返回类型匹配的值。&nbsp;<br>如果方法具有非&nbsp;void&nbsp;的返回类型，return&nbsp;语句必须具有相同或兼容类型的参数。&nbsp;<br>返回值两侧的括号是可选的。</p>
+</li>
+<li><p>do&nbsp;运行<br>do&nbsp;关键字用于指定一个在每次迭代结束时检查其条件的循环。&nbsp;<br>do&nbsp;循环体至少执行一次。&nbsp;<br>条件表达式后面必须有分号。</p>
+</li>
+<li><p>while&nbsp;循环<br>while&nbsp;关键字用于指定一个只要条件为真就会重复的循环。</p>
+</li>
+<li><p>if&nbsp;如果<br>if&nbsp;关键字指示有条件地执行代码块。条件的计算结果必须是布尔值。&nbsp;<br>if&nbsp;语句可以有可选的&nbsp;else&nbsp;子句，该子句包含条件为&nbsp;false&nbsp;时将执行的代码。  &nbsp;<br>包含&nbsp;boolean&nbsp;操作数的表达式只能包含&nbsp;boolean&nbsp;操作数。</p>
+</li>
+<li><p>else&nbsp;否则<br>else&nbsp;关键字总是在&nbsp;if-else&nbsp;语句中与&nbsp;if&nbsp;关键字结合使用。else&nbsp;子句是可选的，如果&nbsp;if&nbsp;条件为&nbsp;false，则执行该子句。</p>
+</li>
+<li><p>for&nbsp;循环<br>for&nbsp;关键字用于指定一个在每次迭代结束前检查其条件的循环。&nbsp;<br>for&nbsp;语句的形式为&nbsp;for(initialize;&nbsp;condition;&nbsp;increment)&nbsp;<br>控件流进入&nbsp;for&nbsp;语句时，将执行一次&nbsp;initialize&nbsp;语句。&nbsp;<br>每次执行循环体之前将计算&nbsp;condition&nbsp;的结果。如果&nbsp;condition&nbsp;为&nbsp;true，则执行循环体。&nbsp;<br>每次执行循环体之后，在计算下一个迭代的&nbsp;condition&nbsp;之前，将执行&nbsp;increment&nbsp;语句。</p>
+</li>
+<li><p>instanceof&nbsp;实例<br>instanceof&nbsp;关键字用来确定对象所属的类。</p>
+</li>
+<li><p>switch&nbsp;观察<br>switch&nbsp;语句用于基于某个表达式选择执行多个代码块中的某一个。&nbsp;<br>switch&nbsp;条件的计算结果必须等于&nbsp;byte、char、short&nbsp;或&nbsp;int。&nbsp;<br>case&nbsp;块没有隐式结束点。break&nbsp;语句通常在每个&nbsp;case&nbsp;块末尾使用，用于退出&nbsp;switch&nbsp;语句。&nbsp;<br>如果没有&nbsp;break&nbsp;语句，执行流将进入所有后面的&nbsp;case&nbsp;和/或&nbsp;default&nbsp;块。</p>
+</li>
+<li><p>case&nbsp;返回观察里的结果<br>case&nbsp;用来标记&nbsp;switch&nbsp;语句中的每个分支。&nbsp;<br>case&nbsp;块没有隐式结束点。break&nbsp;语句通常在每个&nbsp;case&nbsp;块末尾使用，用于退出&nbsp;switch&nbsp;语句。&nbsp;<br>如果没有&nbsp;break&nbsp;语句，执行流将进入所有后面的&nbsp;case&nbsp;和/或&nbsp;default&nbsp;块。</p>
+</li>
+<li><p>default&nbsp;默认<br>default&nbsp;关键字用来标记&nbsp;switch&nbsp;语句中的默认分支。&nbsp;<br>default&nbsp;块没有隐式结束点。break&nbsp;语句通常在每个&nbsp;case&nbsp;或&nbsp;default&nbsp;块的末尾使用，以便在完成块时退出&nbsp;switch&nbsp;语句。&nbsp;<br>如果没有&nbsp;default&nbsp;语句，其参数与任何&nbsp;case&nbsp;块都不匹配的&nbsp;switch&nbsp;语句将不执行任何操作。</p>
+</li>
+</ol>
+<h4 id="4-错误处理"><a href="#4-错误处理" class="headerlink" title="4.&nbsp;错误处理"></a>4.&nbsp;错误处理</h4><ol>
+<li><p>try&nbsp;捕获异常<br>try&nbsp;关键字用于包含可能引发异常的语句块。&nbsp;<br>每个&nbsp;try&nbsp;块都必须至少有一个&nbsp;catch&nbsp;或&nbsp;finally&nbsp;子句。&nbsp;<br>如果某个特定异常类未被任何&nbsp;catch&nbsp;子句处理，该异常将沿着调用栈递归地传播到下一个封闭&nbsp;try&nbsp;块。如果任何封闭&nbsp;try&nbsp;块都未捕获到异常，Java&nbsp;解释器将退出，并显示错误消息和堆栈跟踪信息。</p>
+</li>
+<li><p>catch&nbsp;处理异常<br>catch&nbsp;关键字用来在&nbsp;try-catch&nbsp;或&nbsp;try-catch-finally&nbsp;语句中定义异常处理块。&nbsp;<br>开始和结束标记&nbsp;{&nbsp;和&nbsp;}&nbsp;是&nbsp;catch&nbsp;子句语法的一部分，即使该子句只包含一个语句，也不能省略这两个标记。&nbsp;<br>每个&nbsp;try&nbsp;块都必须至少有一个&nbsp;catch&nbsp;或&nbsp;finally&nbsp;子句。&nbsp;<br>如果某个特定异常类未被任何&nbsp;catch&nbsp;子句处理，该异常将沿着调用栈递归地传播到下一个封闭&nbsp;try&nbsp;块。如果任何封闭&nbsp;try&nbsp;块都未捕获到异常，Java&nbsp;解释器将退出，并显示错误消息和堆栈跟踪信息。</p>
+</li>
+<li><p>throw&nbsp;抛出一个异常对象<br>throw&nbsp;关键字用于引发异常。&nbsp;<br>throw&nbsp;语句将&nbsp;java.lang.Throwable&nbsp;作为参数。Throwable&nbsp;在调用栈中向上传播，直到被适当的&nbsp;catch&nbsp;块捕获。&nbsp;<br>引发非&nbsp;RuntimeException&nbsp;异常的任何方法还必须在方法声明中使用&nbsp;throws&nbsp;修饰符来声明它引发的异常。</p>
+</li>
+<li><p>throws&nbsp;声明一个异常可能被抛出<br>throws&nbsp;关键字可以应用于方法，以便指出方法引发了特定类型的异常。&nbsp;<br>throws&nbsp;关键字将逗号分隔的&nbsp;java.lang.Throwables&nbsp;列表作为参数。&nbsp;<br>引发非&nbsp;RuntimeException&nbsp;异常的任何方法还必须在方法声明中使用&nbsp;throws&nbsp;修饰符来声明它引发的异常。&nbsp;<br>要在&nbsp;try-catch&nbsp;块中包含带&nbsp;throws&nbsp;子句的方法的调用，必须提供该方法的调用者。</p>
+</li>
+</ol>
+<h4 id="5-包相关"><a href="#5-包相关" class="headerlink" title="5.&nbsp;包相关"></a>5.&nbsp;包相关</h4><ol>
+<li><p>import&nbsp;引入<br>import&nbsp;关键字使一个包中的一个或所有类在当前&nbsp;Java&nbsp;源文件中可见。可以不使用完全限定的类名来引用导入的类。&nbsp;<br>当多个包包含同名的类时，许多&nbsp;Java&nbsp;程序员只使用特定的&nbsp;import&nbsp;语句（没有“*”）来避免不确定性。</p>
+</li>
+<li><p>package&nbsp;包<br>package&nbsp;关键字指定在&nbsp;Java&nbsp;源文件中声明的类所驻留的&nbsp;Java&nbsp;包。&nbsp;<br>package&nbsp;语句（如果出现）必须是&nbsp;Java&nbsp;源文件中的第一个非注释性文本。<br>例:java.lang.Object。&nbsp;<br>如果&nbsp;Java&nbsp;源文件不包含&nbsp;package&nbsp;语句，在该文件中定义的类将位于“默认包”中。请注意，不能从非默认包中的类引用默认包中的类。</p>
+</li>
+</ol>
+<h4 id="6-基本类型"><a href="#6-基本类型" class="headerlink" title="6.&nbsp;基本类型"></a>6.&nbsp;基本类型</h4><ol>
+<li><p>&nbsp;boolean&nbsp;布尔型<br>boolean&nbsp;是&nbsp;Java&nbsp;原始类型。boolean&nbsp;变量的值可以是&nbsp;true&nbsp;或&nbsp;false。<br>boolean&nbsp;变量只能以&nbsp;true&nbsp;或&nbsp;false&nbsp;作为值。boolean&nbsp;不能与数字类型相互转换。&nbsp;<br>包含&nbsp;boolean&nbsp;操作数的表达式只能包含&nbsp;boolean&nbsp;操作数。&nbsp;<br>Boolean&nbsp;类是&nbsp;boolean&nbsp;原始类型的包装对象类。</p>
+</li>
+<li><p>byte&nbsp;字节型<br>byte&nbsp;是&nbsp;Java&nbsp;原始类型。byte&nbsp;可存储在&nbsp;[-128,&nbsp;127]&nbsp;范围以内的整数值。&nbsp;<br>Byte&nbsp;类是&nbsp;byte&nbsp;原始类型的包装对象类。它定义代表此类型的值的范围的&nbsp;MIN_VALUE&nbsp;和&nbsp;MAX_VALUE&nbsp;常量。&nbsp;<br>Java&nbsp;中的所有整数值都是&nbsp;32&nbsp;位的&nbsp;int&nbsp;值，除非值后面有&nbsp;l&nbsp;或&nbsp;L（如&nbsp;235L），这表示该值应解释为&nbsp;long。</p>
+</li>
+<li><p>char&nbsp;字符型<br>char&nbsp;是&nbsp;Java&nbsp;原始类型。char&nbsp;变量可以存储一个&nbsp;Unicode&nbsp;字符。&nbsp;<br>可以使用下列&nbsp;char&nbsp;常量：\b -&nbsp;空格,&nbsp;\f -&nbsp;换页,&nbsp;\n -&nbsp;换行,&nbsp;\r -&nbsp;回车,&nbsp;\t -&nbsp;水平制表符,&nbsp;\‘ -&nbsp;单引号,&nbsp;\“ -&nbsp;双引号,&nbsp;\\ -&nbsp;反斜杠,&nbsp;\xxx -&nbsp;采用&nbsp;xxx&nbsp;编码的&nbsp;Latin-1&nbsp;字符。\x&nbsp;和&nbsp;\xx&nbsp;均为合法形式，但可能引起混淆。&nbsp;\uxxxx -&nbsp;采用十六进制编码&nbsp;xxxx&nbsp;的&nbsp;Unicode&nbsp;字符。&nbsp;<br>Character&nbsp;类包含一些可用来处理&nbsp;char&nbsp;变量的&nbsp;static&nbsp;方法，这些方法包括&nbsp;isDigit()、isLetter()、isWhitespace()&nbsp;和&nbsp;toUpperCase()。&nbsp;<br>char&nbsp;值没有符号。</p>
+</li>
+<li><p>double&nbsp;双精度<br>double&nbsp;是&nbsp;Java&nbsp;原始类型。double&nbsp;变量可以存储双精度浮点值。&nbsp;<br>由于浮点数据类型是实际数值的近似值，因此，一般不要对浮点数值进行是否相等的比较。&nbsp;<br>Java&nbsp;浮点数值可代表无穷大和&nbsp;NaN（非数值）。Double&nbsp;包装对象类用来定义常量&nbsp;MIN_VALUE、MAX_VALUE、NEGATIVE_INFINITY、POSITIVE_INFINITY&nbsp;和&nbsp;NaN。</p>
+</li>
+<li><p>float&nbsp;浮点<br>float&nbsp;是&nbsp;Java&nbsp;原始类型。float&nbsp;变量可以存储单精度浮点值。&nbsp;<br>使用此关键字时应遵循下列规则：&nbsp;<br>Java&nbsp;中的浮点文字始终默认为双精度。要指定单精度文字值，应在数值后加上&nbsp;f&nbsp;或&nbsp;F，如&nbsp;0.01f。&nbsp;<br>由于浮点数据类型是实际数值的近似值，因此，一般不要对浮点数值进行是否相等的比较。&nbsp;<br>Java&nbsp;浮点数值可代表无穷大和&nbsp;NaN（非数值）。Float&nbsp;包装对象类用来定义常量&nbsp;MIN_VALUE、MAX_VALUE、NEGATIVE_INFINITY、POSITIVE_INFINITY&nbsp;和&nbsp;NaN。</p>
+</li>
+<li><p>int&nbsp;整型<br>int&nbsp;是&nbsp;Java&nbsp;原始类型。int&nbsp;变量可以存储&nbsp;32&nbsp;位的整数值。&nbsp;<br>Integer&nbsp;类是&nbsp;int&nbsp;原始类型的包装对象类。它定义代表此类型的值的范围的&nbsp;MIN_VALUE&nbsp;和&nbsp;MAX_VALUE&nbsp;常量。&nbsp;<br>Java&nbsp;中的所有整数值都是&nbsp;32&nbsp;位的&nbsp;int&nbsp;值，除非值后面有&nbsp;l&nbsp;或&nbsp;L（如&nbsp;235L），这表示该值应解释为&nbsp;long。</p>
+</li>
+<li><p>&nbsp;long&nbsp;长整型<br>long&nbsp;是&nbsp;Java&nbsp;原始类型。long&nbsp;变量可以存储&nbsp;64&nbsp;位的带符号整数。&nbsp;<br>Long&nbsp;类是&nbsp;long&nbsp;原始类型的包装对象类。它定义代表此类型的值的范围的&nbsp;MIN_VALUE&nbsp;和&nbsp;MAX_VALUE&nbsp;常量。&nbsp;<br>Java&nbsp;中的所有整数值都是&nbsp;32&nbsp;位的&nbsp;int&nbsp;值，除非值后面有&nbsp;l&nbsp;或&nbsp;L（如&nbsp;235L），这表示该值应解释为&nbsp;long。</p>
+</li>
+<li><p>short&nbsp;短整型<br>short&nbsp;是&nbsp;Java&nbsp;原始类型。short&nbsp;变量可以存储&nbsp;16&nbsp;位带符号的整数。&nbsp;<br>Short&nbsp;类是&nbsp;short&nbsp;原始类型的包装对象类。它定义代表此类型的值的范围的&nbsp;MIN_VALUE&nbsp;和&nbsp;MAX_VALUE&nbsp;常量。&nbsp;<br>Java&nbsp;中的所有整数值都是&nbsp;32&nbsp;位的&nbsp;int&nbsp;值，除非值后面有&nbsp;l&nbsp;或&nbsp;L（如&nbsp;235L），这表示该值应解释为&nbsp;long。</p>
+</li>
+</ol>
+<h4 id="7-变量引用"><a href="#7-变量引用" class="headerlink" title="7.&nbsp;变量引用"></a>7.&nbsp;变量引用</h4><ol>
+<li><p>super&nbsp;父类,超类<br>super&nbsp;关键字用于引用使用该关键字的类的超类。&nbsp;<br>作为独立语句出现的&nbsp;super&nbsp;表示调用超类的构造方法。&nbsp;<br>super.&lt;methodName&gt;()&nbsp;表示调用超类的方法。只有在如下情况中才需要采用这种用法：要调用在该类中被重写的方法，以便指定应当调用在超类中的该方法。</p>
+</li>
+<li><p>&nbsp;this&nbsp;本类<br>this&nbsp;关键字用于引用当前实例。&nbsp;<br>当引用可能不明确时，可以使用&nbsp;this&nbsp;关键字来引用当前的实例。</p>
+</li>
+<li><p>void&nbsp;无返回值<br>void&nbsp;关键字表示&nbsp;null&nbsp;类型。&nbsp;<br>void&nbsp;可以用作方法的返回类型，以指示该方法不返回值。</p>
+</li>
+</ol>
+<h4 id="8-保留字"><a href="#8-保留字" class="headerlink" title="8.&nbsp;保留字"></a>8.&nbsp;保留字</h4><p>正确识别java语言的关键字（keyword）和保留字（reserved&nbsp;word）是十分重要的。Java的关键字对java的编译器有特殊的意义，他们用来表示一种数据类型，或者表示程序的结构等。保留字是为java预留的关键字，他们虽然现在没有作为关键字，但在以后的升级版本中有可能作为关键字。</p>
+<p>识别java语言的关键字，不要和其他语言如c/c++的关键字混淆。&nbsp;<br>const和goto是java的保留字。&nbsp;所有的关键字都是小写&nbsp;</p>
+<ol>
+<li><p>goto&nbsp;跳转<br>goto&nbsp;保留关键字，但无任何作用。结构化程序设计完全不需要&nbsp;goto&nbsp;语句即可完成各种流程，而&nbsp;goto&nbsp;语句的使用往往会使程序的可读性降低，所以&nbsp;Java&nbsp;不允许&nbsp;goto&nbsp;跳转。</p>
+</li>
+<li><p>const&nbsp;静态<br>const&nbsp;保留字，是一个类型修饰符，使用const声明的对象不能更新。与final某些类似。</p>
+</li>
+<li><p>native&nbsp;本地<br>Java不是完美的，Java的不足除了体现在运行速度上要比传统的C++慢许多之外，Java无法直接访问到操作系统底层（如系统硬件等)，为此Java使用native方法来扩展Java程序的功能。&nbsp;<br>　　可以将native方法比作Java程序同Ｃ程序的接口，其实现步骤：&nbsp;<br>　　１、在Java中声明native()方法，然后编译；&nbsp;<br>　　２、用javah产生一个.h文件；&nbsp;<br>　　３、写一个.cpp文件实现native导出方法，其中需要包含第二步产生的.h文件（注意其中又包含了JDK带的jni.h文件）；&nbsp;<br>　　４、将第三步的.cpp文件编译成动态链接库文件；&nbsp;<br>　　５、在Java中用System.loadLibrary()方法加载第四步产生的动态链接库文件，这个native()方法就可以在Java中被访问了。</p>
+</li>
+</ol>
 
                 
             </div>
@@ -494,7 +590,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://limitlm.github.io/posts/64268.html">https://limitlm.github.io/posts/64268.html</a>
+                    <a href="https://limitlm.github.io/posts/48874.html">https://limitlm.github.io/posts/48874.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -709,29 +805,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/35811.html">
+                <a href="/posts/48874.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="学Java的第一天">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java关键字">
                         
-                        <span class="card-title">学Java的第一天</span>
+                        <span class="card-title">Java关键字</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java基础
+                            Java关键字
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-16
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -744,6 +841,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -766,31 +864,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/47193.html">
+                <a href="/posts/35811.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="markdown语法">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="学Java的第一天">
                         
-                        <span class="card-title">markdown语法</span>
+                        <span class="card-title">学Java的第一天</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            markdown的基本用法
+                            Java基础
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-11-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/markdown/" class="post-category">
-                                    markdown
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -800,8 +898,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/markdown/">
-                        <span class="chip bg-color">markdown</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>
