@@ -8,7 +8,7 @@
       <link href="/posts/35811.html"/>
       <url>/posts/35811.html</url>
       
-        <content type="html"><![CDATA[<h2 id="Java基础01：注释"><a href="#Java基础01：注释" class="headerlink" title="Java基础01：注释"></a>Java基础01：注释</h2><p>注释不会被执行，给程序员看的，方便维护。</p><h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h3><blockquote><p>//单行注释</p></blockquote><h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h3><blockquote><p>/*多行<br>注释*/</p></blockquote><h3 id="文档注释"><a href="#文档注释" class="headerlink" title="文档注释"></a>文档注释</h3><p>JavaDoc</p><blockquote><p>/**<br>  *@description<br>  *@author<br>  */</p></blockquote><h2 id="Java基础02：标识符和关键字"><a href="#Java基础02：标识符和关键字" class="headerlink" title="Java基础02：标识符和关键字"></a>Java基础02：标识符和关键字</h2><p>详情看站内文章</p><p>&nbsp;<a href="#">Post not found: 48874</a></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="Java基础01：注释"><a href="#Java基础01：注释" class="headerlink" title="Java基础01：注释"></a>Java基础01：注释</h2><p>注释不会被执行，给程序员看的，方便维护。</p><h3 id="单行注释"><a href="#单行注释" class="headerlink" title="单行注释"></a>单行注释</h3><blockquote><p>//单行注释</p></blockquote><h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h3><blockquote><p>/*多行<br>注释*/</p></blockquote><h3 id="文档注释"><a href="#文档注释" class="headerlink" title="文档注释"></a>文档注释</h3><p>JavaDoc</p><blockquote><p>/**<br>  *@description<br>  *@author<br>  */</p></blockquote><h2 id="Java基础02：标识符和关键字"><a href="#Java基础02：标识符和关键字" class="headerlink" title="Java基础02：标识符和关键字"></a>Java基础02：标识符和关键字</h2><p>详情看站内文章</p><p>&nbsp;<a href="/posts/undefined.html" title="Java关键字">Java关键字</a></p>]]></content>
       
       
       <categories>
