@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>学Java的准备工作</title>
+      <link href="/posts/64268.html"/>
+      <url>/posts/64268.html</url>
+      
+        <content type="html"><![CDATA[<p>大学没有ssm框架的课程，找工作必须要会这个，那我自学。</p><p>从最基础的开始，就当复习了。</p><p>视频教程看b站狂神说，动力节点，尚硅谷，黑马的。</p><h1 id="1-搭建环境"><a href="#1-搭建环境" class="headerlink" title="1.搭建环境"></a>1.搭建环境</h1><h2 id="1-1从eclipse到idea"><a href="#1-1从eclipse到idea" class="headerlink" title="1.1从eclipse到idea"></a>1.1从eclipse到idea</h2><p>idea确实比eclipse先进，按照教学选择用idea</p><h3 id="1-1-1安装idea"><a href="#1-1-1安装idea" class="headerlink" title="1.1.1安装idea"></a>1.1.1安装idea</h3><p>去官网下载idea的最新版，不要下载社区版，后续社区版不能用spring</p><h3 id="1-1-2安装无限试用插件"><a href="#1-1-2安装无限试用插件" class="headerlink" title="1.1.2安装无限试用插件"></a>1.1.2安装无限试用插件</h3><p>学生优惠只有一年，还是太贵了，现在也只是个人学习使用，等以后工作用上的时候再补票入正吧。</p><h2 id="1-2安装Java环境"><a href="#1-2安装Java环境" class="headerlink" title="1.2安装Java环境"></a>1.2安装Java环境</h2><p>大一就安装好了</p><h3 id="1-2-1安装jdk"><a href="#1-2-1安装jdk" class="headerlink" title="1.2.1安装jdk"></a>1.2.1安装jdk</h3><p>在官网下载的jdk13</p><h3 id="1-2-2测试是否安装成功"><a href="#1-2-2测试是否安装成功" class="headerlink" title="1.2.2测试是否安装成功"></a>1.2.2测试是否安装成功</h3><p>win+R运行cmd</p><p>输入java -version查看</p><p><img src="https://cdn.jsdelivr.net/gh/limitlm/mypic/img/202111161659540.png" alt="安装成功"></p><h1 id="2开始编程"><a href="#2开始编程" class="headerlink" title="2开始编程"></a>2开始编程</h1><h2 id="2-1写个hello-world吧"><a href="#2-1写个hello-world吧" class="headerlink" title="2.1写个hello world吧"></a>2.1写个hello world吧</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token punctuation">}</span><span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p><strong><code>Java入门到入土正式开始了</code></strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>markdown语法</title>
       <link href="/posts/47193.html"/>
       <url>/posts/47193.html</url>
