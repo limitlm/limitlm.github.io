@@ -431,7 +431,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    904
+                    1.3k
                 </div>
                 
 
@@ -583,6 +583,38 @@ a<span class="token punctuation">[</span><span class="token number">2</span><spa
  
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h2><h3 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象"></a>什么是面向对象</h3><ul>
+<li><p>面向对象编程(Object-Oriented Programming, OOP)  </p>
+</li>
+<li><p>面向对象编程的本质就是:以类的方式组织代码，以对象的组织(封装)数据。</p>
+</li>
+<li><p>抽象</p>
+</li>
+<li><p>三大特性：  </p>
+<ul>
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ul>
+</li>
+<li><p>从认识论角度考虑是先有对象后有类。对象，是具体的事物。类，是抽象的，是对对象的抽象  </p>
+</li>
+<li><p>从代码运行角度考虑是先有类后有对象。类是对象的模板。</p>
+</li>
+</ul>
+<h3 id="方法回顾"><a href="#方法回顾" class="headerlink" title="方法回顾"></a>方法回顾</h3><h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>用static修饰的方法<br>可以直接用  <code>类名.方法名()</code> 调用</p>
+<h4 id="非静态方法"><a href="#非静态方法" class="headerlink" title="非静态方法"></a>非静态方法</h4><p>没有用static修饰的方法<br>需要先实例化对象才能调用</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">GirlFriend</span> gl <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GirlFriend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gl<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="创建与初始化对象"><a href="#创建与初始化对象" class="headerlink" title="创建与初始化对象"></a>创建与初始化对象</h3><p>使用new关键字创建对象，除了分配内存空间外还会给创建好的对象进行初始化以及对类中的构造方法的调用。<br>构造方法的特点：</p>
+<ol>
+<li>必须和类的名字相同</li>
+<li>必须没有返回类型，也不能写void</li>
+</ol>
+<p>什么都不写的时候，默认会提供一个无参构造方法。<br>一个类可以有多个构造方法。构造方法也能重载。<br>构造方法相当于给对象初始化的时候赋予对象初始值。<br>快捷键Alt + Insert创建构造方法。</p>
+<h3 id="创建对象内存分析"><a href="#创建对象内存分析" class="headerlink" title="创建对象内存分析"></a>创建对象内存分析</h3><p>在栈中的保存的是对象的引用变量名，真正的对象在堆中，根据类为模板生成对象，根据构造方法给对象赋予初始属性。</p>
 
                 
             </div>
@@ -824,30 +856,29 @@ a<span class="token punctuation">[</span><span class="token number">2</span><spa
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/4974.html">
+                <a href="/posts/61295.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="学Java的第6天">
+                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="学Java的第7天">
                         
-                        <span class="card-title">学Java的第6天</span>
+                        <span class="card-title">学Java的第7天</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            数组
+                            类与对象
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-07
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-08
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -860,7 +891,6 @@ a<span class="token punctuation">[</span><span class="token number">2</span><spa
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1163,7 +1193,7 @@ a<span class="token punctuation">[</span><span class="token number">2</span><spa
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">12.7k</span>
+                        class="white-color">14.4k</span>
             
             
             
