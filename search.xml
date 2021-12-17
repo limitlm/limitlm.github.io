@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>Java权限修饰符</title>
-      <link href="/posts/46443.html"/>
-      <url>/posts/46443.html</url>
+      <title>学Java的第11天</title>
+      <link href="/posts/9866.html"/>
+      <url>/posts/9866.html</url>
       
-        <content type="html"><![CDATA[<h2 id="什么是权限修饰符"><a href="#什么是权限修饰符" class="headerlink" title="什么是权限修饰符"></a>什么是权限修饰符</h2><ul><li>权限修饰符:是用来控制一个成员能够被访问的范围的。</li><li>可以修饰成员变量，方法，构造器，内部类，不同权限修饰符修饰的成员能够被访问的范围将受到限制。</li></ul><h2 id="权限修饰符的分类和具体作用范围"><a href="#权限修饰符的分类和具体作用范围" class="headerlink" title="权限修饰符的分类和具体作用范围"></a>权限修饰符的分类和具体作用范围</h2><ul><li>权限修饰符:有四种作用范围由小到大(private -&gt; 缺省 -&gt; protected -&gt; public )</li></ul><table><thead><tr><th align="center">修饰符</th><th align="center">同一个类中</th><th align="center">同一个包中其他类</th><th align="center">不同包下的子类</th><th align="center">不同包下的无关类</th></tr></thead><tbody><tr><td align="center">private</td><td align="center">√</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center">缺省</td><td align="center">√</td><td align="center">√</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">protected</td><td align="center">√</td><td align="center">√</td><td align="center">√</td><td align="center"></td></tr><tr><td align="center">public</td><td align="center">√</td><td align="center">√</td><td align="center">√</td><td align="center">√</td></tr></tbody></table><h2 id="学完权限修饰符需要具备如下能力"><a href="#学完权限修饰符需要具备如下能力" class="headerlink" title="学完权限修饰符需要具备如下能力"></a>学完权限修饰符需要具备如下能力</h2><ul><li>能够识别别人定义的成员的访问权限。</li><li>自己定义成员（方法，成员变量，构造器等）一般满足如下要求:<ul><li>成员变量一般私有。</li><li>方法一般公开。</li><li>如果该成员只希望本类访问，使用private修饰。</li><li>如果该成员只希望本类，同一个包下的其他类和子类访问，使用protected修饰。</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h2 id="权限修饰符"><a href="#权限修饰符" class="headerlink" title="权限修饰符"></a>权限修饰符</h2><ul><li>权限修饰符:是用来控制一个成员能够被访问的范围的。</li><li>可以修饰成员变量，方法，构造器，内部类，不同权限修饰符修饰的成员能够被访问的范围将受到限制。</li></ul><h3 id="权限修饰符的分类和具体作用范围"><a href="#权限修饰符的分类和具体作用范围" class="headerlink" title="权限修饰符的分类和具体作用范围"></a>权限修饰符的分类和具体作用范围</h3><ul><li>权限修饰符:有四种作用范围由小到大(private -&gt; 缺省 -&gt; protected -&gt; public )</li></ul><table><thead><tr><th align="center">修饰符</th><th align="center">同一个类中</th><th align="center">同一个包中其他类</th><th align="center">不同包下的子类</th><th align="center">不同包下的无关类</th></tr></thead><tbody><tr><td align="center">private</td><td align="center">√</td><td align="center"></td><td align="center"></td><td align="center"></td></tr><tr><td align="center">缺省</td><td align="center">√</td><td align="center">√</td><td align="center"></td><td align="center"></td></tr><tr><td align="center">protected</td><td align="center">√</td><td align="center">√</td><td align="center">√</td><td align="center"></td></tr><tr><td align="center">public</td><td align="center">√</td><td align="center">√</td><td align="center">√</td><td align="center">√</td></tr></tbody></table><h3 id="学完权限修饰符需要具备如下能力"><a href="#学完权限修饰符需要具备如下能力" class="headerlink" title="学完权限修饰符需要具备如下能力"></a>学完权限修饰符需要具备如下能力</h3><ul><li>能够识别别人定义的成员的访问权限。</li><li>自己定义成员（方法，成员变量，构造器等）一般满足如下要求:<ul><li>成员变量一般私有。</li><li>方法一般公开。</li><li>如果该成员只希望本类访问，使用private修饰。</li><li>如果该成员只希望本类，同一个包下的其他类和子类访问，使用protected修饰。</li></ul></li></ul>]]></content>
       
       
       <categories>
@@ -35,7 +35,7 @@
       <link href="/posts/12271.html"/>
       <url>/posts/12271.html</url>
       
-        <content type="html"><![CDATA[<p>她让我分手，她能找到更好的，我让她解脱。<br>最近我需要学习，白天没时间陪她。<br>我爱她，尽管她想方设法恶心过我，我还是很爱她。<br>我大学陪着她浑浑噩噩，我现在选择学习三个月，<br>也是为了我和她能有未来。<br>她才答应等我三个月，结果只等了我三天。<br>我可能考虑得太远了，轻视了当下和她共处的时间。<br>她给了我足够的理由，我现在配不上她。  </p><p>你一天刷几小时抖音，我根本没时间看你@我的。<br>你无理取闹的时候，我也会忍不住凶你。<br>你现在确实没有以前那么凶那么爱生气了。<br>我却开始变成了你以前的样子。<br>你成长了，我却没有。  </p><p>提前祝你成年生日快乐。<br>我应该是没有机会陪你过了。<br>还有这些年许下的种种承诺，<br>都来不及兑现了。  </p><p>我不能耽误你了。<br>谢谢你还想跟我做朋友，<br>但是我不能留在你的生活中。<br>我受不了你近在眼前却不属于我的感觉，<br>你知道的，我占有欲很强，不想可望而不可及。<br>让我再自私这最后一次吧。<br>我爱你 卡洛<br>再见了</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="时间2021年12月17日02-15"><a href="#时间2021年12月17日02-15" class="headerlink" title="时间2021年12月17日02:15"></a>时间2021年12月17日02:15</h2><h2 id="在一起的第1216天"><a href="#在一起的第1216天" class="headerlink" title="在一起的第1216天"></a>在一起的第1216天</h2><p>分分合合那么多次，虽然不敢面对，但我也知道这次是真的了。</p><p>她让我分手，她说她能找到更好的，我让她解脱。<br>最近我需要学习，白天没时间陪她。<br>我爱她，尽管她想方设法恶心过我，我还是很爱她。<br>我大学陪着她浑浑噩噩，我现在选择学习三个月，<br>也是为了我和她能有未来。<br>她才答应等我三个月，结果只等了我三天。<br>我可能考虑得太远了，轻视了当下和她共处的时间。<br>她给了我足够的理由，我现在配不上她。  </p><p>你一天刷几小时抖音，我根本没时间看你@我的。<br>你无理取闹的时候，我也会忍不住凶你。<br>你现在确实没有以前那么凶那么爱生气了。<br>我却开始变成了你以前的样子。<br>你成长了，我却没有。  </p><p>提前祝你成年生日快乐。<br>我应该是没有机会陪你过了。<br>还有这些年许下的种种承诺，<br>都来不及兑现了。  </p><p>我不能耽误你了。<br>谢谢你还想跟我做朋友，<br>但是我不能留在你的生活中。<br>我受不了你近在眼前却不属于我的感觉，<br>你知道的，我占有欲很强，不想可望而不可及。<br>让我再自私这最后一次吧。<br>我爱你 卡洛<br>再见了</p>]]></content>
       
       
       <categories>
