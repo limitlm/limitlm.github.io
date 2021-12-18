@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /posts/
-Allow: /sitemap.xml
-
-Disallow: /
-
-Sitemap: https://limitlm.github.io/sitemap.xml
