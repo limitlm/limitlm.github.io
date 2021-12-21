@@ -427,7 +427,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.3k
                 </div>
                 
 
@@ -965,6 +965,32 @@
 <li>最近最久未使用算法（LRU）：淘汰最近最左边的那个</li>
 </ol>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ht411W7uB?p=4">计算缺页率教程</a></p>
+<h3 id="根据逻辑地址求物理地址"><a href="#根据逻辑地址求物理地址" class="headerlink" title="根据逻辑地址求物理地址"></a>根据逻辑地址求物理地址</h3><table>
+<thead>
+<tr>
+<th align="center">页号</th>
+<th align="center">块号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">6</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">8</td>
+</tr>
+</tbody></table>
+<p>已知每页大小2048字节，求逻辑地址4865对应的物理地址。</p>
+<p>解：<br>页号=逻辑地址/页大小=4865/2048=2<br>页内地址=逻辑地址%页大小=4865%2048=769<br>第2页对应6块<br>物理地址=块数*块大小(页大小)+页内地址=6*2048+769=13057</p>
 
                 
             </div>
@@ -1533,7 +1559,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">22.9k</span>
+                        class="white-color">23k</span>
             
             
             
