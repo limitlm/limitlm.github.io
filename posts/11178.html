@@ -513,9 +513,89 @@
 <li>部分分配</li>
 <li>环路条件</li>
 </ol>
-<p>避免死锁的经典问题：银行家算法<br>设系统中有三种类型的资源（A、B、C）和五个进程（P1、P2、P3、P4、P5），A资源的数量是17，B资源的数量是6，C资源的数量是19。在T0时刻的状态如下：若当前剩余资源（A、B、C）分别为（2，3，3）。请采用银行家算法写出它的安全序列。<br>若P4在T0时刻提出（1，1，0）时是否存在安全序列。<br>||资源最大需求|已分配资源量|<br>|:–:|:—:|:—:|<br>|P1|0 0 6|4 0 5|<br>|P2|1 3 4|4 0 2|<br>|P3|2 1 1|2 1 4|<br>|P4|3 4 7|2 1 2|<br>|P5|1 1 1|3 1 3|</p>
+<p>避免死锁的经典问题：银行家算法<br>设系统中有三种类型的资源（A、B、C）和五个进程（P1、P2、P3、P4、P5），A资源的数量是17，B资源的数量是6，C资源的数量是19。在T0时刻的状态如下：若当前剩余资源（A、B、C）分别为（2，3，3）。请采用银行家算法写出它的安全序列。<br>若P4在T0时刻提出（1，1，0）时是否存在安全序列。</p>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">资源最大需求</th>
+<th align="center">已分配资源量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">P1</td>
+<td align="center">0 0 6</td>
+<td align="center">4 0 5</td>
+</tr>
+<tr>
+<td align="center">P2</td>
+<td align="center">1 3 4</td>
+<td align="center">4 0 2</td>
+</tr>
+<tr>
+<td align="center">P3</td>
+<td align="center">2 1 1</td>
+<td align="center">2 1 4</td>
+</tr>
+<tr>
+<td align="center">P4</td>
+<td align="center">3 4 7</td>
+<td align="center">2 1 2</td>
+</tr>
+<tr>
+<td align="center">P5</td>
+<td align="center">1 1 1</td>
+<td align="center">3 1 3</td>
+</tr>
+</tbody></table>
 <hr>
-<p>解：<br>|进程|max|allocation|need|available|<br>|:–:|:—:|:—:|:—:|:—:|<br>|P1|0 0 6|4 0 5|0 0 1|2 3 3|<br>|P2|1 3 4|4 0 2|0 3 2|<br>|P3|2 1 1|2 1 4|0 0 0|<br>|P4|3 4 7|2 1 2|1 3 5|<br>|P5|1 1 1|3 1 3|0 0 0|</p>
+<p>解：</p>
+<table>
+<thead>
+<tr>
+<th align="center">进程</th>
+<th align="center">max</th>
+<th align="center">allocation</th>
+<th align="center">need</th>
+<th align="center">available</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">P1</td>
+<td align="center">0 0 6</td>
+<td align="center">4 0 5</td>
+<td align="center">0 0 1</td>
+<td align="center">2 3 3</td>
+</tr>
+<tr>
+<td align="center">P2</td>
+<td align="center">1 3 4</td>
+<td align="center">4 0 2</td>
+<td align="center">0 3 2</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">P3</td>
+<td align="center">2 1 1</td>
+<td align="center">2 1 4</td>
+<td align="center">0 0 0</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">P4</td>
+<td align="center">3 4 7</td>
+<td align="center">2 1 2</td>
+<td align="center">1 3 5</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">P5</td>
+<td align="center">1 1 1</td>
+<td align="center">3 1 3</td>
+<td align="center">0 0 0</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
 <table>
 <thead>
 <tr>
@@ -564,7 +644,53 @@
 </tbody></table>
 <p>安全序列为P3、P4、P5、P1、P2</p>
 <hr>
-<p>P4请求（1，1，0）&lt; need（1，3，5）<br>P4请求（1，1，0）&lt; available（2，3，3）<br>|进程|max|allocation|need|available|<br>|:–:|:—:|:—:|:—:|:—:|<br>|P1|0 0 6|4 0 5|0 0 1|1 2 3|<br>|P2|1 3 4|4 0 2|0 3 2|<br>|P3|2 1 1|2 1 4|0 0 0|<br>|P4|3 4 7|3 2 2|0 2 5|<br>|P5|1 1 1|3 1 3|0 0 0|</p>
+<p>P4请求（1，1，0）&lt; need（1，3，5）<br>P4请求（1，1，0）&lt; available（2，3，3）</p>
+<table>
+<thead>
+<tr>
+<th align="center">进程</th>
+<th align="center">max</th>
+<th align="center">allocation</th>
+<th align="center">need</th>
+<th align="center">available</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">P1</td>
+<td align="center">0 0 6</td>
+<td align="center">4 0 5</td>
+<td align="center">0 0 1</td>
+<td align="center">1 2 3</td>
+</tr>
+<tr>
+<td align="center">P2</td>
+<td align="center">1 3 4</td>
+<td align="center">4 0 2</td>
+<td align="center">0 3 2</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">P3</td>
+<td align="center">2 1 1</td>
+<td align="center">2 1 4</td>
+<td align="center">0 0 0</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">P4</td>
+<td align="center">3 4 7</td>
+<td align="center">3 2 2</td>
+<td align="center">0 2 5</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">P5</td>
+<td align="center">1 1 1</td>
+<td align="center">3 1 3</td>
+<td align="center">0 0 0</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
 <table>
 <thead>
 <tr>
@@ -818,12 +944,20 @@
 <h2 id="存储管理"><a href="#存储管理" class="headerlink" title="存储管理"></a>存储管理</h2><h3 id="存储管理的基本任务和主要功能"><a href="#存储管理的基本任务和主要功能" class="headerlink" title="存储管理的基本任务和主要功能"></a>存储管理的基本任务和主要功能</h3><p>基本任务：主存空间分配、地址变换、存储保护和存储扩充</p>
 <h3 id="虚拟存储器和地址重定位"><a href="#虚拟存储器和地址重定位" class="headerlink" title="虚拟存储器和地址重定位"></a>虚拟存储器和地址重定位</h3><p>虚拟存储器概念：</p>
 <blockquote>
-<p>为解决内存小而作业大、作业多的矛盾，应该把一个程序当前正在使用的部分放在内存，而其余部分放在磁盘上。<br>地址重定位概念：<br>内存地址的集合称为内存空间或物理地址空间。内存中，每一个存储单元都与相应的内存地址的编号相对应，显然，内存空间是一维线性的。</p>
+<p>为解决内存小而作业大、作业多的矛盾，应该把一个程序当前正在使用的部分放在内存，而其余部分放在磁盘上。</p>
+</blockquote>
+<p>地址重定位概念：</p>
+<blockquote>
+<p>内存地址的集合称为内存空间或物理地址空间。内存中，每一个存储单元都与相应的内存地址的编号相对应，显然，内存空间是一维线性的。</p>
 </blockquote>
 <h3 id="分区、分页、分段三者的区别"><a href="#分区、分页、分段三者的区别" class="headerlink" title="分区、分页、分段三者的区别"></a>分区、分页、分段三者的区别</h3><p>区别：</p>
 <h3 id="覆盖和交换"><a href="#覆盖和交换" class="headerlink" title="覆盖和交换"></a>覆盖和交换</h3><p>覆盖技术概念：</p>
 <blockquote>
-<p>程序划分为若干个功能上相对独立的程序段，按照程序逻辑结构让那些不需要同时执行的程序端共享同一块内存区。<br>交换技术概念：<br>对象是进程，等待状态的进程驻留内存会造成存储空间的浪费。因此，有必要把处于等待状态的进程换出内存。交换技术是实现此目标的常用方法之一。</p>
+<p>程序划分为若干个功能上相对独立的程序段，按照程序逻辑结构让那些不需要同时执行的程序端共享同一块内存区。</p>
+</blockquote>
+<p>交换技术概念：</p>
+<blockquote>
+<p>对象是进程，等待状态的进程驻留内存会造成存储空间的浪费。因此，有必要把处于等待状态的进程换出内存。交换技术是实现此目标的常用方法之一。</p>
 </blockquote>
 <h3 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h3><ol>
 <li>先进先出置换算法（FIFO）：淘汰存在次数最多的</li>
