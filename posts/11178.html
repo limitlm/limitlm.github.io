@@ -427,7 +427,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    2.7k
                 </div>
                 
 
@@ -991,6 +991,57 @@
 </tbody></table>
 <p>已知每页大小2048字节，求逻辑地址4865对应的物理地址。</p>
 <p>解：<br>页号=逻辑地址/页大小=4865/2048=2<br>页内地址=逻辑地址%页大小=4865%2048=769<br>第2页对应6块<br>物理地址=块数*块大小(页大小)+页内地址=6*2048+769=13057</p>
+<h2 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h2><h3 id="文件和文件系统、文件系统功能"><a href="#文件和文件系统、文件系统功能" class="headerlink" title="文件和文件系统、文件系统功能"></a>文件和文件系统、文件系统功能</h3><p>文件：</p>
+<blockquote>
+<p>文件是一段程序或数据的集合</p>
+</blockquote>
+<p>文件系统：</p>
+<blockquote>
+<p>操作系统中与管理文件有关的软件和数据称为文件系统</p>
+</blockquote>
+<p>功能：</p>
+<blockquote>
+<ol>
+<li>对文件空间进行统一管理</li>
+<li>实现按名存取，有用户可见的文件逻辑结构</li>
+<li>文件的物理结构</li>
+<li>完成文件的查找</li>
+<li>完成文件的共享和保护</li>
+</ol>
+</blockquote>
+<h3 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h3><ol>
+<li>顺序的</li>
+<li>先排序在找最近的</li>
+</ol>
+<h2 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h2><h3 id="设备管理的目标和任务"><a href="#设备管理的目标和任务" class="headerlink" title="设备管理的目标和任务"></a>设备管理的目标和任务</h3><p>目标：</p>
+<blockquote>
+<p>对计算机输入输出系统的管理</p>
+</blockquote>
+<p>任务：</p>
+<ol>
+<li>选择和分配输入输出设备</li>
+<li>控制输出输出设备和CPU之间交换数据</li>
+<li>为用户提供友好的透明接口</li>
+<li>提高并行操作度，提高操作系统效率</li>
+</ol>
+<h3 id="数据传送控制方式"><a href="#数据传送控制方式" class="headerlink" title="数据传送控制方式"></a>数据传送控制方式</h3><ol>
+<li>程序直接控制方式</li>
+<li>中断方式</li>
+<li>DMA方式</li>
+</ol>
+<h3 id="中断技术、中断处理过程"><a href="#中断技术、中断处理过程" class="headerlink" title="中断技术、中断处理过程"></a>中断技术、中断处理过程</h3><blockquote>
+<p>使CPU暂时中断当前正在执行的程序，转去执行相应的急需处理的程序，处理完毕后返回中断处继续执行</p>
+</blockquote>
+<p>中断处理过程：</p>
+<ol>
+<li>检查响应中断条件是否满足</li>
+<li>如果CPU响应中断，则CPU关中断，使CPU进入不可再次响应中断的状态</li>
+<li>保存被中断进程现场</li>
+<li>分析中断原因，调用中断处理子程序</li>
+<li>执行中断处理子程序</li>
+<li>退出中断，恢复被中断进程的现场</li>
+<li>开中断，CPU继续执行</li>
+</ol>
 
                 
             </div>
@@ -1559,7 +1610,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">23k</span>
+                        class="white-color">23.4k</span>
             
             
             
