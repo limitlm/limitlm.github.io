@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>接口、多态</title>
+      <link href="/posts/63176.html"/>
+      <url>/posts/63176.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><p>interface</p><ul><li>接口中的成员只有常量和抽象方法。</li><li>在接口中，常量的修饰符public static final可以省略；抽象方法的修饰符public abstract可以省略。</li><li>因为接口是公开的规范，里面的内容都默认是公开的。  </li><li>接口不能创建对象。</li></ul><h3 id="实现类"><a href="#实现类" class="headerlink" title="实现类"></a>实现类</h3><ul><li>接口是用来被类实现（implements）的，实现接口的类称为实现类。实现类可以理解成所谓的子类。</li><li>接口可以被类单实现，也可以被多实现。</li><li>一个类实现接口，必须重写完全部接口的全部抽象方法，否则这个类需要定义成抽象类。</li></ul><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>新版本允许接口带有方法体的方法</p><ul><li>默认方法：必须用default修饰-实现类对象调用</li><li>静态方法：必须用static修饰-必须用当前接口名调用</li><li>私有方法：用private修饰，只能被接口内部方法访问</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>操作系统知识点梳理</title>
       <link href="/posts/11178.html"/>
       <url>/posts/11178.html</url>
