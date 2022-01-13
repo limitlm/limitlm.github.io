@@ -5,7 +5,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Java 笔记">
-    <meta name="description" content="面向对象进阶">
+    <meta name="description" content="需求：
+使用面向对象编程模拟：设计一个电脑对象，可以安装2个USB设备
+
+鼠标：被安装时可以完成接入、调用点击功能、拔出功能。
+键盘：被安装时可以完成接入、调用打字功能、拔出功能。
+
+分析
+
+定义一个USB的接口（申明USB设备的规范必须是">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +25,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>学Java的第10天 | 泷少的博客</title>
+    <title>一个多态案例 | 泷少的博客</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/libs/awesome/css/all.min.css">
@@ -272,12 +280,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">学Java的第10天</h1>
+                    <h1 class="description center-align post-title">一个多态案例</h1>
                 </div>
             </div>
         </div>
@@ -422,7 +430,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-16
+                    2022-01-01
                 </div>
                 
 
@@ -431,7 +439,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    470
                 </div>
                 
 
@@ -451,100 +459,139 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="static关键字"><a href="#static关键字" class="headerlink" title="static关键字"></a>static关键字</h2><h3 id="static关键字的作用"><a href="#static关键字的作用" class="headerlink" title="static关键字的作用"></a>static关键字的作用</h3><ul>
-<li>static是静态的意思，可以修饰成员变量，表示该成员变量只在内存中只存储一份，可以被共享访问、修改。</li>
-</ul>
-<h3 id="成员变量可以分为2类"><a href="#成员变量可以分为2类" class="headerlink" title="成员变量可以分为2类"></a>成员变量可以分为2类</h3><ul>
-<li><p>静态成员交量（有static修饰，属于类，内存中加载一次)︰常表示如在线人数信息、等需要被共享的信息，可以被共享访问。</p>
-<blockquote>
-<p>类名.静态成员变量</p>
-</blockquote>
-</li>
-<li><p>实例成员变量（无static修饰，存在于每个对象中)∶常表示姓名name、年龄age、等属于每个对象的信息。</p>
-<blockquote>
-<p>对象.实例成员变量</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="成员方法的分类"><a href="#成员方法的分类" class="headerlink" title="成员方法的分类"></a>成员方法的分类</h3><ul>
-<li>静态成员方法（有static修饰，属于类)，建议用类名访问，也可以用对象访问。<blockquote>
-<p>表示对象自己的行为的，且方法中需要访问实例成员的，则该方法必须申明成实例方法。</p>
-</blockquote>
-</li>
-<li>实例成员方法（无static修饰，属于对象），只能用对象触发访问。<blockquote>
-<p>如果该方法是以执行一个通用功能为目的，或者需要方便访问，则可以申明成静态方法。</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="static访问注意事项"><a href="#static访问注意事项" class="headerlink" title="static访问注意事项"></a>static访问注意事项</h3><ul>
-<li>静态方法只能访问静态的成员，不可以直接访问实例成员。</li>
-<li>实例方法可以访问静态的成员，也可以访问实例成员。</li>
-<li>静态方法中是不可以出现this关键字的。</li>
-</ul>
-<h3 id="代码块概述"><a href="#代码块概述" class="headerlink" title="代码块概述"></a>代码块概述</h3><ul>
-<li>代码块是类的5大成分之一（成员变量、构造器，方法，代码块，内部类)，定义在类中方法外。</li>
-<li>在Java类下，使用(}括起来的代码被称为代码块。</li>
-</ul>
-<p>代码块分为</p>
+                <p>需求：</p>
+<p>使用面向对象编程模拟：设计一个电脑对象，可以安装2个USB设备</p>
 <ul>
-<li>静态代码块:<blockquote>
-<p>格式:static{}<br>特点:需要通过static关键字修饰，随着类的加载而加载，并且自动触发、只执行一次<br>使用场景:在类加载的时候做一些静态数据初始化的操作，以便后续使用。</p>
-</blockquote>
-</li>
-<li>构造代码块（了解，用的少)∶<blockquote>
-<p>格式:{}<br>特点:每次创建对象，调用构造器执行时，都会执行该代码块中的代码，并且在构造器执行前执行<br>使用场景:初始化实例资源。</p>
-</blockquote>
-</li>
+<li>鼠标：被安装时可以完成接入、调用点击功能、拔出功能。</li>
+<li>键盘：被安装时可以完成接入、调用打字功能、拔出功能。</li>
 </ul>
-<h3 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h3><p>什么是设计模式(Design pattern)  </p>
-<blockquote>
-<p>设计模式是一套被前人反复使用、多数人知晓、经过分类编目的代码设计经验的总结，后来者可以直接拿来解决问题设计模式是软设计中的常见解决方案，好的设计模式可以进一步的提高代码的重用性。  </p>
-</blockquote>
-<p>单例模式  </p>
-<blockquote>
-<p>可以保证系统中，应用该模式的这个类永远只有一个实例，即一个类永远只能创建一个对象。  </p>
-</blockquote>
-<p>单例的场景和作用  </p>
-<blockquote>
-<p>例如任务管理器对象我们只需要一个就可以解决问题了，这样可以节省内存空间。</p>
-</blockquote>
-<h4 id="饿汉单例设计模式"><a href="#饿汉单例设计模式" class="headerlink" title="饿汉单例设计模式"></a>饿汉单例设计模式</h4><p>在用类获取对象的时候，对象已经提前为你创建好了</p>
-<p>设计步骤:</p>
-<ul>
-<li>定义一个类，把构造器私有。</li>
-<li>定义一个静态变量存储一个对象。</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**a、定义一个单例类*/</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> singleInstance <span class="token punctuation">{</span>
-<span class="token comment">/**c.定义一个静态变量存储一个对象即可:属于类，与类一起加载一次*/</span>    
-    <span class="token keyword">public</span> <span class="token keyword">static</span> singleInstance instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SinglcInstance</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">/**b.单例必须私有构造器*/</span>
-    <span class="token keyword">private</span> singleInstance <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token class-name">Systen</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print1n</span><span class="token punctuation">(</span><span class="token string">"创建了一个对象"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>分析</p>
+<ol>
+<li>定义一个USB的接口（申明USB设备的规范必须是：可以接入和拔出）</li>
+<li>提供2个USB实现类代表鼠标和键盘，让其实现USB接口，并分别定义独有功能。</li>
+<li>创建电脑对象，创建2个USB实现类对象，分别安装到电脑中并触发功能的执行。</li>
+</ol>
+<h3 id="创建USB接口"><a href="#创建USB接口" class="headerlink" title="创建USB接口"></a>创建USB接口</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> USB <span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * 接入
+     */</span>
+    <span class="token keyword">void</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<h4 id="懒汉单例设计横式"><a href="#懒汉单例设计横式" class="headerlink" title="懒汉单例设计横式"></a>懒汉单例设计横式</h4><p>在真正需要该对象的时候，才去创建一个对象（延迟加载对象）</p>
-<p>设计步骤:</p>
-<ul>
-<li>定义一个类，把构造器私有。</li>
-<li>定义一个静态变量存储一个对象。</li>
-<li>提供一个返回单例对象的方法</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**a、定义一个单例类*/</span>
-<span class="token keyword">public</span> <span class="token keyword">class</span> singleInstance <span class="token punctuation">{</span>
-<span class="token comment">/**c.定义一个静态变量存储一个对象即可:属于类，与类一起加载一次*/</span>    
-    <span class="token keyword">private</span> <span class="token keyword">static</span> singleInstance instance<span class="token punctuation">;</span>
-<span class="token comment">/**b.单例必须私有构造器*/</span>
-    <span class="token keyword">private</span> singleInstance <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
-    <span class="token comment">/**d.必须提供一个方法返回一个单例对象*/</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SingleInstance</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">singleInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+    <span class="token comment">/**
+     * 拔出
+     */</span>
+    <span class="token keyword">void</span> <span class="token function">unconnected</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="创建键盘类"><a href="#创建键盘类" class="headerlink" title="创建键盘类"></a>创建键盘类</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Keyboard</span> <span class="token keyword">implements</span> USB <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Keyboard</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">"接入电脑"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">unconnected</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">"从电脑拔出"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">keyDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">"敲键盘了"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="创建鼠标类"><a href="#创建鼠标类" class="headerlink" title="创建鼠标类"></a>创建鼠标类</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Mouse</span> <span class="token keyword">implements</span> USB <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Mouse</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">"接入电脑"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">unconnected</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">"从电脑拔出"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">dbClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>name <span class="token operator">+</span> <span class="token string">"双击了"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="创建电脑类"><a href="#创建电脑类" class="headerlink" title="创建电脑类"></a>创建电脑类</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Computer</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">Computer</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setName</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">installUSB</span><span class="token punctuation">(</span><span class="token class-name">USB</span> usb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//usb可能是键盘也可能是鼠标，这里使用多态</span>
+        usb<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//独有功能先判断再强转</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>usb <span class="token keyword">instanceof</span> <span class="token class-name">Keyboard</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Keyboard</span> k <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Keyboard</span><span class="token punctuation">)</span> usb<span class="token punctuation">;</span>
+            k<span class="token punctuation">.</span><span class="token function">keyDown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>usb <span class="token keyword">instanceof</span> <span class="token class-name">Mouse</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Mouse</span> m <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Mouse</span><span class="token punctuation">)</span> usb<span class="token punctuation">;</span>
+            m<span class="token punctuation">.</span><span class="token function">dbClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        usb<span class="token punctuation">.</span><span class="token function">unconnected</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"开机"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="创建测试类"><a href="#创建测试类" class="headerlink" title="创建测试类"></a>创建测试类</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//创建电脑对象</span>
+        <span class="token class-name">Computer</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Computer</span><span class="token punctuation">(</span><span class="token string">"外星人"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//创建usb设备</span>
+        <span class="token class-name">USB</span> u1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Keyboard</span><span class="token punctuation">(</span><span class="token string">"机械键盘"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">installUSB</span><span class="token punctuation">(</span>u1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">USB</span> u2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Mouse</span><span class="token punctuation">(</span><span class="token string">"机械鼠标"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        c<span class="token punctuation">.</span><span class="token function">installUSB</span><span class="token punctuation">(</span>u2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h3><p><img src="https://cdn.jsdelivr.net/gh/limitlm/mypic@main/img/1642072822.png" alt="测试结果"></p>
 
                 
             </div>
@@ -571,7 +618,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://limitlm.github.io/posts/55947.html">https://limitlm.github.io/posts/55947.html</a>
+                    <a href="https://limitlm.github.io/posts/1044.html">https://limitlm.github.io/posts/1044.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -786,40 +833,54 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/12271.html">
+                <a href="/posts/1044.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="经营了1216天的感情结束了">
+                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="一个多态案例">
                         
-                        <span class="card-title">经营了1216天的感情结束了</span>
+                        <span class="card-title">一个多态案例</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            被卡洛分手了
+                            
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Diary/" class="post-category">
-                                    Diary
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -831,31 +892,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/27468.html">
+                <a href="/posts/63176.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="jsDelivr 缓存刷新">
+                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="接口、多态">
                         
-                        <span class="card-title">jsDelivr 缓存刷新</span>
+                        <span class="card-title">接口、多态</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            新壁纸提交到github仓库后，发现cdn加速的图片地址缓存没更新，还是原来的图片……
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-27
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E5%B7%A7/" class="post-category">
-                                    技巧
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -865,12 +926,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/cdn/">
-                        <span class="chip bg-color">cdn</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/jsDeliver/">
-                        <span class="chip bg-color">jsDeliver</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>
