@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="git">
-    <meta name="description" content=".git文件夹比项目本身还大了">
+    <meta name="keywords" content="Java 笔记">
+    <meta name="description" content="Object——toString方法、equals方法   Objects——equals方法、isNull方法">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>.git文件夹太大的解决方法 | 泷少的博客</title>
+    <title>常用API——Object和Objects | 泷少的博客</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/libs/awesome/css/all.min.css">
@@ -272,12 +272,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">.git文件夹太大的解决方法</h1>
+                    <h1 class="description center-align post-title">常用API——Object和Objects</h1>
                 </div>
             </div>
         </div>
@@ -393,8 +393,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
                             </a>
                         
                     </div>
@@ -405,8 +409,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E5%B7%A7/" class="post-category">
-                                技巧
+                            <a href="/categories/Java/" class="post-category">
+                                Java
                             </a>
                         
                     </div>
@@ -418,7 +422,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-15
+                    2022-01-16
                 </div>
                 
 
@@ -427,7 +431,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    480
+                    456
                 </div>
                 
 
@@ -447,42 +451,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>今天想提交项目代码时发现文件.git文件夹越来越大, 然后花点时间研究了下，在网上查了几篇博文，成功把文件大小缩小了4倍。这里整理了一下思路，大致的意思就是找到git历史记录提交了哪些大文件. 然后重构git，让pack包变小。</p>
-<h2 id="一、打开终端"><a href="#一、打开终端" class="headerlink" title="一、打开终端"></a>一、打开终端</h2><p>进入项目文件夹，鼠标右键git bash here进入终端</p>
-<h2 id="二、查找大文件"><a href="#二、查找大文件" class="headerlink" title="二、查找大文件"></a>二、查找大文件</h2><p>命令如下，查找大小前五的文件。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> rev-list --objects --all <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> verify-pack -v .git/objects/pack/*.idx <span class="token operator">|</span> <span class="token function">sort</span> -k <span class="token number">3</span> -n <span class="token operator">|</span> <span class="token function">tail</span> -5 <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print$1}'</span><span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="删除指定大文件"><a href="#删除指定大文件" class="headerlink" title="删除指定大文件"></a>删除指定大文件</h2><p>我这里是因为第一次提交更新壁纸，忘记把壁纸压缩了，一张壁纸7MB，导致历史记录文件变大。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> filter-branch --force --index-filter <span class="token string">"git rm -rf --cached --ignore-unmatch 'themes/hexo-theme-matery/source/medias/banner'"</span> --prune-empty --tag-name-filter <span class="token function">cat</span> -- --all
-<span class="token function">git</span> for-each-ref --format<span class="token operator">=</span><span class="token string">'delete %(refname)'</span> refs/original <span class="token operator">|</span> <span class="token function">git</span> update-ref --stdin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>这里因为是删文件夹，所以使用的命令是<code>rm -rf</code>，如果是删一个文件，只需要<code>rm</code>就行了。</p>
-<h2 id="四、重新标记过期的缓存文件"><a href="#四、重新标记过期的缓存文件" class="headerlink" title="四、重新标记过期的缓存文件"></a>四、重新标记过期的缓存文件</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reflog expire --expire<span class="token operator">=</span>now --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="五、回收过期的缓存"><a href="#五、回收过期的缓存" class="headerlink" title="五、回收过期的缓存"></a>五、回收过期的缓存</h2><p>使用gc命令清理空间</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> gc --prune<span class="token operator">=</span>now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="六、查看文件大小"><a href="#六、查看文件大小" class="headerlink" title="六、查看文件大小"></a>六、查看文件大小</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> count-objects -v
-<span class="token function">du</span> -sh .git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>第一个命令返回pack包大小。<br>第二个命令返回.git文件夹大小。</p>
-<h2 id="七、重新提交"><a href="#七、重新提交" class="headerlink" title="七、重新提交"></a>七、重新提交</h2><p>要用<code>--force</code>命令强制提交到远程仓库。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push --all --force origin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>如果遇到push不了的，可以尝试重新设置与远程仓库的连接。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin ssh://git@github.com/limitlm/blog.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>然后使用<code>git remote -v</code>命令查看是否更改正确。<br>重新push应该就能成功了。</p>
+                <h2 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h2><p>Object类的作用：</p>
+<ul>
+<li>一个类要么默认继承了Object类，要么间接继承了Object类，Object类是Java中的祖宗类。</li>
+<li>Object类的方法是一切子类都可以直接使用的，所以我们要学习Object类的方法。</li>
+</ul>
+<h3 id="toString方法"><a href="#toString方法" class="headerlink" title="toString方法"></a>toString方法</h3><blockquote>
+<p>返回String类型<br>默认是返回当前对象在堆内存中的地址信息:类的全限名@内存地址</p>
+</blockquote>
+<p>toString存在的意义</p>
+<ul>
+<li>父类toString()方法存在的意义就是为了被子类重写，以便返回对象的内容信息，而不是地址信息！！</li>
+</ul>
 <hr>
-<h3 id="git-ssh和https切换"><a href="#git-ssh和https切换" class="headerlink" title="git ssh和https切换"></a>git ssh和https切换</h3><blockquote>
-<p>从ssh切换至https</p>
-</blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin https://email/username/ProjectName.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>重写toString方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">tostring</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> ………
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<blockquote>
-<p>从https切换至ssh</p>
+<p>可以直接用IDEA快捷键生成</p>
+<h3 id="equals方法"><a href="#equals方法" class="headerlink" title="equals方法"></a>equals方法</h3><blockquote>
+<p>返回Boolean类型<br>默认是比较当前对象与另一个对象的地址是否相同，相同返回true，不同返回false</p>
 </blockquote>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin git@email:username/ProjectName.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>需要比较对象内容时<br>重写equals方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">// 1、判断足否是同一个对象比较，如果是返回true。</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> o<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token comment">// 2、如果o是null返回false，如果o不是同类型页返回false</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>o <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> o<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token comment">//强制类型转换，把o从Object转为比较类型</span>
+<span class="token class-name">Student</span> student <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Student</span><span class="token punctuation">)</span> o<span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>sex<span class="token operator">==</span>student<span class="token punctuation">.</span>sex <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">==</span>student<span class="token punctuation">.</span>age <span class="token operator">&amp;&amp;</span> <span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span>student<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Objects类"><a href="#Objects类" class="headerlink" title="Objects类"></a>Objects类</h2><p>Objects类与Object还是继承关系，Objects类是从JDK 1.7开始之后才有的。</p>
+<h3 id="equals-方法"><a href="#equals-方法" class="headerlink" title="equals 方法"></a>equals 方法</h3><p>Objects的equals方法比较的结果是一样的,但是更安全。</p>
+<blockquote>
+<p>普通的equals方法，如果某个对象的值是Null，写代码时不会报错，运行起来会有空指针错误，会留下隐患</p>
+<p>Objects.equals方法比较两个对象的，底层会先进行非空判断，从而可以避免空指针异常。再进行equals比较</p>
+</blockquote>
+<h3 id="isNull方法"><a href="#isNull方法" class="headerlink" title="isNull方法"></a>isNull方法</h3><blockquote>
+<p>判断变量是否为null ,为null返回true,反之返回false</p>
+</blockquote>
 
                 
             </div>
@@ -509,7 +520,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://limitlm.github.io/posts/9817.html">https://limitlm.github.io/posts/9817.html</a>
+                    <a href="https://limitlm.github.io/posts/63919.html">https://limitlm.github.io/posts/63919.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -547,8 +558,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
                                 </a>
                             
                         </div>
@@ -724,84 +739,31 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/27468.html">
+                <a href="/posts/30357.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="jsDelivr 缓存刷新">
+                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/14.jpg" class="responsive-img" alt="内部类和匿名内部类">
                         
-                        <span class="card-title">jsDelivr 缓存刷新</span>
+                        <span class="card-title">内部类和匿名内部类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            新壁纸提交到github仓库后，发现cdn加速的图片地址缓存没更新，还是原来的图片……
+                            
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-15
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-16
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8A%80%E5%B7%A7/" class="post-category">
-                                    技巧
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/cdn/">
-                        <span class="chip bg-color">cdn</span>
-                    </a>
-                    
-                    <a href="/tags/jsDeliver/">
-                        <span class="chip bg-color">jsDeliver</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/48428.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="初级Java项目——AtmSystem">
-                        
-                        <span class="card-title">初级Java项目——AtmSystem</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            模拟ATM机的系统
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Projects/" class="post-category">
-                                    Projects
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
@@ -815,8 +777,61 @@
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/%E9%A1%B9%E7%9B%AE/">
-                        <span class="chip bg-color">项目</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/1044.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="一个多态案例">
+                        
+                        <span class="card-title">一个多态案例</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            使用面向对象编程模拟：设计一个电脑对象，可以安装2个USB设备
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-01
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>
