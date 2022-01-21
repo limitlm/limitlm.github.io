@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Java 笔记">
-    <meta name="description" content="String和ArrayList">
+    <meta name="description" content="Date SimpleDateFormat calendar">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>学Java的第9天 | 泷少的博客</title>
+    <title>日期时间 | 泷少的博客</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/libs/awesome/css/all.min.css">
@@ -277,7 +277,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">学Java的第9天</h1>
+                    <h1 class="description center-align post-title">日期时间</h1>
                 </div>
             </div>
         </div>
@@ -422,7 +422,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-13
+                    2022-01-21
                 </div>
                 
 
@@ -431,7 +431,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    884
+                    900
                 </div>
                 
 
@@ -451,137 +451,158 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><h3 id="String概述"><a href="#String概述" class="headerlink" title="String概述"></a>String概述</h3><ul>
-<li>java.lang.String类代表字符串，String类定义的变量可以用于指向字符串对象，然后操作该字符串。</li>
-<li>Java程序中所有双引号标注的对象都可以认为是字符串对象。</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> name <span class="token operator">=</span> <span class="token string">"泷少"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+                <h2 id="Date类"><a href="#Date类" class="headerlink" title="Date类"></a>Date类</h2><p>Date类的对象在Java中代表的是当前所在系统的此刻日期时间。</p>
+<h3 id="Date的构造器"><a href="#Date的构造器" class="headerlink" title="Date的构造器"></a>Date的构造器</h3><table>
+<thead>
+<tr>
+<th align="left">方法名称</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">public Date()</td>
+<td align="left">建一个Date对象，代表的是系统当前此刻日期时间。</td>
+</tr>
+</tbody></table>
+<h3 id="Date的常用方法"><a href="#Date的常用方法" class="headerlink" title="Date的常用方法"></a>Date的常用方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法名称</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">public long getTime()</td>
+<td align="left">获取时间对象的毫秒值</td>
+</tr>
+</tbody></table>
+<h3 id="Date-类记录时间的2种形式"><a href="#Date-类记录时间的2种形式" class="headerlink" title="Date 类记录时间的2种形式"></a>Date 类记录时间的2种形式</h3><p>形式1：日期对象  </p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 1、创建一个日期对象代表了：当前系统的此刻日期时间对象</span>
+<span class="token class-name">Date</span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="String类的特点详情"><a href="#String类的特点详情" class="headerlink" title="String类的特点详情"></a>String类的特点详情</h3><ul>
-<li>String其实常被称为不可变字符串类型，它的对象在创建后不能被更改。<br>（字符常量池中，已创建的对象不变，栈中的地址指向更新，给人一种字符串对象更新了的错觉）</li>
-</ul>
-<h3 id="创建字符串的2种方式"><a href="#创建字符串的2种方式" class="headerlink" title="创建字符串的2种方式"></a>创建字符串的2种方式</h3><ol>
-<li>直接用双引号定义（<code>推荐</code>）</li>
+<p>形式2：时间毫秒值<br>指的是从1970年1月1日 00:00:00走到此刻的总的毫秒数，应该是很大的</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">// 2、获取当前时间毫秒值</span>
+<span class="token keyword">long</span> time <span class="token operator">=</span> d<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="案例：计算时间"><a href="#案例：计算时间" class="headerlink" title="案例：计算时间"></a>案例：计算时间</h3><p>请计算出当前时间往后走1小时121秒之后的时间是多少。</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DateDemo1</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Date</span> date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"当前时间"</span> <span class="token operator">+</span> date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> time <span class="token operator">=</span> date<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        time <span class="token operator">+=</span> <span class="token punctuation">(</span><span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">+</span> <span class="token number">121</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+        date<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"经过一小时121秒后的时间"</span> <span class="token operator">+</span> date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ol>
+<li>日期对象如何创建，如何获取时间毫秒值？<br>Date date = new Date();<br>Long time = date.getTime();</li>
+<li>时间毫秒值怎么恢复成日期对象<br>Date d = new Date(time);<br>d.setTime(time);</li>
 </ol>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> name <span class="token operator">=</span> <span class="token string">"泷少"</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>2.使用String类构造器</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> name <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span><span class="token string">"泷少"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="两者区别（面试题）"><a href="#两者区别（面试题）" class="headerlink" title="两者区别（面试题）"></a>两者区别（面试题）</h4><ul>
-<li>双引号创建的字符串，在字符串常量池中，相同内容只会存储一份（为了节约内存资源）。</li>
-<li>构造器new的字符串，每次new都会在堆内存中开辟新的空间，相同内容也是不同的对象，在栈内存中保存的地址也不同。</li>
+<h2 id="SimpleDateFormat类"><a href="#SimpleDateFormat类" class="headerlink" title="SimpleDateFormat类"></a>SimpleDateFormat类</h2><p>SimpleDateFormat 类作用</p>
+<ul>
+<li>可以对Date对象或时间毫秒值<code>格式化</code>成我们喜欢的时间形式。</li>
+<li>也可以把字符串的时间形式<code>解析</code>成日期对象。</li>
 </ul>
-<h3 id="常见面试题"><a href="#常见面试题" class="headerlink" title="常见面试题"></a>常见面试题</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token string">"abc"</span><span class="token punctuation">;</span>
-<span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token string">"ab"</span><span class="token punctuation">;</span>
-<span class="token class-name">String</span> s3 <span class="token operator">=</span> s2 <span class="token operator">+</span> <span class="token string">"c"</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1 <span class="token operator">==</span> s3<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//返回false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s1 <span class="token operator">=</span> <span class="token string">"abc"</span><span class="token punctuation">;</span>
-<span class="token class-name">String</span> s2 <span class="token operator">=</span> <span class="token string">"a"</span> <span class="token operator">+</span> <span class="token string">"b"</span> <span class="token operator">+</span> <span class="token string">"c"</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s1 <span class="token operator">==</span> s2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//返回true</span>
-<span class="token comment">//因为Java存在编译优化机制，编译时"a" + "b" + "c"自动编译成"abd"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="String类常用API"><a href="#String类常用API" class="headerlink" title="String类常用API"></a>String类常用API</h3><table>
+<h3 id="SimpleDateFormat的构造器"><a href="#SimpleDateFormat的构造器" class="headerlink" title="SimpleDateFormat的构造器"></a>SimpleDateFormat的构造器</h3><table>
 <thead>
 <tr>
-<th align="center">方法名</th>
+<th align="left">构造器</th>
 <th align="left">说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">equals</td>
-<td align="left">将此字符串与指定对象进行比较，只关心字符内容是否一致</td>
+<td align="left">public SimpleDateFormat()</td>
+<td align="left">构造一个SimpleDateFormat，使用默认格式</td>
 </tr>
 <tr>
-<td align="center">equalsIgnoreCase</td>
-<td align="left">将此字符串与指定对象进行比较，<strong>忽略大小写</strong>，只关心字符内容是否一致</td>
-</tr>
-<tr>
-<td align="center">length</td>
-<td align="left">返回字符串长度</td>
-</tr>
-<tr>
-<td align="center">charAt</td>
-<td align="left">返回某个索引位置处的字符</td>
-</tr>
-<tr>
-<td align="center">toCharArray</td>
-<td align="left">将字符串转换成字符数组再返回</td>
-</tr>
-<tr>
-<td align="center">subString(index,end)</td>
-<td align="left">根据开始和结束索引截取，返回新字符串（包前不包后）</td>
-</tr>
-<tr>
-<td align="center">replace(旧,新)</td>
-<td align="left">使用新值替换旧值，得到新的字符串（违禁词变*号）</td>
-</tr>
-<tr>
-<td align="center">split</td>
-<td align="left">根据传入的规则切割字符串，得到字符串数组返回</td>
-</tr>
-<tr>
-<td align="center">contains(内容)</td>
-<td align="left">判断字符串中是否包含内容，返回布尔值</td>
-</tr>
-<tr>
-<td align="center">startWith(内容)</td>
-<td align="left">判断字符串中是否以内容开头，返回布尔值</td>
+<td align="left">public SimpleDateFormat(String pattern)</td>
+<td align="left">构造一个SimpleDateFormat，使用指定的格式</td>
 </tr>
 </tbody></table>
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><h3 id="集合概述"><a href="#集合概述" class="headerlink" title="集合概述"></a>集合概述</h3><p>集合与数组类似，也是一种容器，用于装数据的<br>数组定义后，<strong>类型确定</strong>，<strong>长度固定</strong><br>在个数不确定的情况下，数组不方便做增删操作<br>集合的大小不固定，可以动态变化，类型也可以选择不固定</p>
-<h3 id="ArrayList集合"><a href="#ArrayList集合" class="headerlink" title="ArrayList集合"></a>ArrayList集合</h3><p>ArrayList是集合的一种，他支持索引</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">ArrayList</span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Java"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"C"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"C++"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
-list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token string">"C#"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>支持泛型</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">String</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"Java"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><code>注意：集合中只能存储引用类型，不能存储基本数据类型</code></p>
-<h3 id="ArrayList类常用API"><a href="#ArrayList类常用API" class="headerlink" title="ArrayList类常用API"></a>ArrayList类常用API</h3><table>
+<h3 id="SimpleDateFormat的格式化方法"><a href="#SimpleDateFormat的格式化方法" class="headerlink" title="SimpleDateFormat的格式化方法"></a>SimpleDateFormat的格式化方法</h3><table>
 <thead>
 <tr>
-<th align="center">方法名</th>
+<th align="left">格式化方法</th>
 <th align="left">说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="center">get</td>
-<td align="left">返回指定索引处的元素</td>
+<td align="left">public final String format(Date date)</td>
+<td align="left">将日期格式化成日期/时间字符串</td>
 </tr>
 <tr>
-<td align="center">size</td>
-<td align="left">返回集合中的元素个数</td>
-</tr>
-<tr>
-<td align="center">remove(index)</td>
-<td align="left">删除指定索引处的元素，返回被删除的元素</td>
-</tr>
-<tr>
-<td align="center">remove(Object)</td>
-<td align="left">删除指定元素，返回是否删除成功（有相同元素时，默认只删第一次出现的那个元素）</td>
-</tr>
-<tr>
-<td align="center">set(index,element)</td>
-<td align="left">修改指定索引处的元素，返回被修改的元素</td>
+<td align="left">public final String format(Object time)</td>
+<td align="left">将时间毫秒值式化成日期/时间字符串</td>
 </tr>
 </tbody></table>
-<h3 id="遍历删除元素"><a href="#遍历删除元素" class="headerlink" title="遍历删除元素"></a>遍历删除元素</h3><p>从集合<strong>后面</strong>遍历删除，可以避免漏元素。</p>
-<h3 id="存储自定义类型"><a href="#存储自定义类型" class="headerlink" title="存储自定义类型"></a>存储自定义类型</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Student</span><span class="token punctuation">&gt;</span></span> list <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-list<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">"泷少"</span><span class="token punctuation">,</span><span class="token number">23</span><span class="token punctuation">,</span><span class="token string">"男"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>list<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="SimpleDateFormat解析字符串时间成为日期对象"><a href="#SimpleDateFormat解析字符串时间成为日期对象" class="headerlink" title="SimpleDateFormat解析字符串时间成为日期对象"></a>SimpleDateFormat解析字符串时间成为日期对象</h3><table>
+<thead>
+<tr>
+<th align="left">解析方法</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">public Date parse(String source)</td>
+<td align="left">从给定字符串的开始解析文本以生成日期</td>
+</tr>
+</tbody></table>
+<h3 id="案例：格式化时间"><a href="#案例：格式化时间" class="headerlink" title="案例：格式化时间"></a>案例：格式化时间</h3><p>请计算出 2021年08月06日11点11分11秒，往后走2天14小时49分06秒后的时间是多少</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SimpleDateFormatDemo1</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">ParseException</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 目标：学会使用SimpLeDateFormat解析字符串时间成为日期对象。</span>
+        <span class="token comment">// 有一个时间 2021年08月06日 11:11:11 往后 2天 14小时 49分 06秒后的时间是多少。</span>
+        <span class="token comment">// 1、把字符串时间拿到程序中来</span>
+        <span class="token class-name">String</span> datestr <span class="token operator">=</span> <span class="token string">"2021年08月06日 11:11:11"</span><span class="token punctuation">;</span>
+        <span class="token comment">// 2、把字符串时间解析成日期对象(形式必须与被解析时间的形式完全一样,否则运行时解析报错!)</span>
+        <span class="token class-name">SimpleDateFormat</span> sdf <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy年MM月dd日 HH:mm:ss"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">Date</span> d <span class="token operator">=</span> sdf<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>datestr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 3、往后走2天14小时 49分 06秒</span>
+        <span class="token keyword">long</span> time <span class="token operator">=</span> d<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token number">2L</span> <span class="token operator">*</span> <span class="token number">24</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">+</span> <span class="token number">14</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">+</span> <span class="token number">49</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">+</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">;</span>
+        <span class="token comment">// 4、格式化这个时间毫秒值就是结果</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sdf<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>time<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>集合存储的对象并不是对象本身，而是对象的地址。</p>
+<h2 id="Calendar概述"><a href="#Calendar概述" class="headerlink" title="Calendar概述"></a>Calendar概述</h2><ul>
+<li>Calendar代表了系统此刻日期对应的日历对象。</li>
+<li>Calendar是一个抽象类，不能直接创建对象。</li>
+</ul>
+<h3 id="Calendar常用方法"><a href="#Calendar常用方法" class="headerlink" title="Calendar常用方法"></a>Calendar常用方法</h3><table>
+<thead>
+<tr>
+<th align="left">方法名</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">public int get(int field)</td>
+<td align="left">取日期中的某个字段信息。</td>
+</tr>
+<tr>
+<td align="left">public void set(int field,int value)</td>
+<td align="left">修改日历的某个字段信息。</td>
+</tr>
+<tr>
+<td align="left">public void add(int field,int amount)</td>
+<td align="left">为某个字段增加/减少指定的值</td>
+</tr>
+<tr>
+<td align="left">public final Date getTime()</td>
+<td align="left">拿到此刻日期对象。</td>
+</tr>
+<tr>
+<td align="left">public long getTimeInMillis()</td>
+<td align="left">拿到此刻时间毫秒值</td>
+</tr>
+</tbody></table>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>Calendar如何去得到日历对象的？</p>
+<p>public static Calendar getInstance()：获取当前日历对象</p>
+<p><code>注意：calendar是可变日期对象，一旦修改后其对象本身表示的时间将产生变化。</code></p>
 
                 
             </div>
@@ -608,7 +629,7 @@ list<span class="token punctuation">.</span><span class="token function">add</sp
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://limitlm.github.io/posts/1901.html">https://limitlm.github.io/posts/1901.html</a>
+                    <a href="https://limitlm.github.io/posts/26117.html">https://limitlm.github.io/posts/26117.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -825,41 +846,43 @@ list<span class="token punctuation">.</span><span class="token function">add</sp
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/48428.html">
+                <a href="/posts/26117.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="初级Java项目——AtmSystem">
+                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/16.jpg" class="responsive-img" alt="日期时间">
                         
-                        <span class="card-title">初级Java项目——AtmSystem</span>
+                        <span class="card-title">日期时间</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            模拟ATM机的系统
+                            Date SimpleDateFormat calendar
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-21
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Projects/" class="post-category">
-                                    Projects
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -867,8 +890,8 @@ list<span class="token punctuation">.</span><span class="token function">add</sp
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/%E9%A1%B9%E7%9B%AE/">
-                        <span class="chip bg-color">项目</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>
@@ -882,24 +905,24 @@ list<span class="token punctuation">.</span><span class="token function">add</sp
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/64364.html">
+                <a href="/posts/44906.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="学Java的第8天">
+                        <img src="https://cdn.jsdelivr.net/gh/limitlm/limitlm.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="常用API——StringBuilder、Math、System、BigDecimal">
                         
-                        <span class="card-title">学Java的第8天</span>
+                        <span class="card-title">常用API——StringBuilder、Math、System、BigDecimal</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            类与对象
+                            StringBuilder、Math、System、BigDecimal
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-20
                             </span>
                         <span class="publish-author">
                             
