@@ -22,8 +22,9 @@
         body{
             background-image: url(https://cdn.jsdelivr.net/gh/Tokisaki-Galaxy/res/site/medias/background.jpg);
             background-repeat:no-repeat;
-            background-size: 100% 100%;
+            background-size: cover;
             background-attachment:fixed;
+            background-position: 25%;
         }
     </style>
 
@@ -461,7 +462,7 @@
 <li>提供2个USB实现类代表鼠标和键盘，让其实现USB接口，并分别定义独有功能。</li>
 <li>创建电脑对象，创建2个USB实现类对象，分别安装到电脑中并触发功能的执行。</li>
 </ol>
-<h3 id="创建USB接口"><a href="#创建USB接口" class="headerlink" title="创建USB接口"></a>创建USB接口</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> USB <span class="token punctuation">{</span>
+<h3 id="创建USB接口"><a href="#创建USB接口" class="headerlink" title="创建USB接口"></a>创建USB接口</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">USB</span> <span class="token punctuation">{</span>
     <span class="token comment">/**
      * 接入
      */</span>
@@ -473,7 +474,7 @@
     <span class="token keyword">void</span> <span class="token function">unconnected</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="创建键盘类"><a href="#创建键盘类" class="headerlink" title="创建键盘类"></a>创建键盘类</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Keyboard</span> <span class="token keyword">implements</span> USB <span class="token punctuation">{</span>
+<h3 id="创建键盘类"><a href="#创建键盘类" class="headerlink" title="创建键盘类"></a>创建键盘类</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Keyboard</span> <span class="token keyword">implements</span> <span class="token class-name">USB</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
 
     <span class="token keyword">public</span> <span class="token class-name">Keyboard</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -503,7 +504,7 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="创建鼠标类"><a href="#创建鼠标类" class="headerlink" title="创建鼠标类"></a>创建鼠标类</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Mouse</span> <span class="token keyword">implements</span> USB <span class="token punctuation">{</span>
+<h3 id="创建鼠标类"><a href="#创建鼠标类" class="headerlink" title="创建鼠标类"></a>创建鼠标类</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Mouse</span> <span class="token keyword">implements</span> <span class="token class-name">USB</span> <span class="token punctuation">{</span>
     <span class="token keyword">private</span> <span class="token class-name">String</span> name<span class="token punctuation">;</span>
 
     <span class="token keyword">public</span> <span class="token class-name">Mouse</span><span class="token punctuation">(</span><span class="token class-name">String</span> name<span class="token punctuation">)</span> <span class="token punctuation">{</span>
