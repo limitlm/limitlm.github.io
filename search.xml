@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>包装类</title>
+      <link href="/posts/16468.html"/>
+      <url>/posts/16468.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><blockquote><p>其实就是8种基本数据类型对应的引用类型。</p></blockquote><table><thead><tr><th>基本数据类型</th><th>引用数据类型</th></tr></thead><tbody><tr><td>byte</td><td>Byte</td></tr><tr><td>short</td><td>Short</td></tr><tr><td>int</td><td>Integer</td></tr><tr><td>long</td><td>Long</td></tr><tr><td>char</td><td>Character</td></tr><tr><td>float</td><td>Float</td></tr><tr><td>double</td><td>Double</td></tr><tr><td>boolean</td><td>Boolean</td></tr></tbody></table><h2 id="为什么提供包装类"><a href="#为什么提供包装类" class="headerlink" title="为什么提供包装类"></a>为什么提供包装类</h2><ul><li>Java为了实现一切皆对象，为8种基本类型提供了对应的引用类型。</li><li>后面的集合和泛型其实也只能支持包装类型，不支持基本数据类型。</li></ul><p>自动装箱：基本类型的数据和变量可以直接赋值给包装类型的变量。</p><p>自动拆箱：包装类型的变量可以直接赋值给基本数据类型的变量。</p><h2 id="包装类的特有功能"><a href="#包装类的特有功能" class="headerlink" title="包装类的特有功能"></a>包装类的特有功能</h2><ul><li>包装类的变量的默认值可以是null，容错率更高。</li><li>可以把基本类型的数据转换成字符审类型(用处不大)</li><li><blockquote><p>①调用toString()方法得到字符串结果。</p></blockquote></li><li><blockquote><p>② 调用Integer.toString(基本类型的数据)。</p></blockquote></li><li>可以把字符串类型的数值转换成真实的数据类型（真的很有用）</li><li><blockquote><p>①Integer.parselnt(“字符串类型的整数”)</p></blockquote></li><li><blockquote><p>②Double.parseDouble(“字符串类型的小数”)。</p></blockquote></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>新增日期类</title>
       <link href="/posts/54173.html"/>
       <url>/posts/54173.html</url>
