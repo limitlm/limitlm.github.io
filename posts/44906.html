@@ -42,7 +42,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 5.4.2">
+<meta name="generator" content="Hexo 6.2.0">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -430,7 +430,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    986
+                    985
                 </div>
                 
 
@@ -499,9 +499,9 @@
 <p>设计一个方法用于输出任意整型数组的内容，要求输出成如下格式:<br>“该数组内容为：[11，22，33，44，55]”</p>
 <p>分析：</p>
 <ol>
-<li>定义一个方法，要求该方法能够接收数组，并输出数组内容。</li>
+<li>定义一个方法，要求该方法能够接收数组，并输出数组内容。<br>—&gt; 需要参数吗？需要返回值类型申明吗？</li>
+<li>定义一个静态初始化的数组，调用该方法，并传入该数组。</li>
 </ol>
-<p>—&gt; 需要参数吗？需要返回值类型申明吗？<br>2. 定义一个静态初始化的数组，调用该方法，并传入该数组。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StringBuilderTest</span> <span class="token punctuation">{</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr1 <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
@@ -1236,7 +1236,7 @@
                         var years = days * 365;
                         var today = new Date();
                         var startYear = "2021";
-                        var startMonth = "08";
+                        var startMonth = "8";
                         var startDate = "20";
                         var startHour = "21";
                         var startMinute = "40";
