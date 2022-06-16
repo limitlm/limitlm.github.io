@@ -461,12 +461,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="CDN-缓存"><a href="#CDN-缓存" class="headerlink" title="CDN 缓存"></a>CDN 缓存</h2><p>jsDelivr 提供的全球 CDN 加速，CDN的分流作用不仅减少了用户的访问延时，也减少的源站的负载。但其缺点也很明显：当网站更新时，如果CDN节点上数据没有及时更新，即便用户再浏览器使用Ctrl +F5的方式使浏览器端的缓存失效，也会因为CDN边缘节点没有同步最新数据而导致用户端未能及时更新</p>
+                <h2 id="CDN-缓存">CDN 缓存</h2>
+<p>jsDelivr 提供的全球 CDN 加速，CDN的分流作用不仅减少了用户的访问延时，也减少的源站的负载。但其缺点也很明显：当网站更新时，如果CDN节点上数据没有及时更新，即便用户再浏览器使用Ctrl +F5的方式使浏览器端的缓存失效，也会因为CDN边缘节点没有同步最新数据而导致用户端未能及时更新</p>
 <hr>
 <p>CDN边缘节点对开发者是透明的，相比于浏览器Ctrl+F5的强制刷新来使浏览器本地缓存失效，开发者可以通过CDN服务商提供的“刷新缓存”接口来达到清理CDN边缘节点缓存的目的。这样开发者在更新数据后，可以使用“刷新缓存”功能来强制CDN节点上的数据缓存过期，保证客户端在访问时，拉取到最新的数据。</p>
-<h2 id="jsDelivr-缓存刷新方式"><a href="#jsDelivr-缓存刷新方式" class="headerlink" title="jsDelivr 缓存刷新方式"></a>jsDelivr 缓存刷新方式</h2><p>对于 jsDelivr，缓存刷新的方式也很简单，只需将想刷新的链接的开头的</p>
-<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/">https://cdn.jsdelivr.net/</a>…<br>替换成</p>
-<p><a target="_blank" rel="noopener" href="https://purge.jsdelivr.net/">https://purge.jsdelivr.net/</a>…<br>用浏览器打开这个链接，即可实时刷新。<br>刷新成功后，浏览器会返回缓存刷新成功的信息，如下：</p>
+<h2 id="jsDelivr-缓存刷新方式">jsDelivr 缓存刷新方式</h2>
+<p>对于 jsDelivr，缓存刷新的方式也很简单，只需将想刷新的链接的开头的</p>
+<p><a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/">https://cdn.jsdelivr.net/</a>…
+替换成</p>
+<p><a target="_blank" rel="noopener" href="https://purge.jsdelivr.net/">https://purge.jsdelivr.net/</a>…
+用浏览器打开这个链接，即可实时刷新。<br>
+刷新成功后，浏览器会返回缓存刷新成功的信息，如下：</p>
 <pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token punctuation">{</span>
   <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"QvIVwzidVaTW93LI"</span><span class="token punctuation">,</span>
   <span class="token property">"status"</span><span class="token operator">:</span> <span class="token string">"finished"</span><span class="token punctuation">,</span>
@@ -483,8 +488,8 @@
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><blockquote>
+<h2 id="注意-2">注意</h2>
+<blockquote>
 <p><strong>不要连续多次刷新，否则会被当成攻击，会被限制1小时左右的时间不能刷新！！！</strong></p>
 </blockquote>
 
@@ -1052,7 +1057,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.4k</span>
+                        class="white-color">30.5k</span>
             
             
             

@@ -461,43 +461,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
+                <h2 id="数组">数组</h2>
+<ul>
 <li>数组是相同类型的数据的有序集合</li>
 <li>其中每一个数据称作数组元素，每个数组元素可以通过下标访问他们</li>
 </ul>
-<h3 id="数组的声明创建"><a href="#数组的声明创建" class="headerlink" title="数组的声明创建"></a>数组的声明创建</h3><p>声明数组变量的语法：</p>
+<h3 id="数组的声明创建">数组的声明创建</h3>
+<p>声明数组变量的语法：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">dataType<span class="token punctuation">[</span><span class="token punctuation">]</span> arrayRefVar<span class="token punctuation">;</span><span class="token comment">//首选方法</span>
 或
 dataType arrayRefVar<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//效果相同，非首选方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>Java语言使用new关键字来创建数组，语法如下：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java">dataType<span class="token punctuation">[</span><span class="token punctuation">]</span> arrayRefVar <span class="token operator">=</span> <span class="token keyword">new</span> dataType<span class="token punctuation">[</span>arraySize<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>数组的元素通过索引（下标）来访问，从0开始<br>获取数组长度： array.length<br>在栈中声明，new在堆中开辟空间</p>
-<h3 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h3><p>静态初始化：</p>
+<p>数组的元素通过索引（下标）来访问，从0开始<br>
+获取数组长度： array.length<br>
+在栈中声明，new在堆中开辟空间</p>
+<h3 id="数组初始化">数组初始化</h3>
+<p>静态初始化：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>动态初始化：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
 a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
 a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>赋值一个元素后，其他元素隐式赋值，默认值为0。</p>
-<h3 id="数组的四个基本特点"><a href="#数组的四个基本特点" class="headerlink" title="数组的四个基本特点"></a>数组的四个基本特点</h3><ol>
+<h3 id="数组的四个基本特点">数组的四个基本特点</h3>
+<ol>
 <li>长度确定，一旦被创建，大小无法改变</li>
 <li>元素类型必须相同，不能出现混合类型</li>
 <li>元素可以是任何类型，包括基本类型和引用类型</li>
 <li>数组变量属于引用类型，可以看成是对象，元素相当于对象的成员变量</li>
 </ol>
-<h3 id="数组的边界"><a href="#数组的边界" class="headerlink" title="数组的边界"></a>数组的边界</h3><p>0 ~ 数组长度-1<br>下标越界异常：<br>java.lang.ArrayIndexOutOfBoundsException</p>
-<h3 id="数组的使用"><a href="#数组的使用" class="headerlink" title="数组的使用"></a>数组的使用</h3><p>普通for循环遍历数组<br>for……each遍历数组</p>
-<h3 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h3><p>二维数组：</p>
+<h3 id="数组的边界">数组的边界</h3>
+<p>0 ~ 数组长度-1
+下标越界异常：
+java.lang.ArrayIndexOutOfBoundsException</p>
+<h3 id="数组的使用">数组的使用</h3>
+<p>普通for循环遍历数组
+for……each遍历数组</p>
+<h3 id="多维数组">多维数组</h3>
+<p>二维数组：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>二维数组相当于一个一维数组，它的每个元素也是一个一维数组</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <p>二维数组的遍历：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> x <span class="token operator">:</span> a
@@ -507,15 +513,27 @@ a<span class="token punctuation">[</span><span class="token number">2</span><spa
             <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>三维数组就是每个元素都是一个二维数组……套娃</p>
-<h3 id="Arrays类"><a href="#Arrays类" class="headerlink" title="Arrays类"></a>Arrays类</h3><h4 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString"></a>toString</h4><p>Arrays.toString()<br>打印数组元素</p>
-<h4 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h4><p>Arrays.sort()<br>升序排序</p>
-<h4 id="fill"><a href="#fill" class="headerlink" title="fill"></a>fill</h4><p>Arrays.fill(数组对象,值)<br>Arrays.fill(数组对象,起始索引,结束索引,值)<br>填充元素赋值</p>
-<h4 id="equals"><a href="#equals" class="headerlink" title="equals"></a>equals</h4><p>比较数组</p>
-<h4 id="binarySearch"><a href="#binarySearch" class="headerlink" title="binarySearch"></a>binarySearch</h4><p>对排序好的数组进行二分查找</p>
-<h3 id="八大排序"><a href="#八大排序" class="headerlink" title="八大排序"></a>八大排序</h3><p>详情见我写的另一篇文章<a target="_blank" rel="noopener" href="https://www.cnblogs.com/morethink/p/8419151.html">八大排序算法</a></p>
-<h3 id="稀疏数组"><a href="#稀疏数组" class="headerlink" title="稀疏数组"></a>稀疏数组</h3><p>当一个数组大部分元素为0或同一个值时，可以使用稀疏数组来保存<br>稀疏数组的处理方式：</p>
+<h3 id="Arrays类">Arrays类</h3>
+<h4 id="toString">toString</h4>
+<p>Arrays.toString()
+打印数组元素</p>
+<h4 id="sort">sort</h4>
+<p>Arrays.sort()
+升序排序</p>
+<h4 id="fill">fill</h4>
+<p>Arrays.fill(数组对象,值)
+Arrays.fill(数组对象,起始索引,结束索引,值)
+填充元素赋值</p>
+<h4 id="equals">equals</h4>
+<p>比较数组</p>
+<h4 id="binarySearch">binarySearch</h4>
+<p>对排序好的数组进行二分查找</p>
+<h3 id="八大排序">八大排序</h3>
+<p>详情见我写的另一篇文章<a target="_blank" rel="noopener" href="https://www.cnblogs.com/morethink/p/8419151.html">八大排序算法</a></p>
+<h3 id="稀疏数组">稀疏数组</h3>
+<p>当一个数组大部分元素为0或同一个值时，可以使用稀疏数组来保存<br>
+稀疏数组的处理方式：</p>
 <ol>
 <li>记录有几行几列有几个不同值</li>
 <li>记录不同值的索引和具体值</li>
@@ -593,38 +611,55 @@ a<span class="token punctuation">[</span><span class="token number">2</span><spa
  
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="面向对象编程"><a href="#面向对象编程" class="headerlink" title="面向对象编程"></a>面向对象编程</h2><h3 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象"></a>什么是面向对象</h3><ul>
-<li><p>面向对象编程(Object-Oriented Programming, OOP)  </p>
+<h2 id="面向对象编程">面向对象编程</h2>
+<h3 id="什么是面向对象">什么是面向对象</h3>
+<ul>
+<li>
+<p>面向对象编程(Object-Oriented Programming, OOP)</p>
 </li>
-<li><p>面向对象编程的本质就是:以类的方式组织代码，以对象的组织(封装)数据。</p>
+<li>
+<p>面向对象编程的本质就是:以类的方式组织代码，以对象的组织(封装)数据。</p>
 </li>
-<li><p>抽象</p>
+<li>
+<p>抽象</p>
 </li>
-<li><p>三大特性：  </p>
+<li>
+<p>三大特性：</p>
 <ul>
 <li>封装</li>
 <li>继承</li>
 <li>多态</li>
 </ul>
 </li>
-<li><p>从认识论角度考虑是先有对象后有类。对象，是具体的事物。类，是抽象的，是对对象的抽象  </p>
+<li>
+<p>从认识论角度考虑是先有对象后有类。对象，是具体的事物。类，是抽象的，是对对象的抽象</p>
 </li>
-<li><p>从代码运行角度考虑是先有类后有对象。类是对象的模板。</p>
+<li>
+<p>从代码运行角度考虑是先有类后有对象。类是对象的模板。</p>
 </li>
 </ul>
-<h3 id="方法回顾"><a href="#方法回顾" class="headerlink" title="方法回顾"></a>方法回顾</h3><h4 id="静态方法"><a href="#静态方法" class="headerlink" title="静态方法"></a>静态方法</h4><p>用static修饰的方法<br>可以直接用  <code>类名.方法名()</code> 调用</p>
-<h4 id="非静态方法"><a href="#非静态方法" class="headerlink" title="非静态方法"></a>非静态方法</h4><p>没有用static修饰的方法<br>需要先实例化对象才能调用</p>
+<h3 id="方法回顾">方法回顾</h3>
+<h4 id="静态方法">静态方法</h4>
+<p>用static修饰的方法<br>
+可以直接用  <code>类名.方法名()</code> 调用</p>
+<h4 id="非静态方法">非静态方法</h4>
+<p>没有用static修饰的方法<br>
+需要先实例化对象才能调用</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">GirlFriend</span> gl <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GirlFriend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 gl<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<h3 id="创建与初始化对象"><a href="#创建与初始化对象" class="headerlink" title="创建与初始化对象"></a>创建与初始化对象</h3><p>使用new关键字创建对象，除了分配内存空间外还会给创建好的对象进行初始化以及对类中的构造方法的调用。<br>构造方法的特点：</p>
+<h3 id="创建与初始化对象">创建与初始化对象</h3>
+<p>使用new关键字创建对象，除了分配内存空间外还会给创建好的对象进行初始化以及对类中的构造方法的调用。<br>
+构造方法的特点：</p>
 <ol>
 <li>必须和类的名字相同</li>
 <li>必须没有返回类型，也不能写void</li>
 </ol>
-<p>什么都不写的时候，默认会提供一个无参构造方法。<br>一个类可以有多个构造方法。构造方法也能重载。<br>构造方法相当于给对象初始化的时候赋予对象初始值。<br>快捷键Alt + Insert创建构造方法。</p>
-<h3 id="创建对象内存分析"><a href="#创建对象内存分析" class="headerlink" title="创建对象内存分析"></a>创建对象内存分析</h3><p>在栈中的保存的是对象的引用变量名，真正的对象在堆中，根据类为模板生成对象，根据构造方法给对象赋予初始属性。</p>
+<p>什么都不写的时候，默认会提供一个无参构造方法。<br>
+一个类可以有多个构造方法。构造方法也能重载。<br>
+构造方法相当于给对象初始化的时候赋予对象初始值。<br>
+快捷键Alt + Insert创建构造方法。</p>
+<h3 id="创建对象内存分析">创建对象内存分析</h3>
+<p>在栈中的保存的是对象的引用变量名，真正的对象在堆中，根据类为模板生成对象，根据构造方法给对象赋予初始属性。</p>
 
                 
             </div>
@@ -1194,7 +1229,7 @@ gl<span class="token punctuation">.</span><span class="token function">eat</span
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.4k</span>
+                        class="white-color">30.5k</span>
             
             
             

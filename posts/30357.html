@@ -461,20 +461,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><p>内部类就是定义在一个类里面的类，里面的类可以理解成（寄生），外部类可以理解成（宿主）</p>
+                <h2 id="内部类">内部类</h2>
+<p>内部类就是定义在一个类里面的类，里面的类可以理解成（寄生），外部类可以理解成（宿主）</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">People</span><span class="token punctuation">{</span>
     <span class="token comment">// 内部类</span>
     <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Heart</span><span class="token punctuation">{</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>内部类的使用场景、作用</p>
 <ul>
 <li>当一个事物的内部，还有一个部分需要一个完整的结构进行描述，而这个内部的完整的结构又只为外部事物提供服务，那么整个内部的完整结构可以选择使用内部类来设计。</li>
 <li>内部类通常可以方便访问外部类的成员，包括私有的成员。</li>
 <li>内部类提供了更好的封装性，内部类本身就可以用private protectecd等修饰，封装性可以做更多控制。</li>
 </ul>
-<h3 id="静态内部类（了解即可）"><a href="#静态内部类（了解即可）" class="headerlink" title="静态内部类（了解即可）"></a>静态内部类（了解即可）</h3><h4 id="什么是静态内部类？"><a href="#什么是静态内部类？" class="headerlink" title="什么是静态内部类？"></a>什么是静态内部类？</h4><ul>
+<h3 id="静态内部类（了解即可）">静态内部类（了解即可）</h3>
+<h4 id="什么是静态内部类？">什么是静态内部类？</h4>
+<ul>
 <li>有static修饰，属于外部类本身。</li>
 <li>它的特点和使用与普通类是完全一样的，类有的成分它都有，只是位置在别人里面而已。</li>
 </ul>
@@ -483,20 +485,26 @@
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Inner</span><span class="token punctuation">{</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="静态内部类创建对象的格式"><a href="#静态内部类创建对象的格式" class="headerlink" title="静态内部类创建对象的格式"></a>静态内部类创建对象的格式</h4><p>格式：外部类名.内部类名 对象名 = new 外部类名.内部类构造器;</p>
+<h4 id="静态内部类创建对象的格式">静态内部类创建对象的格式</h4>
+<p>格式：外部类名.内部类名 对象名 = new 外部类名.内部类构造器;</p>
 <p>范例:Outer.Inner in = new Outer.Inner();</p>
-<h4 id="静态内部类的访问拓展"><a href="#静态内部类的访问拓展" class="headerlink" title="静态内部类的访问拓展"></a>静态内部类的访问拓展</h4><ol>
-<li>静态内部类中是否可以直接访问外部类的静态成员？<br>可以，外部类的静态成员只有一份可以被共享访问。</li>
-<li>静态内部类中是否可以直接访问外部类的实例成员？<br>不可以的，外部类的实例成员必须用外部类对象访问。</li>
+<h4 id="静态内部类的访问拓展">静态内部类的访问拓展</h4>
+<ol>
+<li>静态内部类中是否可以直接访问外部类的静态成员？<br>
+可以，外部类的静态成员只有一份可以被共享访问。</li>
+<li>静态内部类中是否可以直接访问外部类的实例成员？<br>
+不可以的，外部类的实例成员必须用外部类对象访问。</li>
 </ol>
-<h4 id="静态内部类的使用场景、特点、访问总结"><a href="#静态内部类的使用场景、特点、访问总结" class="headerlink" title="静态内部类的使用场景、特点、访问总结"></a>静态内部类的使用场景、特点、访问总结</h4><ul>
+<h4 id="静态内部类的使用场景、特点、访问总结">静态内部类的使用场景、特点、访问总结</h4>
+<ul>
 <li>如果一个类中包含了一个完整的成分，如汽车类中的发动机类。</li>
 <li>特点、使用与普通类是一样的，类有的成分它都有，只是位置在别人里面而已。</li>
 <li>可以直接访问外部类的静态成员，不能直接访问外部类的实例成员。</li>
 <li>注意：开发中实际用的还是比较少。</li>
 </ul>
-<h3 id="成员内部类（了解即可）"><a href="#成员内部类（了解即可）" class="headerlink" title="成员内部类（了解即可）"></a>成员内部类（了解即可）</h3><h4 id="什么是成员内部类？"><a href="#什么是成员内部类？" class="headerlink" title="什么是成员内部类？"></a>什么是成员内部类？</h4><ul>
+<h3 id="成员内部类（了解即可）">成员内部类（了解即可）</h3>
+<h4 id="什么是成员内部类？">什么是成员内部类？</h4>
+<ul>
 <li>无static修饰，属于外部类的对象。</li>
 <li>JDK16之前，成员内部类中不能定义静态成员，JDK 16开始也可以定义静态成员了。</li>
 </ul>
@@ -505,13 +513,18 @@
     <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Inner</span><span class="token punctuation">{</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="成员内部类创建对象的格式"><a href="#成员内部类创建对象的格式" class="headerlink" title="成员内部类创建对象的格式"></a>成员内部类创建对象的格式</h4><p>格式：外部类名.内部类名 对象名 = new 外部类构造器.new内部类构造器();<br>范例:Outer.Inner in = new Outer().new Inner();</p>
-<h4 id="成员内部类的访问拓展"><a href="#成员内部类的访问拓展" class="headerlink" title="成员内部类的访问拓展"></a>成员内部类的访问拓展</h4><ol>
-<li>成员内部类中是否可以直接访问外部类的静态成员？<br>可以，外部类的静态成员只有一份可以被共享访问。</li>
-<li>成员内部类的实例方法中是否可以直接访问外部类的实例成员？<br>可以的，因为必须先有外部类对象，才能有成员内部类对象，所以可以直接访问外部类对象的实例成员。</li>
+<h4 id="成员内部类创建对象的格式">成员内部类创建对象的格式</h4>
+<p>格式：外部类名.内部类名 对象名 = new 外部类构造器.new内部类构造器();
+范例:Outer.Inner in = new Outer().new Inner();</p>
+<h4 id="成员内部类的访问拓展">成员内部类的访问拓展</h4>
+<ol>
+<li>成员内部类中是否可以直接访问外部类的静态成员？<br>
+可以，外部类的静态成员只有一份可以被共享访问。</li>
+<li>成员内部类的实例方法中是否可以直接访问外部类的实例成员？<br>
+可以的，因为必须先有外部类对象，才能有成员内部类对象，所以可以直接访问外部类对象的实例成员。</li>
 </ol>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>成员内部类是什么样的、有什么特点？</p>
+<h4 id="总结">总结</h4>
+<p>成员内部类是什么样的、有什么特点？</p>
 <ul>
 <li>无static修饰，属于外部类的对象。</li>
 <li>可以直接访问外部类的静态成员，实例方法中可以直接访问外部类的实例成员。</li>
@@ -521,11 +534,13 @@
 <li>外部类名.内部类名对象名= new 外部类构造器.new 内部类构造器();</li>
 </ul>
 <p><em><strong>注意：在成员内部类中访问所在外部类对象，格式：<code>外部类名.this.成员</code></strong></em></p>
-<h3 id="局部内部类（鸡肋语法，了解即可）"><a href="#局部内部类（鸡肋语法，了解即可）" class="headerlink" title="局部内部类（鸡肋语法，了解即可）"></a>局部内部类（鸡肋语法，了解即可）</h3><ul>
+<h3 id="局部内部类（鸡肋语法，了解即可）">局部内部类（鸡肋语法，了解即可）</h3>
+<ul>
 <li>局部内部类放在方法、代码块、构造器等执行体中。</li>
 <li>局部内部类的类文件名为： 外部类$N内部类.class。</li>
 </ul>
-<h3 id="匿名内部类（重点）"><a href="#匿名内部类（重点）" class="headerlink" title="匿名内部类（重点）"></a>匿名内部类（重点）</h3><ul>
+<h3 id="匿名内部类（重点）">匿名内部类（重点）</h3>
+<ul>
 <li>本质上是一个没有名字的局部内部类，定义在方法中、代码块中、等。</li>
 <li>作用：方便创建子类对象，最终目的为了简化代码编写。</li>
 </ul>
@@ -533,14 +548,14 @@
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">new</span> 类<span class="token operator">|</span>抽象类名<span class="token operator">|</span>或者接口名<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     重写方法<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>特点总结：</p>
 <ul>
 <li>匿名内部类是一个没有名字的内部类。</li>
 <li>匿名内部类写出来就会产生一个匿名内部类的对象。</li>
 <li>匿名内部类的对象类型相当于是当前new的那个的类型的子类类型。</li>
 </ul>
-<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//为按钮绑定点击事件监听器。</span>
+<h4 id="案例-2">案例</h4>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//为按钮绑定点击事件监听器。</span>
 btn<span class="token punctuation">.</span><span class="token function">addActionListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ActionListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">actionPerformed</span><span class="token punctuation">(</span><span class="token class-name">ActionEvent</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -548,7 +563,6 @@ btn<span class="token punctuation">.</span><span class="token function">addActio
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//btn.addActionListener(e -&gt; System.out.printin（"登录一下"));</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
 <p>后续衔接lambda表达式，实现代码简化。</p>
 
                 
@@ -1119,7 +1133,7 @@ btn<span class="token punctuation">.</span><span class="token function">addActio
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.4k</span>
+                        class="white-color">30.5k</span>
             
             
             

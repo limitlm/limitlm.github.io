@@ -441,7 +441,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    641
+                    644
                 </div>
                 
 
@@ -461,26 +461,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><ul>
-<li><strong>该露的露，该藏的藏</strong><ul>
+                <h2 id="封装">封装</h2>
+<ul>
+<li><strong>该露的露，该藏的藏</strong>
+<ul>
 <li>程序设计追求<code>“高内聚，低耦合”</code>。高内聚就是类的内部数据操作细节自己完成，不允许外部干涉；低耦合指仅暴露少量的方法给外部使用。</li>
 </ul>
 </li>
-<li>封装（数据的隐藏）<ul>
+<li>封装（数据的隐藏）
+<ul>
 <li>通常应禁止直接访问一个对象中数据的实际表示，而应通过操作接口来访问，这称为信息隐藏。</li>
 </ul>
 </li>
 </ul>
 <p>属性私有，方法公开：private、public、get/set</p>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>Java中只有单继承没有多继承.<br>继承关系的俩个类，一个为子类(派生类).一个为父类(基类)。子类继承父类,使用关键字<code>extends</code>来表示。<br>子类继承父类的属性和方法，但是不能直接访问父类的私有属性。<br>Object类是所有类的父类。</p>
-<h3 id="super"><a href="#super" class="headerlink" title="super"></a>super</h3><p>super();调用父类的构造方法，必须在子类的构造方法的第一个，不写也会隐式添加。<br>super()和this()不能同时出现在子类的构造方法中。</p>
-<h3 id="方法的重写"><a href="#方法的重写" class="headerlink" title="方法的重写"></a>方法的重写</h3><p>这些方法不能被重写：</p>
+<h2 id="继承">继承</h2>
+<p>Java中只有单继承没有多继承.<br>
+继承关系的俩个类，一个为子类(派生类).一个为父类(基类)。子类继承父类,使用关键字<code>extends</code>来表示。<br>
+子类继承父类的属性和方法，但是不能直接访问父类的私有属性。<br>
+Object类是所有类的父类。</p>
+<h3 id="super">super</h3>
+<p>super();调用父类的构造方法，必须在子类的构造方法的第一个，不写也会隐式添加。<br>
+super()和this()不能同时出现在子类的构造方法中。</p>
+<h3 id="方法的重写">方法的重写</h3>
+<p>这些方法不能被重写：</p>
 <ol>
 <li>static方法。属于类,它不属于实例</li>
 <li>final常量</li>
 <li>private方法</li>
 </ol>
-<p>方法的重写只跟方法有关，跟属性无关。<br>假设B类继承自A类，print是静态方法：<br>A a = new A();<br>B b = new A();<br>a.print();//调用A类的方法<br>b.print();//调用B类的方法<br>说明静态方法的调用只和左边的类有关。<br>非静态方法，使用override重写，调用的是右边对象的方法。</p>
+<p>方法的重写只跟方法有关，跟属性无关。<br>
+假设B类继承自A类，print是静态方法：<br>
+A a = new A();<br>
+B b = new A();<br>
+a.print();//调用A类的方法<br>
+b.print();//调用B类的方法<br>
+说明静态方法的调用只和左边的类有关。<br>
+非静态方法，使用override重写，调用的是右边对象的方法。</p>
 <p>重写需要有继承关系。子类重写父类的方法。</p>
 <ol>
 <li>方法名必须相同</li>
@@ -488,14 +505,19 @@
 <li>修饰符范围可以扩大但不能缩小public&gt;protected&gt;Default&gt;private</li>
 <li>抛出的异常范围,可以被缩小，但不能扩大:</li>
 </ol>
-<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>即同一方法可以根据发送对象的不同而采用多种不同的行为方式。<br>一个对象的实际类型是确定的，但可以指向对象的引用的类型有很多。<br>多态存在的条件：</p>
+<h2 id="多态">多态</h2>
+<p>即同一方法可以根据发送对象的不同而采用多种不同的行为方式。<br>
+一个对象的实际类型是确定的，但可以指向对象的引用的类型有很多。<br>
+多态存在的条件：</p>
 <ul>
-<li>有继承关系  </li>
+<li>有继承关系</li>
 <li>子类重写父类方法</li>
 <li>父类引用指向子类对象</li>
 </ul>
-<p>注意:多态是方法的多态，属性没有多态性。  </p>
-<h3 id="instanceof和类型转换"><a href="#instanceof和类型转换" class="headerlink" title="instanceof和类型转换"></a>instanceof和类型转换</h3><p>instanceof判断两个类是否有上下级继承关系，返回布尔类型。<br>类型转换：</p>
+<p>注意:多态是方法的多态，属性没有多态性。</p>
+<h3 id="instanceof和类型转换">instanceof和类型转换</h3>
+<p>instanceof判断两个类是否有上下级继承关系，返回布尔类型。<br>
+类型转换：</p>
 <ol>
 <li>父类引用指向子类对象</li>
 <li>把子类转换为父类。向上转型，可能会丢失方法</li>
@@ -1070,7 +1092,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.4k</span>
+                        class="white-color">30.5k</span>
             
             
             

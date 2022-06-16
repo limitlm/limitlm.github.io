@@ -437,7 +437,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    480
+                    481
                 </div>
                 
 
@@ -458,37 +458,41 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>今天想提交项目代码时发现文件.git文件夹越来越大, 然后花点时间研究了下，在网上查了几篇博文，成功把文件大小缩小了4倍。这里整理了一下思路，大致的意思就是找到git历史记录提交了哪些大文件. 然后重构git，让pack包变小。</p>
-<h2 id="一、打开终端"><a href="#一、打开终端" class="headerlink" title="一、打开终端"></a>一、打开终端</h2><p>进入项目文件夹，鼠标右键git bash here进入终端</p>
-<h2 id="二、查找大文件"><a href="#二、查找大文件" class="headerlink" title="二、查找大文件"></a>二、查找大文件</h2><p>命令如下，查找大小前五的文件。</p>
+<h2 id="一、打开终端">一、打开终端</h2>
+<p>进入项目文件夹，鼠标右键git bash here进入终端</p>
+<h2 id="二、查找大文件">二、查找大文件</h2>
+<p>命令如下，查找大小前五的文件。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> rev-list --objects --all <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> verify-pack -v .git/objects/pack/*.idx <span class="token operator">|</span> <span class="token function">sort</span> -k <span class="token number">3</span> -n <span class="token operator">|</span> <span class="token function">tail</span> -5 <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print$1}'</span><span class="token variable">)</span></span>"</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="删除指定大文件"><a href="#删除指定大文件" class="headerlink" title="删除指定大文件"></a>删除指定大文件</h2><p>我这里是因为第一次提交更新壁纸，忘记把壁纸压缩了，一张壁纸7MB，导致历史记录文件变大。</p>
+<h2 id="删除指定大文件">删除指定大文件</h2>
+<p>我这里是因为第一次提交更新壁纸，忘记把壁纸压缩了，一张壁纸7MB，导致历史记录文件变大。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> filter-branch --force --index-filter <span class="token string">"git rm -rf --cached --ignore-unmatch 'themes/hexo-theme-matery/source/medias/banner'"</span> --prune-empty --tag-name-filter <span class="token function">cat</span> -- --all
 <span class="token function">git</span> for-each-ref --format<span class="token operator">=</span><span class="token string">'delete %(refname)'</span> refs/original <span class="token operator">|</span> <span class="token function">git</span> update-ref --stdin<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>这里因为是删文件夹，所以使用的命令是<code>rm -rf</code>，如果是删一个文件，只需要<code>rm</code>就行了。</p>
-<h2 id="四、重新标记过期的缓存文件"><a href="#四、重新标记过期的缓存文件" class="headerlink" title="四、重新标记过期的缓存文件"></a>四、重新标记过期的缓存文件</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reflog expire --expire<span class="token operator">=</span>now --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="五、回收过期的缓存"><a href="#五、回收过期的缓存" class="headerlink" title="五、回收过期的缓存"></a>五、回收过期的缓存</h2><p>使用gc命令清理空间</p>
+<h2 id="四、重新标记过期的缓存文件">四、重新标记过期的缓存文件</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> reflog expire --expire<span class="token operator">=</span>now --all<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="五、回收过期的缓存">五、回收过期的缓存</h2>
+<p>使用gc命令清理空间</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> gc --prune<span class="token operator">=</span>now<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="六、查看文件大小"><a href="#六、查看文件大小" class="headerlink" title="六、查看文件大小"></a>六、查看文件大小</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> count-objects -v
+<h2 id="六、查看文件大小">六、查看文件大小</h2>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> count-objects -v
 <span class="token function">du</span> -sh .git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>第一个命令返回pack包大小。<br>第二个命令返回.git文件夹大小。</p>
-<h2 id="七、重新提交"><a href="#七、重新提交" class="headerlink" title="七、重新提交"></a>七、重新提交</h2><p>要用<code>--force</code>命令强制提交到远程仓库。</p>
+<p>第一个命令返回pack包大小。<br>
+第二个命令返回.git文件夹大小。</p>
+<h2 id="七、重新提交">七、重新提交</h2>
+<p>要用<code>--force</code>命令强制提交到远程仓库。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> push --all --force origin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="push失败"><a href="#push失败" class="headerlink" title="push失败"></a>push失败</h3><p>如果遇到push不了的，可以尝试重新设置与远程仓库的连接。</p>
+<h2 id="其他">其他</h2>
+<h3 id="push失败">push失败</h3>
+<p>如果遇到push不了的，可以尝试重新设置与远程仓库的连接。</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin ssh://git@github.com/limitlm/blog.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>然后使用<code>git remote -v</code>命令查看是否更改正确。<br>重新push应该就能成功了。</p>
+<p>然后使用<code>git remote -v</code>命令查看是否更改正确。<br>
+重新push应该就能成功了。</p>
 <hr>
-<h3 id="git-ssh和https切换"><a href="#git-ssh和https切换" class="headerlink" title="git ssh和https切换"></a>git ssh和https切换</h3><blockquote>
+<h3 id="git-ssh和https切换">git ssh和https切换</h3>
+<blockquote>
 <p>从ssh切换至https</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote set-url origin https://email/username/ProjectName.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <blockquote>
 <p>从https切换至ssh</p>
 </blockquote>
@@ -1058,7 +1062,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.4k</span>
+                        class="white-color">30.5k</span>
             
             
             

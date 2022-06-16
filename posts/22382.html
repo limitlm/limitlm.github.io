@@ -461,41 +461,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="Scanner对象"><a href="#Scanner对象" class="headerlink" title="Scanner对象"></a>Scanner对象</h2><ul>
+                <h2 id="Scanner对象">Scanner对象</h2>
+<ul>
 <li>可以通过Scanner类获取用户输入</li>
 <li>基本语法：</li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Scanner</span> sc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
 <ul>
 <li>通过Scanner类的next()和nextLine()方法获取输入的字符串，在读取前一般需要使用hasNext()与hasNextLine()判断是否还有输入的数据。</li>
 </ul>
-<h3 id="next"><a href="#next" class="headerlink" title="next()"></a>next()</h3><ol>
+<h3 id="next">next()</h3>
+<ol>
 <li>一定要读取到字符后才可以结束输入。</li>
 <li>对输入有效字符前遇到的空白，next()方法会自动将其去掉。</li>
 <li>只有输入有效字符后才将其后面的空白作为分隔符或者结束符。</li>
 <li><code>next()不能得到带有空格的字符串。</code></li>
 </ol>
-<h3 id="nextLine"><a href="#nextLine" class="headerlink" title="nextLine()"></a>nextLine()</h3><ol>
+<h3 id="nextLine">nextLine()</h3>
+<ol>
 <li>以Enter为结束符，返回输入回车前的所有字符。</li>
 <li>可以获取空白。</li>
 </ol>
-<h3 id="close"><a href="#close" class="headerlink" title="close()"></a>close()</h3><p>每次使用完Scanner类记得Scanner.close();<br>可以节约内存。</p>
-<h3 id="对数据类型要求"><a href="#对数据类型要求" class="headerlink" title="对数据类型要求"></a>对数据类型要求</h3><p>例如：<br>nextInt();要求输入整数，对应的有hasNextInt();<br>nextFloat();要求输入小数，对应的有hasNextFloat();<br>以此类推……</p>
-<h2 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h2><p>按照顺序依次执行</p>
-<h2 id="if选择结构"><a href="#if选择结构" class="headerlink" title="if选择结构"></a>if选择结构</h2><h3 id="if单选择结构"><a href="#if单选择结构" class="headerlink" title="if单选择结构"></a>if单选择结构</h3><p>语法：</p>
+<h3 id="close">close()</h3>
+<p>每次使用完Scanner类记得Scanner.close();<br>
+可以节约内存。</p>
+<h3 id="对数据类型要求">对数据类型要求</h3>
+<p>例如：<br>
+nextInt();要求输入整数，对应的有hasNextInt();<br>
+nextFloat();要求输入小数，对应的有hasNextFloat();<br>
+以此类推……</p>
+<h2 id="顺序结构">顺序结构</h2>
+<p>按照顺序依次执行</p>
+<h2 id="if选择结构">if选择结构</h2>
+<h3 id="if单选择结构">if单选择结构</h3>
+<p>语法：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>布尔表达式<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment">//如果布尔表达式为true时要执行的语句</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="if双选择结构"><a href="#if双选择结构" class="headerlink" title="if双选择结构"></a>if双选择结构</h3><p>语法：</p>
+<h3 id="if双选择结构">if双选择结构</h3>
+<p>语法：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>布尔表达式<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment">//如果布尔表达式为true时要执行的语句</span>
 <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
   <span class="token comment">//如果布尔表达式为false时要执行的语句</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="if多选择结构"><a href="#if多选择结构" class="headerlink" title="if多选择结构"></a>if多选择结构</h3><p>语法：</p>
+<h3 id="if多选择结构">if多选择结构</h3>
+<p>语法：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>布尔表达式<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment">//如果布尔表达式1为true时要执行的语句</span>
 <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>布尔表达式<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -508,9 +519,11 @@
 <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
   <span class="token comment">//如果以上所有布尔表达式为false时要执行的语句</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="嵌套的if结构"><a href="#嵌套的if结构" class="headerlink" title="嵌套的if结构"></a>嵌套的if结构</h3><p>允许套娃</p>
-<h3 id="switch多选择结构"><a href="#switch多选择结构" class="headerlink" title="switch多选择结构"></a>switch多选择结构</h3><p>switch case语句判断一个变量与一系列值中的某个值是否相等，每个值称为一个分支。<br>变量类型可以是byte、short、int、char或者字符串。</p>
+<h3 id="嵌套的if结构">嵌套的if结构</h3>
+<p>允许套娃</p>
+<h3 id="switch多选择结构">switch多选择结构</h3>
+<p>switch case语句判断一个变量与一系列值中的某个值是否相等，每个值称为一个分支。<br>
+变量类型可以是byte、short、int、char或者字符串。</p>
 <p>语法：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span> a<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">switch</span> <span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -526,23 +539,25 @@
         <span class="token keyword">default</span><span class="token operator">:</span>
             <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"输入其他"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><p>语法：</p>
+<h2 id="循环结构">循环结构</h2>
+<h3 id="while循环">while循环</h3>
+<p>语法：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">while</span> <span class="token punctuation">(</span>循环条件布尔表达式<span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token comment">//循环体执行的语句</span>
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>只要布尔表达式的值为true就会一直执行<br>应该避免死循环</p>
-<h3 id="do……while循环"><a href="#do……while循环" class="headerlink" title="do……while循环"></a>do……while循环</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">do</span> <span class="token punctuation">{</span>
+<p>只要布尔表达式的值为true就会一直执行<br>
+应该避免死循环</p>
+<h3 id="do……while循环">do……while循环</h3>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">do</span> <span class="token punctuation">{</span>
         <span class="token comment">//循环体执行的语句</span>
     <span class="token punctuation">}</span><span class="token keyword">while</span> <span class="token punctuation">(</span>循环条件布尔表达式<span class="token punctuation">)</span>；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>区别在于会至少会先执行 <strong><code>1次</code></strong> 后，再判断是否循环执行</p>
-<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><p>已知循环次数的情况下选for循环<br>语法：</p>
+<h3 id="for循环">for循环</h3>
+<p>已知循环次数的情况下选for循环<br>
+语法：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span><span class="token punctuation">(</span>初始化<span class="token punctuation">;</span>布尔表达式<span class="token punctuation">;</span>迭代<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment">//执行的代码</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>for循环可以嵌套</p>
 <p>示例九九乘法表：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">9</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -551,25 +566,30 @@
         <span class="token punctuation">}</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="增强for循环"><a href="#增强for循环" class="headerlink" title="增强for循环"></a>增强for循环</h3><p>一般用来遍历数组<br>语法：</p>
+<h3 id="增强for循环">增强for循环</h3>
+<p>一般用来遍历数组<br>
+语法：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">for</span><span class="token punctuation">(</span>声明语句<span class="token operator">:</span>表达式<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment">//执行的代码</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <p>示例遍历数组：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> array <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> x <span class="token operator">:</span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h3><p>break结束整个循环<br>continue退出本次循环</p>
-<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>Java方法是语句的集合，它们在一起执行一个功能。<br>一个方法只完成1个功能，有利于后期的扩展。</p>
-<h3 id="方法的定义"><a href="#方法的定义" class="headerlink" title="方法的定义"></a>方法的定义</h3><ul>
+<h3 id="break和continue">break和continue</h3>
+<p>break结束整个循环<br>
+continue退出本次循环</p>
+<h2 id="方法">方法</h2>
+<p>Java方法是语句的集合，它们在一起执行一个功能。<br>
+一个方法只完成1个功能，有利于后期的扩展。</p>
+<h3 id="方法的定义">方法的定义</h3>
+<ul>
 <li>修饰符：可选如public</li>
 <li>返回值类型：如void</li>
 <li>方法名：驼峰原则命名</li>
-<li>参数类型：<ul>
+<li>参数类型：
+<ul>
 <li>形参：在方法被调用时用于接收外界输入的数据</li>
 <li>实参：调用方法时实际传递给方法的数据</li>
 </ul>
@@ -582,9 +602,11 @@
     ……
     <span class="token keyword">return</span> 返回值<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="方法的调用"><a href="#方法的调用" class="headerlink" title="方法的调用"></a>方法的调用</h3><p>有返回值的当作赋值变量来传参调用<br>无返回值的直接调用</p>
-<h3 id="方法的重载"><a href="#方法的重载" class="headerlink" title="方法的重载"></a>方法的重载</h3><p>重载就是在一个类中，有相同的函数名称，但形参不同的函数</p>
+<h3 id="方法的调用">方法的调用</h3>
+<p>有返回值的当作赋值变量来传参调用<br>
+无返回值的直接调用</p>
+<h3 id="方法的重载">方法的重载</h3>
+<p>重载就是在一个类中，有相同的函数名称，但形参不同的函数</p>
 <p>方法重载的规则：</p>
 <ul>
 <li>方法名称必须相同</li>
@@ -592,8 +614,12 @@
 <li>方法的返回类型可以相同也可以不同</li>
 <li>仅仅返回类型不同不足以成为方法的重载</li>
 </ul>
-<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><p>在方法声明中，在指定参数类型后加一个…号。<br>可变参数必须是方法的最后一个参数</p>
-<h3 id="方法的递归调用"><a href="#方法的递归调用" class="headerlink" title="方法的递归调用"></a>方法的递归调用</h3><p>递归就是方法自己调用自己<br>递归结构包括两部分：</p>
+<h3 id="可变参数">可变参数</h3>
+<p>在方法声明中，在指定参数类型后加一个…号。<br>
+可变参数必须是方法的最后一个参数</p>
+<h3 id="方法的递归调用">方法的递归调用</h3>
+<p>递归就是方法自己调用自己<br>
+递归结构包括两部分：</p>
 <ul>
 <li>递归头：什么时候不调用自身方法，如果没有递归头将陷入死循环</li>
 <li>递归体：什么时候需要调用自身方法</li>
@@ -1175,7 +1201,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.4k</span>
+                        class="white-color">30.5k</span>
             
             
             

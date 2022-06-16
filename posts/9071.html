@@ -441,7 +441,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    627
+                    630
                 </div>
                 
 
@@ -461,27 +461,34 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><blockquote>
+                <h2 id="数据类型">数据类型</h2>
+<blockquote>
 <p>Java的数据类型分为两大类：<strong>基本类型</strong>和<strong>引用类型</strong></p>
 </blockquote>
-<h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><blockquote>
+<h3 id="基本类型">基本类型</h3>
+<blockquote>
 <p>基本类型分为两大类：<em><strong>数值类型</strong></em> 和 <em><strong>boolean类型</strong></em></p>
 </blockquote>
-<h4 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h4><blockquote>
+<h4 id="数值类型">数值类型</h4>
+<blockquote>
 <p>数值类型分为三大类：<code>整数类型</code>、<code>浮点类型</code>和<code>字符类型</code></p>
 </blockquote>
-<h5 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h5><ol>
+<h5 id="整数类型">整数类型</h5>
+<ol>
 <li>byte占一个字节 范围-128到127</li>
 <li>short占2个字节 范围-32768到32767</li>
 <li>int占4个字节 范围-2147483648到2147483647</li>
 <li>long占8个字节 范围-9223372036854775808到9223372036854775807</li>
 </ol>
-<h5 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h5><ol>
+<h5 id="浮点类型">浮点类型</h5>
+<ol>
 <li>float占4个字节</li>
 <li>double占8个字节</li>
 </ol>
-<h4 id="boolean类型"><a href="#boolean类型" class="headerlink" title="boolean类型"></a>boolean类型</h4><p>占一位，其值只有<code>true</code>和<code>false</code>两个</p>
-<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><ol>
+<h4 id="boolean类型">boolean类型</h4>
+<p>占一位，其值只有<code>true</code>和<code>false</code>两个</p>
+<h3 id="引用类型">引用类型</h3>
+<ol>
 <li>类</li>
 <li>接口</li>
 <li>数组</li>
@@ -490,21 +497,22 @@
 <blockquote>
 <p><em><strong>在Java中，String字符串不是基本类型</strong></em></p>
 </blockquote>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
+<h2 id="变量">变量</h2>
+<ul>
 <li>变量就是可以变化的量</li>
 <li>Java是一种强类型语言，每个变量都必须声明其类型</li>
 <li>Java变量是程序中最基本的储存单元，其要素包括变量名，变量类型和作用域</li>
 </ul>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">type varName [=value] [{,varName[=value]}];  
 //数据类型 变量名 = 值：可以使用逗号隔开来声明多个同类型变量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
 <p>注意事项：</p>
 <ul>
 <li>每个变量都有类型，类型可以是基本型，也可以是引用类型</li>
 <li>变量名必须是合法的标识符</li>
 <li>变量声明是一条完整的语句，因此每一个声明都必须以分号结束</li>
 </ul>
-<h2 id="什么是字节"><a href="#什么是字节" class="headerlink" title="什么是字节"></a>什么是字节</h2><ul>
+<h2 id="什么是字节">什么是字节</h2>
+<ul>
 <li>位（bit）：是计算机内部数据储存的最小单位，11001100是一个八位二进制数</li>
 <li>字节（byte）：是计算机中数据处理的基本单位，习惯上用大写B来表示</li>
 <li>1B（byte，字节） = 8bit（位）</li>
@@ -518,26 +526,46 @@
 <li>1024KB=1MB</li>
 <li>1024MB=1GB</li>
 </ul>
-<h2 id="数据类型扩展"><a href="#数据类型扩展" class="headerlink" title="数据类型扩展"></a>数据类型扩展</h2><h3 id="整数拓展：进制"><a href="#整数拓展：进制" class="headerlink" title="整数拓展：进制"></a>整数拓展：进制</h3><h4 id="二进制"><a href="#二进制" class="headerlink" title="二进制"></a>二进制</h4><p>Java中一般不使用二进制，但是可以以0b开头表示二进制数</p>
-<h4 id="八进制"><a href="#八进制" class="headerlink" title="八进制"></a>八进制</h4><p>int i = 010;<br>输出8</p>
-<h4 id="十进制"><a href="#十进制" class="headerlink" title="十进制"></a>十进制</h4><p>int i = 10;<br>输出10</p>
-<h4 id="十六进制"><a href="#十六进制" class="headerlink" title="十六进制"></a>十六进制</h4><p>int i = 0x10;<br>输出16</p>
-<h3 id="浮点数扩展"><a href="#浮点数扩展" class="headerlink" title="浮点数扩展"></a>浮点数扩展</h3><h4 id="float"><a href="#float" class="headerlink" title="float"></a>float</h4><p>float f = 0.1f</p>
-<h4 id="double"><a href="#double" class="headerlink" title="double"></a>double</h4><p>double d = 1.0/10<br><strong>不要使用浮点数进行比较</strong></p>
-<h3 id="字符扩展"><a href="#字符扩展" class="headerlink" title="字符扩展"></a>字符扩展</h3><p>字符的本质还是数字<br>可以int强制类型转换<br>Unicode编码占2字节</p>
+<h2 id="数据类型扩展">数据类型扩展</h2>
+<h3 id="整数拓展：进制">整数拓展：进制</h3>
+<h4 id="二进制">二进制</h4>
+<p>Java中一般不使用二进制，但是可以以0b开头表示二进制数</p>
+<h4 id="八进制">八进制</h4>
+<p>int i = 010;<br>
+输出8</p>
+<h4 id="十进制">十进制</h4>
+<p>int i = 10;<br>
+输出10</p>
+<h4 id="十六进制">十六进制</h4>
+<p>int i = 0x10;<br>
+输出16</p>
+<h3 id="浮点数扩展">浮点数扩展</h3>
+<h4 id="float">float</h4>
+<p>float f = 0.1f</p>
+<h4 id="double">double</h4>
+<p>double d = 1.0/10<br>
+<strong>不要使用浮点数进行比较</strong></p>
+<h3 id="字符扩展">字符扩展</h3>
+<p>字符的本质还是数字<br>
+可以int强制类型转换<br>
+Unicode编码占2字节</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">char</span> c1<span class="token operator">=</span><span class="token char">'a'</span><span class="token punctuation">;</span>
 <span class="token keyword">char</span> c2<span class="token operator">=</span><span class="token char">'\u0061'</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>c1<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//输出97</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//输出a</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h4><p>\t 制表符<br>\n 换行符</p>
-<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s1<span class="token operator">=</span><span class="token string">"hello，world"</span><span class="token punctuation">;</span>
+<h4 id="转义字符">转义字符</h4>
+<p>\t 制表符
+\n 换行符</p>
+<h4 id="字符串">字符串</h4>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s1<span class="token operator">=</span><span class="token string">"hello，world"</span><span class="token punctuation">;</span>
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">//输出hello，world</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="布尔值扩展"><a href="#布尔值扩展" class="headerlink" title="布尔值扩展"></a>布尔值扩展</h3><p>Boolean值只有true和false<br>用于条件判断<br>注意：</p>
+<h3 id="布尔值扩展">布尔值扩展</h3>
+<p>Boolean值只有true和false<br>
+用于条件判断<br>
+注意：</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
 <span class="token comment">//选第二种，不要画蛇添足</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -1110,7 +1138,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">30.4k</span>
+                        class="white-color">30.5k</span>
             
             
             
