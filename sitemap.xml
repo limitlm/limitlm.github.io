@@ -308,15 +308,6 @@
   </url>
   
   <url>
-    <loc>https://limitlm.github.io/404/index.html</loc>
-    
-    <lastmod>2022-06-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://limitlm.github.io/about/index.html</loc>
     
     <lastmod>2022-06-17</lastmod>
@@ -354,6 +345,15 @@
   
   <url>
     <loc>https://limitlm.github.io/tags/index.html</loc>
+    
+    <lastmod>2022-06-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://limitlm.github.io/404/index.html</loc>
     
     <lastmod>2022-06-17</lastmod>
     
