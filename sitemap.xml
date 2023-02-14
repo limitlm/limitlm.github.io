@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://limitlm.github.io/tags/index.html</loc>
+    
+    <lastmod>2023-02-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://limitlm.github.io/posts/26479.html</loc>
     
     <lastmod>2023-02-14</lastmod>
@@ -345,15 +354,6 @@
   
   <url>
     <loc>https://limitlm.github.io/friends/index.html</loc>
-    
-    <lastmod>2023-02-14</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://limitlm.github.io/tags/index.html</loc>
     
     <lastmod>2023-02-14</lastmod>
     
