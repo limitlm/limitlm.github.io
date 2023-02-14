@@ -220,7 +220,7 @@ byte,short,char-&gt;int-&gt;long-&gt;float-&gt;double<br>
 <p>低-----&gt;高<br>
 (int)1.1;<br>
 //输出1</p>
-<h2 id="变量-2">变量</h2>
+<h2 id="变量">变量</h2>
 <p>变量就是可以变化的量<br>
 局部变量必须声明初始值</p>
 <h2 id="常量">常量</h2>
@@ -1187,7 +1187,7 @@ list<span class="token punctuation">.</span><span class="token function">add</sp
 <li>final修饰的变量是引用类型:那么变量存储的地址值不能发生改变，但是地址指向的对象内容是可以发生变化的。（例如数组元素可以变，但是不能给数组重新赋值）</li>
 </ul>
 <hr>
-<h2 id="常量-2">常量</h2>
+<h2 id="常量">常量</h2>
 <ul>
 <li>常量是使用了public static final修饰的成员变量，必须有初始化值，而且执行的过程中其值不能被改变。</li>
 <li>常量的作用和好处:可以用于做系统的配置信息，方便程序的维护，同时也能提高可读性。</li>
@@ -1240,7 +1240,7 @@ SPRING , SUMMER ,AUTUMN , WINTER;<br>
   <entry>
     <title>接口、多态</title>
     <url>/posts/63176.html</url>
-    <content><![CDATA[<h2 id="接口-2">接口</h2>
+    <content><![CDATA[<h2 id="接口">接口</h2>
 <p>interface</p>
 <ul>
 <li>接口中的成员只有常量和抽象方法。</li>
@@ -1512,7 +1512,7 @@ SPRING , SUMMER ,AUTUMN , WINTER;<br>
 <li>匿名内部类写出来就会产生一个匿名内部类的对象。</li>
 <li>匿名内部类的对象类型相当于是当前new的那个的类型的子类类型。</li>
 </ul>
-<h4 id="案例-2">案例</h4>
+<h4 id="案例">案例</h4>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//为按钮绑定点击事件监听器。</span>
 btn<span class="token punctuation">.</span><span class="token function">addActionListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ActionListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token annotation punctuation">@Override</span>
@@ -1798,7 +1798,7 @@ btn<span class="token punctuation">.</span><span class="token function">addActio
 </tr>
 </tbody>
 </table>
-<h3 id="注意事项-2">注意事项</h3>
+<h3 id="注意事项">注意事项</h3>
 <p>正例：优先推荐入参为String的构造方法，或使用BigDecimal的valueOf方法，此方法内部其实执行了Double 的 toString，而Double 的 toString 按 double 的实际能表达的精度对尾数进行了截断。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">BigDecimal</span> recommend1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BigDecimal</span><span class="token punctuation">(</span><span class="token string">"0.1"</span><span class="token punctuation">)</span>
 <span class="token class-name">BigDecimal</span> recommend2 <span class="token operator">=</span> <span class="token class-name">BigDecimal</span> <span class="token function">valueOf</span><span class="token punctuation">(</span><span class="token number">0.1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
@@ -1867,7 +1867,7 @@ btn<span class="token punctuation">.</span><span class="token function">addActio
         <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"经过一小时121秒后的时间"</span> <span class="token operator">+</span> date<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="注意事项-3">注意事项</h3>
+<h3 id="注意事项">注意事项</h3>
 <ol>
 <li>日期对象如何创建，如何获取时间毫秒值？<br>
 Date date = new Date();<br>
@@ -2901,7 +2901,7 @@ students<span class="token punctuation">[</span><span class="token number">2</sp
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="注意-2">注意</h2>
+<h2 id="注意">注意</h2>
 <blockquote>
 <p><strong>不要连续多次刷新，否则会被当成攻击，会被限制1小时左右的时间不能刷新！！！</strong></p>
 </blockquote>
