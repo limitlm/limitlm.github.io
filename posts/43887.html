@@ -85,7 +85,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 8.1.1">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -386,7 +386,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    614
+                    615
                 </div>
                 
 
@@ -415,18 +415,7 @@ byte,short,char-&gt;int-&gt;long-&gt;float-&gt;double<br>
 <p>高-----&gt;低<br>
 在数据前面加上(数据类型)</p>
 <h4 id="案例">案例</h4>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//可以用下划线_分割数字，不改变大小</span>
-<span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">10_0000_0000</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> b<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> c1<span class="token operator">=</span>a<span class="token operator">*</span>b<span class="token punctuation">;</span>
-<span class="token keyword">long</span> c2<span class="token operator">=</span>a<span class="token operator">*</span>b<span class="token punctuation">;</span>
-<span class="token keyword">long</span> c3<span class="token operator">=</span>a<span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span>b<span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//输出负数溢出了</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//输出还是负数</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c3<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//输出正常</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可以用下划线_分割数字，不改变大小</span></span><br><span class="line"><span class="type">int</span> a=<span class="number">10_0000_0000</span>;</span><br><span class="line"><span class="type">int</span> b=<span class="number">20</span>;</span><br><span class="line"><span class="type">int</span> c1=a*b;</span><br><span class="line"><span class="type">long</span> c2=a*b;</span><br><span class="line"><span class="type">long</span> c3=a*(<span class="type">long</span>)b;</span><br><span class="line">System.out.print(c1);</span><br><span class="line"><span class="comment">//输出负数溢出了</span></span><br><span class="line">System.out.print(c2);</span><br><span class="line"><span class="comment">//输出还是负数</span></span><br><span class="line">System.out.print(c3);</span><br><span class="line"><span class="comment">//输出正常</span></span><br></pre></td></tr></tbody></table></figure>
 <p>说明是先计算再赋值，先计算结果溢出了，赋值给long类型的c还是溢出后的结果</p>
 <h3 id="自动类型转换">自动类型转换</h3>
 <p>低-----&gt;高<br>
@@ -474,7 +463,7 @@ int c = a&gt;b?a:b;<br>
 <li>为了更好的组织类，Java提供了包机制，用于区别类名的命名空间</li>
 <li>包语句的语法格式为：</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">pkg1</span><span class="token punctuation">[</span><span class="token punctuation">.</span>pkg2<span class="token punctuation">[</span><span class="token punctuation">.</span>pkg3…<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pkg1[.pkg2[.pkg3…]];</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li><strong><code>一般利用公司域名倒置作为包名：com.xxx.xxx</code></strong></li>
 <li>为了能够使用某一个包的成员，我们需要在Java程序中明确导入该包，使用import语句可完成此功能</li>
@@ -644,7 +633,7 @@ int c = a&gt;b?a:b;<br>
   
 
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+  <script src="https://unpkg.com/@waline/client@latest/dist/waline.js"></script>
   <link
     rel="stylesheet"
     href="https://unpkg.com/@waline/client@v2/dist/waline.css"
@@ -984,7 +973,7 @@ int c = a&gt;b?a:b;<br>
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2023</span>
+                <span id="year">2021-2025</span>
             
             <a href="/about" target="_blank">泷少</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

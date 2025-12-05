@@ -85,7 +85,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 8.1.1">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -386,7 +386,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    630
+                    629
                 </div>
                 
 
@@ -448,8 +448,7 @@
 <li>Java是一种强类型语言，每个变量都必须声明其类型</li>
 <li>Java变量是程序中最基本的储存单元，其要素包括变量名，变量类型和作用域</li>
 </ul>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">type varName [=value] [{,varName[=value]}];  
-//数据类型 变量名 = 值：可以使用逗号隔开来声明多个同类型变量<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type varName [=value] [{,varName[=value]}];  </span><br><span class="line">//数据类型 变量名 = 值：可以使用逗号隔开来声明多个同类型变量</span><br></pre></td></tr></tbody></table></figure>
 <p>注意事项：</p>
 <ul>
 <li>每个变量都有类型，类型可以是基本型，也可以是引用类型</li>
@@ -494,26 +493,17 @@
 <p>字符的本质还是数字<br>
 可以int强制类型转换<br>
 Unicode编码占2字节</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">char</span> c1<span class="token operator">=</span><span class="token char">'a'</span><span class="token punctuation">;</span>
-<span class="token keyword">char</span> c2<span class="token operator">=</span><span class="token char">'\u0061'</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">)</span>c1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//输出97</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//输出a</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> c1=<span class="string">'a'</span>;</span><br><span class="line"><span class="type">char</span> c2=<span class="string">'\u0061'</span>;</span><br><span class="line">System.out.print((<span class="type">int</span>)c1);</span><br><span class="line"><span class="comment">//输出97</span></span><br><span class="line">System.out.print(c2);</span><br><span class="line"><span class="comment">//输出a</span></span><br></pre></td></tr></tbody></table></figure>
 <h4 id="转义字符">转义字符</h4>
 <p>\t 制表符
 \n 换行符</p>
 <h4 id="字符串">字符串</h4>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s1<span class="token operator">=</span><span class="token string">"hello，world"</span><span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//输出hello，world</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s1=<span class="string">"hello，world"</span>;</span><br><span class="line">System.out.print(s1);</span><br><span class="line"><span class="comment">//输出hello，world</span></span><br></pre></td></tr></tbody></table></figure>
 <h3 id="布尔值扩展">布尔值扩展</h3>
 <p>Boolean值只有true和false<br>
 用于条件判断<br>
 注意：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token operator">=</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span class="token comment">//选第二种，不要画蛇添足</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (flag=<span class="literal">true</span>){};</span><br><span class="line"><span class="keyword">if</span> (flag){};</span><br><span class="line"><span class="comment">//选第二种，不要画蛇添足</span></span><br></pre></td></tr></tbody></table></figure>
 
                 
             </div>
@@ -663,7 +653,7 @@ Unicode编码占2字节</p>
   
 
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+  <script src="https://unpkg.com/@waline/client@latest/dist/waline.js"></script>
   <link
     rel="stylesheet"
     href="https://unpkg.com/@waline/client@v2/dist/waline.css"
@@ -1003,7 +993,7 @@ Unicode编码占2字节</p>
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2023</span>
+                <span id="year">2021-2025</span>
             
             <a href="/about" target="_blank">泷少</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>

@@ -85,7 +85,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0">
+<meta name="generator" content="Hexo 8.1.1">
 <style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 </head>
 
@@ -408,11 +408,7 @@
             <div id="articleContent">
                 <h2 id="内部类">内部类</h2>
 <p>内部类就是定义在一个类里面的类，里面的类可以理解成（寄生），外部类可以理解成（宿主）</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">People</span><span class="token punctuation">{</span>
-    <span class="token comment">// 内部类</span>
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Heart</span><span class="token punctuation">{</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">People</span>{</span><br><span class="line">    <span class="comment">// 内部类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Heart</span>{</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>内部类的使用场景、作用</p>
 <ul>
 <li>当一个事物的内部，还有一个部分需要一个完整的结构进行描述，而这个内部的完整的结构又只为外部事物提供服务，那么整个内部的完整结构可以选择使用内部类来设计。</li>
@@ -425,11 +421,7 @@
 <li>有static修饰，属于外部类本身。</li>
 <li>它的特点和使用与普通类是完全一样的，类有的成分它都有，只是位置在别人里面而已。</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Outer</span><span class="token punctuation">{</span>
-    <span class="token comment">//静态成员内部类</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">Inner</span><span class="token punctuation">{</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Outer</span>{</span><br><span class="line">    <span class="comment">//静态成员内部类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">Inner</span>{</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="静态内部类创建对象的格式">静态内部类创建对象的格式</h4>
 <p>格式：外部类名.内部类名 对象名 = new 外部类名.内部类构造器;</p>
 <p>范例:Outer.Inner in = new Outer.Inner();</p>
@@ -453,11 +445,7 @@
 <li>无static修饰，属于外部类的对象。</li>
 <li>JDK16之前，成员内部类中不能定义静态成员，JDK 16开始也可以定义静态成员了。</li>
 </ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Outer</span><span class="token punctuation">{</span>
-    <span class="token comment">// 成员内部类</span>
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Inner</span><span class="token punctuation">{</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Outer</span>{</span><br><span class="line">    <span class="comment">// 成员内部类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Inner</span>{</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h4 id="成员内部类创建对象的格式">成员内部类创建对象的格式</h4>
 <p>格式：外部类名.内部类名 对象名 = new 外部类构造器.new内部类构造器();
 范例:Outer.Inner in = new Outer().new Inner();</p>
@@ -490,9 +478,7 @@
 <li>作用：方便创建子类对象，最终目的为了简化代码编写。</li>
 </ul>
 <p>格式:</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">new</span> 类<span class="token operator">|</span>抽象类名<span class="token operator">|</span>或者接口名<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    重写方法<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> 类|抽象类名|或者接口名() {</span><br><span class="line">    重写方法;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>特点总结：</p>
 <ul>
 <li>匿名内部类是一个没有名字的内部类。</li>
@@ -500,14 +486,7 @@
 <li>匿名内部类的对象类型相当于是当前new的那个的类型的子类类型。</li>
 </ul>
 <h4 id="案例">案例</h4>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//为按钮绑定点击事件监听器。</span>
-btn<span class="token punctuation">.</span><span class="token function">addActionListener</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ActionListener</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    <span class="token annotation punctuation">@Override</span>
-    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">actionPerformed</span><span class="token punctuation">(</span><span class="token class-name">ActionEvent</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printin</span><span class="token punctuation">(</span><span class="token string">"登录一下~~"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//btn.addActionListener(e -&gt; System.out.printin（"登录一下"));</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//为按钮绑定点击事件监听器。</span></span><br><span class="line">btn.addActionListener(<span class="keyword">new</span> <span class="title class_">ActionListener</span>() {</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">actionPerformed</span><span class="params">(ActionEvent e)</span>{</span><br><span class="line">        System.out.printin(<span class="string">"登录一下~~"</span>);</span><br><span class="line">    }</span><br><span class="line">});</span><br><span class="line"><span class="comment">//btn.addActionListener(e -&gt; System.out.printin（"登录一下"));</span></span><br></pre></td></tr></tbody></table></figure>
 <p>后续衔接lambda表达式，实现代码简化。</p>
 
                 
@@ -658,7 +637,7 @@ btn<span class="token punctuation">.</span><span class="token function">addActio
   
 
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="https://unpkg.com/@waline/client@v2/dist/waline.js"></script>
+  <script src="https://unpkg.com/@waline/client@latest/dist/waline.js"></script>
   <link
     rel="stylesheet"
     href="https://unpkg.com/@waline/client@v2/dist/waline.css"
@@ -998,7 +977,7 @@ btn<span class="token punctuation">.</span><span class="token function">addActio
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2021-2023</span>
+                <span id="year">2021-2025</span>
             
             <a href="/about" target="_blank">泷少</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
