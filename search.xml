@@ -955,23 +955,6 @@ Unicode编码占2字节</p>
       </tags>
   </entry>
   <entry>
-    <title>学Java的第3天</title>
-    <url>/posts/57198.html</url>
-    <content><![CDATA[<blockquote>
-<p>按照学校要求，去参加为期6天的企业开发实训<br>
-课程包括鸿蒙开发和Java的spring boot + mybatis项目开发<br>
-好忙啊，暂时停更</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>学Java的第4天</title>
     <url>/posts/43887.html</url>
     <content><![CDATA[<h2 id="类型转换">类型转换</h2>
@@ -1063,6 +1046,23 @@ int c = a&gt;b?a:b;<br>
 <li>@return 返回值情况</li>
 <li>@throws 异常抛出情况</li>
 </ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学Java的第3天</title>
+    <url>/posts/57198.html</url>
+    <content><![CDATA[<blockquote>
+<p>按照学校要求，去参加为期6天的企业开发实训<br>
+课程包括鸿蒙开发和Java的spring boot + mybatis项目开发<br>
+好忙啊，暂时停更</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -1467,6 +1467,74 @@ gl<span class="token punctuation">.</span><span class="token function">eat</span
       </tags>
   </entry>
   <entry>
+    <title>学Java的第8天</title>
+    <url>/posts/64364.html</url>
+    <content><![CDATA[<h2 id="static详解">static详解</h2>
+<h3 id="static属性和方法">static属性和方法</h3>
+<p>静态属性和静态方法可以直接类名调用，不需要初始化对象。</p>
+<h3 id="static代码块">static代码块</h3>
+<p>在new一个对象时，先执行类中静态代码块，再执行匿名代码块，然后才是执行构造方法。<br>
+静态代码块仅会执行一次。后续再new一个对象也不会执行了。</p>
+<h3 id="静态导入包">静态导入包</h3>
+<p>在导包时加上static和具体包内方法名，在下面写代码时就不需要加包名了。<br>
+例如：import static java.lang.math.random<br>
+本来调用时应该写math.random的，静态导入包后只需要直接写random就行了。</p>
+<h2 id="抽象类">抽象类</h2>
+<ul>
+<li>abstract修饰方法，那么该方法就是抽象方法，如果修饰类，那么这个类就是抽象类。</li>
+<li>抽象类可以没有抽象方法，但是有抽象方法的类必须声明为抽象类。</li>
+<li>抽象类不能用new生成对象，只能用来让子类继承。</li>
+<li>抽象方法只有方法的声明，没有方法的实现，它是用来让子类实现的。</li>
+<li>子类继承抽象类，那么一定要实现抽象类中没实现的抽象方法，否则该子类也要声明为抽象类。</li>
+</ul>
+<h2 id="接口">接口</h2>
+<p>普通类：只有具体实现<br>
+抽象类：具体实现和抽象方法都有<br>
+接口：只有规范！</p>
+<ul>
+<li>接口是规范，定义规则：“如果你是……，则必须能……”。  “如果是飞机，则必须会飞。”</li>
+<li>声明类的关键字是<code>class</code>，声明接口的关键字是<code>interface</code></li>
+<li>实现接口的关键字是<code>implements</code>，</li>
+<li>接口可以多继承。</li>
+<li>接口不能被new实例化，接口没有构造方法。</li>
+</ul>
+<h2 id="异常">异常</h2>
+<h3 id="error">error</h3>
+<p>错误类由jvm产生抛出，通常情况下与代码编写者的操作无关。<br>
+如，内存不足以运行程序、类定义错误、链接错误</p>
+<h3 id="exception">exception</h3>
+<ul>
+<li>运行时异常
+<ul>
+<li>数组下标越界</li>
+<li>空指针异常</li>
+<li>算数异常</li>
+<li>丢失资源</li>
+<li>找不到异常（这些是不检查异常，程序中可以捕获异常也可以不做处理）</li>
+</ul>
+</li>
+<li>一般由程序逻辑错误引起的</li>
+<li>区别：error是致命错误，程序无法处理，直接终止线程，exception是异常，程序可以处理，写代码的时候可以捕获异常并作出处理。</li>
+</ul>
+<h3 id="异常处理机制">异常处理机制</h3>
+<p>一般情况下<strong>try{代码监控区}catch{捕获异常}finally{处理异常}</strong><br>
+try和catch配合使用，finally可以不用写。<br>
+如果要捕获多个异常，需要从小到大捕获。<br>
+idea快捷键<code>Ctrl + Alt + T</code></p>
+<p>throw和throws抛出异常。</p>
+<h3 id="自定义异常">自定义异常</h3>
+<p>定义一个类，继承exception类<br>
+<em><strong>暂时用不着，后续待补充</strong></em></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>学Java的第7天</title>
     <url>/posts/61295.html</url>
     <content><![CDATA[<h2 id="封装">封装</h2>
@@ -1531,74 +1599,6 @@ b.print();//调用B类的方法<br>
 <li>把子类转换为父类。向上转型，可能会丢失方法</li>
 <li>把父类转换为子类。向下转型:强制转换</li>
 </ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学Java的第8天</title>
-    <url>/posts/64364.html</url>
-    <content><![CDATA[<h2 id="static详解">static详解</h2>
-<h3 id="static属性和方法">static属性和方法</h3>
-<p>静态属性和静态方法可以直接类名调用，不需要初始化对象。</p>
-<h3 id="static代码块">static代码块</h3>
-<p>在new一个对象时，先执行类中静态代码块，再执行匿名代码块，然后才是执行构造方法。<br>
-静态代码块仅会执行一次。后续再new一个对象也不会执行了。</p>
-<h3 id="静态导入包">静态导入包</h3>
-<p>在导包时加上static和具体包内方法名，在下面写代码时就不需要加包名了。<br>
-例如：import static java.lang.math.random<br>
-本来调用时应该写math.random的，静态导入包后只需要直接写random就行了。</p>
-<h2 id="抽象类">抽象类</h2>
-<ul>
-<li>abstract修饰方法，那么该方法就是抽象方法，如果修饰类，那么这个类就是抽象类。</li>
-<li>抽象类可以没有抽象方法，但是有抽象方法的类必须声明为抽象类。</li>
-<li>抽象类不能用new生成对象，只能用来让子类继承。</li>
-<li>抽象方法只有方法的声明，没有方法的实现，它是用来让子类实现的。</li>
-<li>子类继承抽象类，那么一定要实现抽象类中没实现的抽象方法，否则该子类也要声明为抽象类。</li>
-</ul>
-<h2 id="接口">接口</h2>
-<p>普通类：只有具体实现<br>
-抽象类：具体实现和抽象方法都有<br>
-接口：只有规范！</p>
-<ul>
-<li>接口是规范，定义规则：“如果你是……，则必须能……”。  “如果是飞机，则必须会飞。”</li>
-<li>声明类的关键字是<code>class</code>，声明接口的关键字是<code>interface</code></li>
-<li>实现接口的关键字是<code>implements</code>，</li>
-<li>接口可以多继承。</li>
-<li>接口不能被new实例化，接口没有构造方法。</li>
-</ul>
-<h2 id="异常">异常</h2>
-<h3 id="error">error</h3>
-<p>错误类由jvm产生抛出，通常情况下与代码编写者的操作无关。<br>
-如，内存不足以运行程序、类定义错误、链接错误</p>
-<h3 id="exception">exception</h3>
-<ul>
-<li>运行时异常
-<ul>
-<li>数组下标越界</li>
-<li>空指针异常</li>
-<li>算数异常</li>
-<li>丢失资源</li>
-<li>找不到异常（这些是不检查异常，程序中可以捕获异常也可以不做处理）</li>
-</ul>
-</li>
-<li>一般由程序逻辑错误引起的</li>
-<li>区别：error是致命错误，程序无法处理，直接终止线程，exception是异常，程序可以处理，写代码的时候可以捕获异常并作出处理。</li>
-</ul>
-<h3 id="异常处理机制">异常处理机制</h3>
-<p>一般情况下<strong>try{代码监控区}catch{捕获异常}finally{处理异常}</strong><br>
-try和catch配合使用，finally可以不用写。<br>
-如果要捕获多个异常，需要从小到大捕获。<br>
-idea快捷键<code>Ctrl + Alt + T</code></p>
-<p>throw和throws抛出异常。</p>
-<h3 id="自定义异常">自定义异常</h3>
-<p>定义一个类，继承exception类<br>
-<em><strong>暂时用不着，后续待补充</strong></em></p>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -2007,6 +2007,39 @@ SPRING , SUMMER ,AUTUMN , WINTER;<br>
 <li>构造器的构造器都是私有的，枚举对外不能创建对象。</li>
 <li>枚举类的第一行默认都是罗列枚举对象的名称的。</li>
 <li>枚举类相当于是多例模式。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>接口、多态</title>
+    <url>/posts/63176.html</url>
+    <content><![CDATA[<h2 id="接口">接口</h2>
+<p>interface</p>
+<ul>
+<li>接口中的成员只有常量和抽象方法。</li>
+<li>在接口中，常量的修饰符public static final可以省略；抽象方法的修饰符public abstract可以省略。</li>
+<li>因为接口是公开的规范，里面的内容都默认是公开的。</li>
+<li>接口不能创建对象。</li>
+</ul>
+<h3 id="实现类">实现类</h3>
+<ul>
+<li>接口是用来被类实现（implements）的，实现接口的类称为实现类。实现类可以理解成所谓的子类。</li>
+<li>接口可以被类单实现，也可以被多实现。</li>
+<li>一个类实现接口，必须重写完全部接口的全部抽象方法，否则这个类需要定义成抽象类。</li>
+</ul>
+<h3 id="注意事项">注意事项</h3>
+<p>新版本允许接口带有方法体的方法</p>
+<ul>
+<li>默认方法：必须用default修饰-实现类对象调用</li>
+<li>静态方法：必须用static修饰-必须用当前接口名调用</li>
+<li>私有方法：用private修饰，只能被接口内部方法访问</li>
 </ul>
 ]]></content>
       <categories>
@@ -3358,39 +3391,6 @@ students<span class="token punctuation">[</span><span class="token number">2</sp
 <li>如果Lambda表达式的方法体代码只有一行代码。可以省略大括号不写。此时，如果这行代码是return语句，必须省路return不写，同时也必须省略分号不写。</li>
 </ul>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>ages<span class="token punctuation">,</span><span class="token punctuation">(</span>o1<span class="token punctuation">,</span>o2<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> o2 <span class="token operator">-</span> o1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>接口、多态</title>
-    <url>/posts/63176.html</url>
-    <content><![CDATA[<h2 id="接口">接口</h2>
-<p>interface</p>
-<ul>
-<li>接口中的成员只有常量和抽象方法。</li>
-<li>在接口中，常量的修饰符public static final可以省略；抽象方法的修饰符public abstract可以省略。</li>
-<li>因为接口是公开的规范，里面的内容都默认是公开的。</li>
-<li>接口不能创建对象。</li>
-</ul>
-<h3 id="实现类">实现类</h3>
-<ul>
-<li>接口是用来被类实现（implements）的，实现接口的类称为实现类。实现类可以理解成所谓的子类。</li>
-<li>接口可以被类单实现，也可以被多实现。</li>
-<li>一个类实现接口，必须重写完全部接口的全部抽象方法，否则这个类需要定义成抽象类。</li>
-</ul>
-<h3 id="注意事项">注意事项</h3>
-<p>新版本允许接口带有方法体的方法</p>
-<ul>
-<li>默认方法：必须用default修饰-实现类对象调用</li>
-<li>静态方法：必须用static修饰-必须用当前接口名调用</li>
-<li>私有方法：用private修饰，只能被接口内部方法访问</li>
-</ul>
 ]]></content>
       <categories>
         <category>Java</category>

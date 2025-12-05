@@ -754,17 +754,19 @@ gl<span class="token punctuation">.</span><span class="token function">eat</span
   
 
   <!-- <script src="//cdn.jsdelivr.net/npm/@waline/client"></script> -->
-  <script src="https://unpkg.com/@waline/client@latest/dist/waline.js"></script>
-  <link
+   <link
     rel="stylesheet"
     href="https://unpkg.com/@waline/client@latest/dist/waline.css"
   />
-  <script>
-    Waline.init({
-        el: '#waline',
-        serverURL: 'https://limitlm-waline.vercel.app/'
+
+  <script type="module">
+    import { init } from 'https://unpkg.com/@waline/client@latest/dist/waline.js';
+
+    init({
+      el: '#waline',
+      serverURL: 'https://limitlm-waline.vercel.app/',
     });
-  </script> 
+  </script>
     
 
     
