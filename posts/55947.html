@@ -398,9 +398,6 @@
         <hr class="clearfix">
 
         
-        <!-- 是否加载使用自带的 prismjs. -->
-        <link rel="stylesheet" href="/libs/prism/prism.min.css">
-        
 
         
 
@@ -487,7 +484,15 @@
 <li>定义一个类，把构造器私有。</li>
 <li>定义一个静态变量存储一个对象。</li>
 </ul>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**a、定义一个单例类*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">singleInstance</span> {</span><br><span class="line"><span class="comment">/**c.定义一个静态变量存储一个对象即可:属于类，与类一起加载一次*/</span>    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">singleInstance</span> <span class="variable">instance</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SinglcInstance</span> ();</span><br><span class="line"><span class="comment">/**b.单例必须私有构造器*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">singleInstance</span> <span class="params">()</span>{</span><br><span class="line">        Systen.out.print1n(<span class="string">"创建了一个对象"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**a、定义一个单例类*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> singleInstance <span class="token punctuation">{</span>
+<span class="token comment">/**c.定义一个静态变量存储一个对象即可:属于类，与类一起加载一次*/</span>    
+    <span class="token keyword">public</span> <span class="token keyword">static</span> singleInstance instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SinglcInstance</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">/**b.单例必须私有构造器*/</span>
+    <span class="token keyword">private</span> singleInstance <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">Systen</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print1n</span><span class="token punctuation">(</span><span class="token string">"创建了一个对象"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="懒汉单例设计横式">懒汉单例设计横式</h4>
 <p>在真正需要该对象的时候，才去创建一个对象（延迟加载对象）</p>
 <p>设计步骤:</p>
@@ -496,7 +501,20 @@
 <li>定义一个静态变量存储一个对象。</li>
 <li>提供一个返回单例对象的方法</li>
 </ul>
-<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**a、定义一个单例类*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">singleInstance</span> {</span><br><span class="line"><span class="comment">/**c.定义一个静态变量存储一个对象即可:属于类，与类一起加载一次*/</span>    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> singleInstance instance;</span><br><span class="line"><span class="comment">/**b.单例必须私有构造器*/</span></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">singleInstance</span> <span class="params">()</span>{}</span><br><span class="line">    <span class="comment">/**d.必须提供一个方法返回一个单例对象*/</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> SingleInstance <span class="title function_">getInstance</span><span class="params">()</span>{</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="literal">null</span>){</span><br><span class="line">            instance = <span class="keyword">new</span> <span class="title class_">singleInstance</span>();</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">/**a、定义一个单例类*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> singleInstance <span class="token punctuation">{</span>
+<span class="token comment">/**c.定义一个静态变量存储一个对象即可:属于类，与类一起加载一次*/</span>    
+    <span class="token keyword">private</span> <span class="token keyword">static</span> singleInstance instance<span class="token punctuation">;</span>
+<span class="token comment">/**b.单例必须私有构造器*/</span>
+    <span class="token keyword">private</span> singleInstance <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+    <span class="token comment">/**d.必须提供一个方法返回一个单例对象*/</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">SingleInstance</span> <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>instance <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            instance <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token function">singleInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> instance<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
                 
             </div>
@@ -807,9 +825,6 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
-
-  <!-- 是否加载使用自带的 prismjs. -->
-  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->
