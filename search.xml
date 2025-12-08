@@ -1256,148 +1256,6 @@ continue退出本次循环</p>
       </tags>
   </entry>
   <entry>
-    <title>学Java的第7天</title>
-    <url>/posts/61295.html</url>
-    <content><![CDATA[<h2 id="封装">封装</h2>
-<ul>
-<li><strong>该露的露，该藏的藏</strong>
-<ul>
-<li>程序设计追求<code>“高内聚，低耦合”</code>。高内聚就是类的内部数据操作细节自己完成，不允许外部干涉；低耦合指仅暴露少量的方法给外部使用。</li>
-</ul>
-</li>
-<li>封装（数据的隐藏）
-<ul>
-<li>通常应禁止直接访问一个对象中数据的实际表示，而应通过操作接口来访问，这称为信息隐藏。</li>
-</ul>
-</li>
-</ul>
-<p>属性私有，方法公开：private、public、get/set</p>
-<h2 id="继承">继承</h2>
-<p>Java中只有单继承没有多继承.<br>
-继承关系的俩个类，一个为子类(派生类).一个为父类(基类)。子类继承父类,使用关键字<code>extends</code>来表示。<br>
-子类继承父类的属性和方法，但是不能直接访问父类的私有属性。<br>
-Object类是所有类的父类。</p>
-<h3 id="super">super</h3>
-<p>super();调用父类的构造方法，必须在子类的构造方法的第一个，不写也会隐式添加。<br>
-super()和this()不能同时出现在子类的构造方法中。</p>
-<h3 id="方法的重写">方法的重写</h3>
-<p>这些方法不能被重写：</p>
-<ol>
-<li>static方法。属于类,它不属于实例</li>
-<li>final常量</li>
-<li>private方法</li>
-</ol>
-<p>方法的重写只跟方法有关，跟属性无关。<br>
-假设B类继承自A类，print是静态方法：<br>
-A a = new A();<br>
-B b = new A();<br>
-a.print();//调用A类的方法<br>
-b.print();//调用B类的方法<br>
-说明静态方法的调用只和左边的类有关。<br>
-非静态方法，使用override重写，调用的是右边对象的方法。</p>
-<p>重写需要有继承关系。子类重写父类的方法。</p>
-<ol>
-<li>方法名必须相同</li>
-<li>参数列表列表必须相同</li>
-<li>修饰符范围可以扩大但不能缩小public&gt;protected&gt;Default&gt;private</li>
-<li>抛出的异常范围,可以被缩小，但不能扩大:</li>
-</ol>
-<h2 id="多态">多态</h2>
-<p>即同一方法可以根据发送对象的不同而采用多种不同的行为方式。<br>
-一个对象的实际类型是确定的，但可以指向对象的引用的类型有很多。<br>
-多态存在的条件：</p>
-<ul>
-<li>有继承关系</li>
-<li>子类重写父类方法</li>
-<li>父类引用指向子类对象</li>
-</ul>
-<p>注意:多态是方法的多态，属性没有多态性。</p>
-<h3 id="instanceof和类型转换">instanceof和类型转换</h3>
-<p>instanceof判断两个类是否有上下级继承关系，返回布尔类型。<br>
-类型转换：</p>
-<ol>
-<li>父类引用指向子类对象</li>
-<li>把子类转换为父类。向上转型，可能会丢失方法</li>
-<li>把父类转换为子类。向下转型:强制转换</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学Java的第8天</title>
-    <url>/posts/64364.html</url>
-    <content><![CDATA[<h2 id="static详解">static详解</h2>
-<h3 id="static属性和方法">static属性和方法</h3>
-<p>静态属性和静态方法可以直接类名调用，不需要初始化对象。</p>
-<h3 id="static代码块">static代码块</h3>
-<p>在new一个对象时，先执行类中静态代码块，再执行匿名代码块，然后才是执行构造方法。<br>
-静态代码块仅会执行一次。后续再new一个对象也不会执行了。</p>
-<h3 id="静态导入包">静态导入包</h3>
-<p>在导包时加上static和具体包内方法名，在下面写代码时就不需要加包名了。<br>
-例如：import static java.lang.math.random<br>
-本来调用时应该写math.random的，静态导入包后只需要直接写random就行了。</p>
-<h2 id="抽象类">抽象类</h2>
-<ul>
-<li>abstract修饰方法，那么该方法就是抽象方法，如果修饰类，那么这个类就是抽象类。</li>
-<li>抽象类可以没有抽象方法，但是有抽象方法的类必须声明为抽象类。</li>
-<li>抽象类不能用new生成对象，只能用来让子类继承。</li>
-<li>抽象方法只有方法的声明，没有方法的实现，它是用来让子类实现的。</li>
-<li>子类继承抽象类，那么一定要实现抽象类中没实现的抽象方法，否则该子类也要声明为抽象类。</li>
-</ul>
-<h2 id="接口">接口</h2>
-<p>普通类：只有具体实现<br>
-抽象类：具体实现和抽象方法都有<br>
-接口：只有规范！</p>
-<ul>
-<li>接口是规范，定义规则：“如果你是……，则必须能……”。  “如果是飞机，则必须会飞。”</li>
-<li>声明类的关键字是<code>class</code>，声明接口的关键字是<code>interface</code></li>
-<li>实现接口的关键字是<code>implements</code>，</li>
-<li>接口可以多继承。</li>
-<li>接口不能被new实例化，接口没有构造方法。</li>
-</ul>
-<h2 id="异常">异常</h2>
-<h3 id="error">error</h3>
-<p>错误类由jvm产生抛出，通常情况下与代码编写者的操作无关。<br>
-如，内存不足以运行程序、类定义错误、链接错误</p>
-<h3 id="exception">exception</h3>
-<ul>
-<li>运行时异常
-<ul>
-<li>数组下标越界</li>
-<li>空指针异常</li>
-<li>算数异常</li>
-<li>丢失资源</li>
-<li>找不到异常（这些是不检查异常，程序中可以捕获异常也可以不做处理）</li>
-</ul>
-</li>
-<li>一般由程序逻辑错误引起的</li>
-<li>区别：error是致命错误，程序无法处理，直接终止线程，exception是异常，程序可以处理，写代码的时候可以捕获异常并作出处理。</li>
-</ul>
-<h3 id="异常处理机制">异常处理机制</h3>
-<p>一般情况下<strong>try{代码监控区}catch{捕获异常}finally{处理异常}</strong><br>
-try和catch配合使用，finally可以不用写。<br>
-如果要捕获多个异常，需要从小到大捕获。<br>
-idea快捷键<code>Ctrl + Alt + T</code></p>
-<p>throw和throws抛出异常。</p>
-<h3 id="自定义异常">自定义异常</h3>
-<p>定义一个类，继承exception类<br>
-<em><strong>暂时用不着，后续待补充</strong></em></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>学Java的第6天</title>
     <url>/posts/4974.html</url>
     <content><![CDATA[<h2 id="数组">数组</h2>
@@ -1599,6 +1457,148 @@ gl<span class="token punctuation">.</span><span class="token function">eat</span
 快捷键Alt + Insert创建构造方法。</p>
 <h3 id="创建对象内存分析">创建对象内存分析</h3>
 <p>在栈中的保存的是对象的引用变量名，真正的对象在堆中，根据类为模板生成对象，根据构造方法给对象赋予初始属性。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学Java的第7天</title>
+    <url>/posts/61295.html</url>
+    <content><![CDATA[<h2 id="封装">封装</h2>
+<ul>
+<li><strong>该露的露，该藏的藏</strong>
+<ul>
+<li>程序设计追求<code>“高内聚，低耦合”</code>。高内聚就是类的内部数据操作细节自己完成，不允许外部干涉；低耦合指仅暴露少量的方法给外部使用。</li>
+</ul>
+</li>
+<li>封装（数据的隐藏）
+<ul>
+<li>通常应禁止直接访问一个对象中数据的实际表示，而应通过操作接口来访问，这称为信息隐藏。</li>
+</ul>
+</li>
+</ul>
+<p>属性私有，方法公开：private、public、get/set</p>
+<h2 id="继承">继承</h2>
+<p>Java中只有单继承没有多继承.<br>
+继承关系的俩个类，一个为子类(派生类).一个为父类(基类)。子类继承父类,使用关键字<code>extends</code>来表示。<br>
+子类继承父类的属性和方法，但是不能直接访问父类的私有属性。<br>
+Object类是所有类的父类。</p>
+<h3 id="super">super</h3>
+<p>super();调用父类的构造方法，必须在子类的构造方法的第一个，不写也会隐式添加。<br>
+super()和this()不能同时出现在子类的构造方法中。</p>
+<h3 id="方法的重写">方法的重写</h3>
+<p>这些方法不能被重写：</p>
+<ol>
+<li>static方法。属于类,它不属于实例</li>
+<li>final常量</li>
+<li>private方法</li>
+</ol>
+<p>方法的重写只跟方法有关，跟属性无关。<br>
+假设B类继承自A类，print是静态方法：<br>
+A a = new A();<br>
+B b = new A();<br>
+a.print();//调用A类的方法<br>
+b.print();//调用B类的方法<br>
+说明静态方法的调用只和左边的类有关。<br>
+非静态方法，使用override重写，调用的是右边对象的方法。</p>
+<p>重写需要有继承关系。子类重写父类的方法。</p>
+<ol>
+<li>方法名必须相同</li>
+<li>参数列表列表必须相同</li>
+<li>修饰符范围可以扩大但不能缩小public&gt;protected&gt;Default&gt;private</li>
+<li>抛出的异常范围,可以被缩小，但不能扩大:</li>
+</ol>
+<h2 id="多态">多态</h2>
+<p>即同一方法可以根据发送对象的不同而采用多种不同的行为方式。<br>
+一个对象的实际类型是确定的，但可以指向对象的引用的类型有很多。<br>
+多态存在的条件：</p>
+<ul>
+<li>有继承关系</li>
+<li>子类重写父类方法</li>
+<li>父类引用指向子类对象</li>
+</ul>
+<p>注意:多态是方法的多态，属性没有多态性。</p>
+<h3 id="instanceof和类型转换">instanceof和类型转换</h3>
+<p>instanceof判断两个类是否有上下级继承关系，返回布尔类型。<br>
+类型转换：</p>
+<ol>
+<li>父类引用指向子类对象</li>
+<li>把子类转换为父类。向上转型，可能会丢失方法</li>
+<li>把父类转换为子类。向下转型:强制转换</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学Java的第8天</title>
+    <url>/posts/64364.html</url>
+    <content><![CDATA[<h2 id="static详解">static详解</h2>
+<h3 id="static属性和方法">static属性和方法</h3>
+<p>静态属性和静态方法可以直接类名调用，不需要初始化对象。</p>
+<h3 id="static代码块">static代码块</h3>
+<p>在new一个对象时，先执行类中静态代码块，再执行匿名代码块，然后才是执行构造方法。<br>
+静态代码块仅会执行一次。后续再new一个对象也不会执行了。</p>
+<h3 id="静态导入包">静态导入包</h3>
+<p>在导包时加上static和具体包内方法名，在下面写代码时就不需要加包名了。<br>
+例如：import static java.lang.math.random<br>
+本来调用时应该写math.random的，静态导入包后只需要直接写random就行了。</p>
+<h2 id="抽象类">抽象类</h2>
+<ul>
+<li>abstract修饰方法，那么该方法就是抽象方法，如果修饰类，那么这个类就是抽象类。</li>
+<li>抽象类可以没有抽象方法，但是有抽象方法的类必须声明为抽象类。</li>
+<li>抽象类不能用new生成对象，只能用来让子类继承。</li>
+<li>抽象方法只有方法的声明，没有方法的实现，它是用来让子类实现的。</li>
+<li>子类继承抽象类，那么一定要实现抽象类中没实现的抽象方法，否则该子类也要声明为抽象类。</li>
+</ul>
+<h2 id="接口">接口</h2>
+<p>普通类：只有具体实现<br>
+抽象类：具体实现和抽象方法都有<br>
+接口：只有规范！</p>
+<ul>
+<li>接口是规范，定义规则：“如果你是……，则必须能……”。  “如果是飞机，则必须会飞。”</li>
+<li>声明类的关键字是<code>class</code>，声明接口的关键字是<code>interface</code></li>
+<li>实现接口的关键字是<code>implements</code>，</li>
+<li>接口可以多继承。</li>
+<li>接口不能被new实例化，接口没有构造方法。</li>
+</ul>
+<h2 id="异常">异常</h2>
+<h3 id="error">error</h3>
+<p>错误类由jvm产生抛出，通常情况下与代码编写者的操作无关。<br>
+如，内存不足以运行程序、类定义错误、链接错误</p>
+<h3 id="exception">exception</h3>
+<ul>
+<li>运行时异常
+<ul>
+<li>数组下标越界</li>
+<li>空指针异常</li>
+<li>算数异常</li>
+<li>丢失资源</li>
+<li>找不到异常（这些是不检查异常，程序中可以捕获异常也可以不做处理）</li>
+</ul>
+</li>
+<li>一般由程序逻辑错误引起的</li>
+<li>区别：error是致命错误，程序无法处理，直接终止线程，exception是异常，程序可以处理，写代码的时候可以捕获异常并作出处理。</li>
+</ul>
+<h3 id="异常处理机制">异常处理机制</h3>
+<p>一般情况下<strong>try{代码监控区}catch{捕获异常}finally{处理异常}</strong><br>
+try和catch配合使用，finally可以不用写。<br>
+如果要捕获多个异常，需要从小到大捕获。<br>
+idea快捷键<code>Ctrl + Alt + T</code></p>
+<p>throw和throws抛出异常。</p>
+<h3 id="自定义异常">自定义异常</h3>
+<p>定义一个类，继承exception类<br>
+<em><strong>暂时用不着，后续待补充</strong></em></p>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -1888,39 +1888,6 @@ list<span class="token punctuation">.</span><span class="token function">add</sp
       </tags>
   </entry>
   <entry>
-    <title>接口、多态</title>
-    <url>/posts/63176.html</url>
-    <content><![CDATA[<h2 id="接口">接口</h2>
-<p>interface</p>
-<ul>
-<li>接口中的成员只有常量和抽象方法。</li>
-<li>在接口中，常量的修饰符public static final可以省略；抽象方法的修饰符public abstract可以省略。</li>
-<li>因为接口是公开的规范，里面的内容都默认是公开的。</li>
-<li>接口不能创建对象。</li>
-</ul>
-<h3 id="实现类">实现类</h3>
-<ul>
-<li>接口是用来被类实现（implements）的，实现接口的类称为实现类。实现类可以理解成所谓的子类。</li>
-<li>接口可以被类单实现，也可以被多实现。</li>
-<li>一个类实现接口，必须重写完全部接口的全部抽象方法，否则这个类需要定义成抽象类。</li>
-</ul>
-<h3 id="注意事项">注意事项</h3>
-<p>新版本允许接口带有方法体的方法</p>
-<ul>
-<li>默认方法：必须用default修饰-实现类对象调用</li>
-<li>静态方法：必须用static修饰-必须用当前接口名调用</li>
-<li>私有方法：用private修饰，只能被接口内部方法访问</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>学Java的第11天</title>
     <url>/posts/9866.html</url>
     <content><![CDATA[<h2 id="权限修饰符">权限修饰符</h2>
@@ -2040,6 +2007,39 @@ SPRING , SUMMER ,AUTUMN , WINTER;<br>
 <li>构造器的构造器都是私有的，枚举对外不能创建对象。</li>
 <li>枚举类的第一行默认都是罗列枚举对象的名称的。</li>
 <li>枚举类相当于是多例模式。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>接口、多态</title>
+    <url>/posts/63176.html</url>
+    <content><![CDATA[<h2 id="接口">接口</h2>
+<p>interface</p>
+<ul>
+<li>接口中的成员只有常量和抽象方法。</li>
+<li>在接口中，常量的修饰符public static final可以省略；抽象方法的修饰符public abstract可以省略。</li>
+<li>因为接口是公开的规范，里面的内容都默认是公开的。</li>
+<li>接口不能创建对象。</li>
+</ul>
+<h3 id="实现类">实现类</h3>
+<ul>
+<li>接口是用来被类实现（implements）的，实现接口的类称为实现类。实现类可以理解成所谓的子类。</li>
+<li>接口可以被类单实现，也可以被多实现。</li>
+<li>一个类实现接口，必须重写完全部接口的全部抽象方法，否则这个类需要定义成抽象类。</li>
+</ul>
+<h3 id="注意事项">注意事项</h3>
+<p>新版本允许接口带有方法体的方法</p>
+<ul>
+<li>默认方法：必须用default修饰-实现类对象调用</li>
+<li>静态方法：必须用static修饰-必须用当前接口名调用</li>
+<li>私有方法：用private修饰，只能被接口内部方法访问</li>
 </ul>
 ]]></content>
       <categories>
@@ -3225,147 +3225,6 @@ system<span class="token punctuation">.</span>out<span class="token punctuation"
       </tags>
   </entry>
   <entry>
-    <title>常见算法</title>
-    <url>/posts/60550.html</url>
-    <content><![CDATA[<h2 id="选择排序">选择排序</h2>
-<p>选择排序的思想</p>
-<ul>
-<li>每轮选择当前位置，开始找出后面的较小值与该位置交换</li>
-</ul>
-<p>选择排序的关键</p>
-<ul>
-<li>确定总共需要选择几轮： 数组的长度-1</li>
-<li>控制每轮从以前位置为基准，与后面元素选择几次。</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token comment">//第一循环控制选择几轮</span>
-  <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>j <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">int</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="二分查找">二分查找</h2>
-<ul>
-<li>二分查询性能好，二分查找的前提是必须是排好序的数据。</li>
-<li>二分查找相当于每次去掉一半的查找范围。</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">35</span><span class="token punctuation">,</span><span class="token number">88</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">binarySearch</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span><span class="token keyword">int</span> data<span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token keyword">int</span> right <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span><span class="token punctuation">(</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>data <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>data <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      right <span class="token operator">=</span> mid <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-      <span class="token keyword">return</span> mid<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//未找到</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Lambda表达式</title>
-    <url>/posts/34313.html</url>
-    <content><![CDATA[<h2 id="Lambda概述">Lambda概述</h2>
-<ul>
-<li>Lambda表达式是JDK 8开始后的一种新语法形式。</li>
-<li>作用：简化围名内部类的代码写法。</li>
-<li><strong>注意：Lambda表达式只能简化函数式接口的匿名内部类的写法形式</strong></li>
-</ul>
-<h3 id="什么是函数式接口？">什么是函数式接口？</h3>
-<ul>
-<li>首先必须是接口、其次接口中有且仅有一个抽象方法的形式</li>
-<li>加上@FunctionalInterface注解</li>
-</ul>
-<h3 id="Lambda表达式的简化格式">Lambda表达式的简化格式</h3>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token punctuation">(</span>匿名内部类被重写方法的形参列表<span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token punctuation">{</span>
-  被重写方法的方法体代码。
-<span class="token punctuation">}</span>
-注：<span class="token operator">-&gt;</span> 是语法形式，无实际含义<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Lambda表达式简化常见接口">Lambda表达式简化常见接口</h2>
-<h3 id="简化Comparator接口的匿名形式">简化Comparator接口的匿名形式</h3>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>ages<span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> o1<span class="token punctuation">,</span><span class="token class-name">Integer</span> o2<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> o2 <span class="token operator">-</span> o1<span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h3 id="简化按钮监听器ActionListener的匿名内部类形式">简化按钮监听器ActionListener的匿名内部类形式</h3>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">btn<span class="token punctuation">.</span><span class="token function">addActionListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">ActionEvent</span> e<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
-  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printin</span><span class="token punctuation">(</span>"登录一下<span class="token operator">~</span><span class="token operator">~</span><span class="token operator">~</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<h2 id="进一步在Lambda表达式的基础上继续简化">进一步在Lambda表达式的基础上继续简化</h2>
-<ul>
-<li>参数类型可以省略不写。</li>
-<li>如果只有一个参数，参数类型可以省略，同时()也可以省略。</li>
-<li>如果Lambda表达式的方法体代码只有一行代码。可以省略大括号不写,同时要省略分号!</li>
-<li>如果Lambda表达式的方法体代码只有一行代码。可以省略大括号不写。此时，如果这行代码是return语句，必须省路return不写，同时也必须省略分号不写。</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>ages<span class="token punctuation">,</span><span class="token punctuation">(</span>o1<span class="token punctuation">,</span>o2<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> o2 <span class="token operator">-</span> o1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>经营了1216天的感情结束了</title>
-    <url>/posts/12271.html</url>
-    <content><![CDATA[<h2 id="时间2021年12月17日02-15">时间2021年12月17日02:15</h2>
-<h2 id="在一起的第1216天">在一起的第1216天</h2>
-<p>分分合合那么多次，虽然不敢面对，但我也知道这次是真的了。</p>
-<p>她让我分手，她说她能找到更好的，我让她解脱。<br>
-最近我需要学习，白天没时间陪她。<br>
-我爱她，尽管她想方设法恶心过我，我还是很爱她。<br>
-我大学陪着她浑浑噩噩，我现在选择学习三个月，<br>
-也是为了我和她能有未来。<br>
-她才答应等我三个月，结果只等了我三天。<br>
-我可能考虑得太远了，轻视了当下和她共处的时间。<br>
-她给了我足够的理由，我现在配不上她。</p>
-<p>你一天刷几小时抖音，我根本没时间看你@我的。<br>
-你无理取闹的时候，我也会忍不住凶你。<br>
-你现在确实没有以前那么凶那么爱生气了。<br>
-我却开始变成了你以前的样子。<br>
-你成长了，我却没有。</p>
-<p>提前祝你成年生日快乐。<br>
-我应该是没有机会陪你过了。<br>
-还有这些年许下的种种承诺，<br>
-都来不及兑现了。</p>
-<p>我不能耽误你了。<br>
-谢谢你还想跟我做朋友，<br>
-但是我不能留在你的生活中。<br>
-我受不了你近在眼前却不属于我的感觉，<br>
-你知道的，我占有欲很强，不想可望而不可及。<br>
-让我再自私这最后一次吧。<br>
-我爱你 卡洛<br>
-再见了</p>
-]]></content>
-      <categories>
-        <category>Diary</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Arrays类</title>
     <url>/posts/33507.html</url>
     <content><![CDATA[<h2 id="Arrays类概述">Arrays类概述</h2>
@@ -3427,6 +3286,147 @@ students<span class="token punctuation">[</span><span class="token number">2</sp
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">tostring</span><span class="token punctuation">(</span>ages1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>如果是小数排序</p>
 <p>可以使用<strong>return Double.compare(o1.getHeight(),o2.getHeight());</strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见算法</title>
+    <url>/posts/60550.html</url>
+    <content><![CDATA[<h2 id="选择排序">选择排序</h2>
+<p>选择排序的思想</p>
+<ul>
+<li>每轮选择当前位置，开始找出后面的较小值与该位置交换</li>
+</ul>
+<p>选择排序的关键</p>
+<ul>
+<li>确定总共需要选择几轮： 数组的长度-1</li>
+<li>控制每轮从以前位置为基准，与后面元素选择几次。</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token comment">//第一循环控制选择几轮</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>j <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>j <span class="token operator">&lt;</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> temp <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="二分查找">二分查找</h2>
+<ul>
+<li>二分查询性能好，二分查找的前提是必须是排好序的数据。</li>
+<li>二分查找相当于每次去掉一半的查找范围。</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">35</span><span class="token punctuation">,</span><span class="token number">88</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">binarySearch</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">binarySearch</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> arr<span class="token punctuation">,</span><span class="token keyword">int</span> data<span class="token punctuation">)</span><span class="token punctuation">{</span>
+  <span class="token keyword">int</span> left <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+  <span class="token keyword">int</span> right <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>left <span class="token operator">&lt;=</span> right<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">int</span> mid <span class="token operator">=</span> <span class="token punctuation">(</span>left <span class="token operator">+</span> right<span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>data <span class="token operator">&gt;</span> arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      left <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>data <span class="token operator">&lt;</span> arr<span class="token punctuation">[</span>mid<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      right <span class="token operator">=</span> mid <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+      <span class="token keyword">return</span> mid<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span><span class="token comment">//未找到</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>经营了1216天的感情结束了</title>
+    <url>/posts/12271.html</url>
+    <content><![CDATA[<h2 id="时间2021年12月17日02-15">时间2021年12月17日02:15</h2>
+<h2 id="在一起的第1216天">在一起的第1216天</h2>
+<p>分分合合那么多次，虽然不敢面对，但我也知道这次是真的了。</p>
+<p>她让我分手，她说她能找到更好的，我让她解脱。<br>
+最近我需要学习，白天没时间陪她。<br>
+我爱她，尽管她想方设法恶心过我，我还是很爱她。<br>
+我大学陪着她浑浑噩噩，我现在选择学习三个月，<br>
+也是为了我和她能有未来。<br>
+她才答应等我三个月，结果只等了我三天。<br>
+我可能考虑得太远了，轻视了当下和她共处的时间。<br>
+她给了我足够的理由，我现在配不上她。</p>
+<p>你一天刷几小时抖音，我根本没时间看你@我的。<br>
+你无理取闹的时候，我也会忍不住凶你。<br>
+你现在确实没有以前那么凶那么爱生气了。<br>
+我却开始变成了你以前的样子。<br>
+你成长了，我却没有。</p>
+<p>提前祝你成年生日快乐。<br>
+我应该是没有机会陪你过了。<br>
+还有这些年许下的种种承诺，<br>
+都来不及兑现了。</p>
+<p>我不能耽误你了。<br>
+谢谢你还想跟我做朋友，<br>
+但是我不能留在你的生活中。<br>
+我受不了你近在眼前却不属于我的感觉，<br>
+你知道的，我占有欲很强，不想可望而不可及。<br>
+让我再自私这最后一次吧。<br>
+我爱你 卡洛<br>
+再见了</p>
+]]></content>
+      <categories>
+        <category>Diary</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Lambda表达式</title>
+    <url>/posts/34313.html</url>
+    <content><![CDATA[<h2 id="Lambda概述">Lambda概述</h2>
+<ul>
+<li>Lambda表达式是JDK 8开始后的一种新语法形式。</li>
+<li>作用：简化围名内部类的代码写法。</li>
+<li><strong>注意：Lambda表达式只能简化函数式接口的匿名内部类的写法形式</strong></li>
+</ul>
+<h3 id="什么是函数式接口？">什么是函数式接口？</h3>
+<ul>
+<li>首先必须是接口、其次接口中有且仅有一个抽象方法的形式</li>
+<li>加上@FunctionalInterface注解</li>
+</ul>
+<h3 id="Lambda表达式的简化格式">Lambda表达式的简化格式</h3>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token punctuation">(</span>匿名内部类被重写方法的形参列表<span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token punctuation">{</span>
+  被重写方法的方法体代码。
+<span class="token punctuation">}</span>
+注：<span class="token operator">-&gt;</span> 是语法形式，无实际含义<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Lambda表达式简化常见接口">Lambda表达式简化常见接口</h2>
+<h3 id="简化Comparator接口的匿名形式">简化Comparator接口的匿名形式</h3>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>ages<span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token class-name">Integer</span> o1<span class="token punctuation">,</span><span class="token class-name">Integer</span> o2<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> o2 <span class="token operator">-</span> o1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="简化按钮监听器ActionListener的匿名内部类形式">简化按钮监听器ActionListener的匿名内部类形式</h3>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">btn<span class="token punctuation">.</span><span class="token function">addActionListener</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">ActionEvent</span> e<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> <span class="token punctuation">{</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printin</span><span class="token punctuation">(</span>"登录一下<span class="token operator">~</span><span class="token operator">~</span><span class="token operator">~</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h2 id="进一步在Lambda表达式的基础上继续简化">进一步在Lambda表达式的基础上继续简化</h2>
+<ul>
+<li>参数类型可以省略不写。</li>
+<li>如果只有一个参数，参数类型可以省略，同时()也可以省略。</li>
+<li>如果Lambda表达式的方法体代码只有一行代码。可以省略大括号不写,同时要省略分号!</li>
+<li>如果Lambda表达式的方法体代码只有一行代码。可以省略大括号不写。此时，如果这行代码是return语句，必须省路return不写，同时也必须省略分号不写。</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">sort</span><span class="token punctuation">(</span>ages<span class="token punctuation">,</span><span class="token punctuation">(</span>o1<span class="token punctuation">,</span>o2<span class="token punctuation">)</span> <span class="token operator">-&gt;</span> o2 <span class="token operator">-</span> o1<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>Java</category>
