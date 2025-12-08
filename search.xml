@@ -1073,217 +1073,6 @@ int c = a&gt;b?a:b;<br>
       </tags>
   </entry>
   <entry>
-    <title>学Java的第6天</title>
-    <url>/posts/4974.html</url>
-    <content><![CDATA[<h2 id="数组">数组</h2>
-<ul>
-<li>数组是相同类型的数据的有序集合</li>
-<li>其中每一个数据称作数组元素，每个数组元素可以通过下标访问他们</li>
-</ul>
-<h3 id="数组的声明创建">数组的声明创建</h3>
-<p>声明数组变量的语法：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">dataType<span class="token punctuation">[</span><span class="token punctuation">]</span> arrayRefVar<span class="token punctuation">;</span><span class="token comment">//首选方法</span>
-或
-dataType arrayRefVar<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//效果相同，非首选方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p>Java语言使用new关键字来创建数组，语法如下：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java">dataType<span class="token punctuation">[</span><span class="token punctuation">]</span> arrayRefVar <span class="token operator">=</span> <span class="token keyword">new</span> dataType<span class="token punctuation">[</span>arraySize<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>数组的元素通过索引（下标）来访问，从0开始<br>
-获取数组长度： array.length<br>
-在栈中声明，new在堆中开辟空间</p>
-<h3 id="数组初始化">数组初始化</h3>
-<p>静态初始化：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>动态初始化：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
-a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>赋值一个元素后，其他元素隐式赋值，默认值为0。</p>
-<h3 id="数组的四个基本特点">数组的四个基本特点</h3>
-<ol>
-<li>长度确定，一旦被创建，大小无法改变</li>
-<li>元素类型必须相同，不能出现混合类型</li>
-<li>元素可以是任何类型，包括基本类型和引用类型</li>
-<li>数组变量属于引用类型，可以看成是对象，元素相当于对象的成员变量</li>
-</ol>
-<h3 id="数组的边界">数组的边界</h3>
-<p>0 ~ 数组长度-1
-下标越界异常：
-java.lang.ArrayIndexOutOfBoundsException</p>
-<h3 id="数组的使用">数组的使用</h3>
-<p>普通for循环遍历数组
-for……each遍历数组</p>
-<h3 id="多维数组">多维数组</h3>
-<p>二维数组：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>二维数组相当于一个一维数组，它的每个元素也是一个一维数组</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>二维数组的遍历：</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> x <span class="token operator">:</span> a
-    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> b <span class="token operator">:</span> x
-        <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>三维数组就是每个元素都是一个二维数组……套娃</p>
-<h3 id="Arrays类">Arrays类</h3>
-<h4 id="toString">toString</h4>
-<p>Arrays.toString()
-打印数组元素</p>
-<h4 id="sort">sort</h4>
-<p>Arrays.sort()
-升序排序</p>
-<h4 id="fill">fill</h4>
-<p>Arrays.fill(数组对象,值)
-Arrays.fill(数组对象,起始索引,结束索引,值)
-填充元素赋值</p>
-<h4 id="equals">equals</h4>
-<p>比较数组</p>
-<h4 id="binarySearch">binarySearch</h4>
-<p>对排序好的数组进行二分查找</p>
-<h3 id="八大排序">八大排序</h3>
-<p>详情见我写的另一篇文章<a href="https://www.cnblogs.com/morethink/p/8419151.html">八大排序算法</a></p>
-<h3 id="稀疏数组">稀疏数组</h3>
-<p>当一个数组大部分元素为0或同一个值时，可以使用稀疏数组来保存<br>
-稀疏数组的处理方式：</p>
-<ol>
-<li>记录有几行几列有几个不同值</li>
-<li>记录不同值的索引和具体值</li>
-</ol>
-<p>案例：假设有个11*11的棋盘，只有某几个位置有棋子</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SparseArray</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment">//创建一个二维数组 11*11   0：没有棋子， 1：黑棋， 2：白棋</span>
-        <span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"原数组为："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- 
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> x <span class="token operator">:</span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">:</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
- 
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"============================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- 
-        <span class="token comment">//转化为稀疏数组</span>
-        <span class="token comment">//先获取有效值的个数</span>
-        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">11</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">11</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                    sum <span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"有效值的个数为："</span> <span class="token operator">+</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
- 
-        <span class="token comment">//创建稀疏数组</span>
-        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>sum<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">;</span>
-        b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">;</span>
-        b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> sum<span class="token punctuation">;</span>
- 
-        <span class="token comment">//遍历二维数组，将非0的值存放到稀疏数组</span>
-        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> a<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                    count<span class="token operator">++</span><span class="token punctuation">;</span>
-                    b<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
-                    b<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> j<span class="token punctuation">;</span>
-                    b<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"稀疏数组为："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span> <span class="token operator">+</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span> <span class="token operator">+</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
- 
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"============================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"还原数组:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
- 
-        <span class="token comment">//读取稀疏数组</span>
-        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
- 
-        <span class="token comment">//还原数组的值</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>b<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            c<span class="token punctuation">[</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"还原数组为："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> i<span class="token operator">:</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">:</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>j <span class="token operator">+</span> <span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
- 
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="面向对象编程">面向对象编程</h2>
-<h3 id="什么是面向对象">什么是面向对象</h3>
-<ul>
-<li>
-<p>面向对象编程(Object-Oriented Programming, OOP)</p>
-</li>
-<li>
-<p>面向对象编程的本质就是:以类的方式组织代码，以对象的组织(封装)数据。</p>
-</li>
-<li>
-<p>抽象</p>
-</li>
-<li>
-<p>三大特性：</p>
-<ul>
-<li>封装</li>
-<li>继承</li>
-<li>多态</li>
-</ul>
-</li>
-<li>
-<p>从认识论角度考虑是先有对象后有类。对象，是具体的事物。类，是抽象的，是对对象的抽象</p>
-</li>
-<li>
-<p>从代码运行角度考虑是先有类后有对象。类是对象的模板。</p>
-</li>
-</ul>
-<h3 id="方法回顾">方法回顾</h3>
-<h4 id="静态方法">静态方法</h4>
-<p>用static修饰的方法<br>
-可以直接用  <code>类名.方法名()</code> 调用</p>
-<h4 id="非静态方法">非静态方法</h4>
-<p>没有用static修饰的方法<br>
-需要先实例化对象才能调用</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">GirlFriend</span> gl <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GirlFriend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-gl<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h3 id="创建与初始化对象">创建与初始化对象</h3>
-<p>使用new关键字创建对象，除了分配内存空间外还会给创建好的对象进行初始化以及对类中的构造方法的调用。<br>
-构造方法的特点：</p>
-<ol>
-<li>必须和类的名字相同</li>
-<li>必须没有返回类型，也不能写void</li>
-</ol>
-<p>什么都不写的时候，默认会提供一个无参构造方法。<br>
-一个类可以有多个构造方法。构造方法也能重载。<br>
-构造方法相当于给对象初始化的时候赋予对象初始值。<br>
-快捷键Alt + Insert创建构造方法。</p>
-<h3 id="创建对象内存分析">创建对象内存分析</h3>
-<p>在栈中的保存的是对象的引用变量名，真正的对象在堆中，根据类为模板生成对象，根据构造方法给对象赋予初始属性。</p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>学Java的第5天</title>
     <url>/posts/22382.html</url>
     <content><![CDATA[<h2 id="Scanner对象">Scanner对象</h2>
@@ -1764,6 +1553,217 @@ list<span class="token punctuation">.</span><span class="token function">add</sp
       </tags>
   </entry>
   <entry>
+    <title>学Java的第6天</title>
+    <url>/posts/4974.html</url>
+    <content><![CDATA[<h2 id="数组">数组</h2>
+<ul>
+<li>数组是相同类型的数据的有序集合</li>
+<li>其中每一个数据称作数组元素，每个数组元素可以通过下标访问他们</li>
+</ul>
+<h3 id="数组的声明创建">数组的声明创建</h3>
+<p>声明数组变量的语法：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">dataType<span class="token punctuation">[</span><span class="token punctuation">]</span> arrayRefVar<span class="token punctuation">;</span><span class="token comment">//首选方法</span>
+或
+dataType arrayRefVar<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment">//效果相同，非首选方法</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>Java语言使用new关键字来创建数组，语法如下：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">dataType<span class="token punctuation">[</span><span class="token punctuation">]</span> arrayRefVar <span class="token operator">=</span> <span class="token keyword">new</span> dataType<span class="token punctuation">[</span>arraySize<span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>数组的元素通过索引（下标）来访问，从0开始<br>
+获取数组长度： array.length<br>
+在栈中声明，new在堆中开辟空间</p>
+<h3 id="数组初始化">数组初始化</h3>
+<p>静态初始化：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>动态初始化：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+a<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
+a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>赋值一个元素后，其他元素隐式赋值，默认值为0。</p>
+<h3 id="数组的四个基本特点">数组的四个基本特点</h3>
+<ol>
+<li>长度确定，一旦被创建，大小无法改变</li>
+<li>元素类型必须相同，不能出现混合类型</li>
+<li>元素可以是任何类型，包括基本类型和引用类型</li>
+<li>数组变量属于引用类型，可以看成是对象，元素相当于对象的成员变量</li>
+</ol>
+<h3 id="数组的边界">数组的边界</h3>
+<p>0 ~ 数组长度-1
+下标越界异常：
+java.lang.ArrayIndexOutOfBoundsException</p>
+<h3 id="数组的使用">数组的使用</h3>
+<p>普通for循环遍历数组
+for……each遍历数组</p>
+<h3 id="多维数组">多维数组</h3>
+<p>二维数组：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>二维数组相当于一个一维数组，它的每个元素也是一个一维数组</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>二维数组的遍历：</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> x <span class="token operator">:</span> a
+    <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> b <span class="token operator">:</span> x
+        <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>三维数组就是每个元素都是一个二维数组……套娃</p>
+<h3 id="Arrays类">Arrays类</h3>
+<h4 id="toString">toString</h4>
+<p>Arrays.toString()
+打印数组元素</p>
+<h4 id="sort">sort</h4>
+<p>Arrays.sort()
+升序排序</p>
+<h4 id="fill">fill</h4>
+<p>Arrays.fill(数组对象,值)
+Arrays.fill(数组对象,起始索引,结束索引,值)
+填充元素赋值</p>
+<h4 id="equals">equals</h4>
+<p>比较数组</p>
+<h4 id="binarySearch">binarySearch</h4>
+<p>对排序好的数组进行二分查找</p>
+<h3 id="八大排序">八大排序</h3>
+<p>详情见我写的另一篇文章<a href="https://www.cnblogs.com/morethink/p/8419151.html">八大排序算法</a></p>
+<h3 id="稀疏数组">稀疏数组</h3>
+<p>当一个数组大部分元素为0或同一个值时，可以使用稀疏数组来保存<br>
+稀疏数组的处理方式：</p>
+<ol>
+<li>记录有几行几列有几个不同值</li>
+<li>记录不同值的索引和具体值</li>
+</ol>
+<p>案例：假设有个11*11的棋盘，只有某几个位置有棋子</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SparseArray</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//创建一个二维数组 11*11   0：没有棋子， 1：黑棋， 2：白棋</span>
+        <span class="token keyword">int</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> a <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        a<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"原数组为："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> x <span class="token operator">:</span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">:</span> x<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+ 
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"============================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+        <span class="token comment">//转化为稀疏数组</span>
+        <span class="token comment">//先获取有效值的个数</span>
+        <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">11</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> <span class="token number">11</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    sum <span class="token operator">++</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"有效值的个数为："</span> <span class="token operator">+</span> sum<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+        <span class="token comment">//创建稀疏数组</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> b <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>sum<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">;</span>
+        b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">11</span><span class="token punctuation">;</span>
+        b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> sum<span class="token punctuation">;</span>
+ 
+        <span class="token comment">//遍历二维数组，将非0的值存放到稀疏数组</span>
+        <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> a<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    count<span class="token operator">++</span><span class="token punctuation">;</span>
+                    b<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> i<span class="token punctuation">;</span>
+                    b<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> j<span class="token punctuation">;</span>
+                    b<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"稀疏数组为："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span> <span class="token operator">+</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span> <span class="token operator">+</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+ 
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"============================="</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"还原数组:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+        <span class="token comment">//读取稀疏数组</span>
+        <span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> c <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token keyword">int</span><span class="token punctuation">[</span>b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>b<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+ 
+        <span class="token comment">//还原数组的值</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span>b<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            c<span class="token punctuation">[</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">[</span>b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">=</span> b<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"还原数组为："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span><span class="token punctuation">[</span><span class="token punctuation">]</span> i<span class="token operator">:</span> c<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> j<span class="token operator">:</span>i<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>j <span class="token operator">+</span> <span class="token string">"\t"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+ 
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="面向对象编程">面向对象编程</h2>
+<h3 id="什么是面向对象">什么是面向对象</h3>
+<ul>
+<li>
+<p>面向对象编程(Object-Oriented Programming, OOP)</p>
+</li>
+<li>
+<p>面向对象编程的本质就是:以类的方式组织代码，以对象的组织(封装)数据。</p>
+</li>
+<li>
+<p>抽象</p>
+</li>
+<li>
+<p>三大特性：</p>
+<ul>
+<li>封装</li>
+<li>继承</li>
+<li>多态</li>
+</ul>
+</li>
+<li>
+<p>从认识论角度考虑是先有对象后有类。对象，是具体的事物。类，是抽象的，是对对象的抽象</p>
+</li>
+<li>
+<p>从代码运行角度考虑是先有类后有对象。类是对象的模板。</p>
+</li>
+</ul>
+<h3 id="方法回顾">方法回顾</h3>
+<h4 id="静态方法">静态方法</h4>
+<p>用static修饰的方法<br>
+可以直接用  <code>类名.方法名()</code> 调用</p>
+<h4 id="非静态方法">非静态方法</h4>
+<p>没有用static修饰的方法<br>
+需要先实例化对象才能调用</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">GirlFriend</span> gl <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GirlFriend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+gl<span class="token punctuation">.</span><span class="token function">eat</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h3 id="创建与初始化对象">创建与初始化对象</h3>
+<p>使用new关键字创建对象，除了分配内存空间外还会给创建好的对象进行初始化以及对类中的构造方法的调用。<br>
+构造方法的特点：</p>
+<ol>
+<li>必须和类的名字相同</li>
+<li>必须没有返回类型，也不能写void</li>
+</ol>
+<p>什么都不写的时候，默认会提供一个无参构造方法。<br>
+一个类可以有多个构造方法。构造方法也能重载。<br>
+构造方法相当于给对象初始化的时候赋予对象初始值。<br>
+快捷键Alt + Insert创建构造方法。</p>
+<h3 id="创建对象内存分析">创建对象内存分析</h3>
+<p>在栈中的保存的是对象的引用变量名，真正的对象在堆中，根据类为模板生成对象，根据构造方法给对象赋予初始属性。</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>学Java的第10天</title>
     <url>/posts/55947.html</url>
     <content><![CDATA[<h2 id="static关键字">static关键字</h2>
@@ -2018,39 +2018,6 @@ SPRING , SUMMER ,AUTUMN , WINTER;<br>
       </tags>
   </entry>
   <entry>
-    <title>接口、多态</title>
-    <url>/posts/63176.html</url>
-    <content><![CDATA[<h2 id="接口">接口</h2>
-<p>interface</p>
-<ul>
-<li>接口中的成员只有常量和抽象方法。</li>
-<li>在接口中，常量的修饰符public static final可以省略；抽象方法的修饰符public abstract可以省略。</li>
-<li>因为接口是公开的规范，里面的内容都默认是公开的。</li>
-<li>接口不能创建对象。</li>
-</ul>
-<h3 id="实现类">实现类</h3>
-<ul>
-<li>接口是用来被类实现（implements）的，实现接口的类称为实现类。实现类可以理解成所谓的子类。</li>
-<li>接口可以被类单实现，也可以被多实现。</li>
-<li>一个类实现接口，必须重写完全部接口的全部抽象方法，否则这个类需要定义成抽象类。</li>
-</ul>
-<h3 id="注意事项">注意事项</h3>
-<p>新版本允许接口带有方法体的方法</p>
-<ul>
-<li>默认方法：必须用default修饰-实现类对象调用</li>
-<li>静态方法：必须用static修饰-必须用当前接口名调用</li>
-<li>私有方法：用private修饰，只能被接口内部方法访问</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一个多态案例</title>
     <url>/posts/1044.html</url>
     <content><![CDATA[<p>需求：</p>
@@ -2187,6 +2154,39 @@ SPRING , SUMMER ,AUTUMN , WINTER;<br>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="测试结果">测试结果</h3>
 <p><img src="https://cdn.jsdelivr.net/gh/limitlm/mypic@main/img/1642072822.png" alt="测试结果"></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>接口、多态</title>
+    <url>/posts/63176.html</url>
+    <content><![CDATA[<h2 id="接口">接口</h2>
+<p>interface</p>
+<ul>
+<li>接口中的成员只有常量和抽象方法。</li>
+<li>在接口中，常量的修饰符public static final可以省略；抽象方法的修饰符public abstract可以省略。</li>
+<li>因为接口是公开的规范，里面的内容都默认是公开的。</li>
+<li>接口不能创建对象。</li>
+</ul>
+<h3 id="实现类">实现类</h3>
+<ul>
+<li>接口是用来被类实现（implements）的，实现接口的类称为实现类。实现类可以理解成所谓的子类。</li>
+<li>接口可以被类单实现，也可以被多实现。</li>
+<li>一个类实现接口，必须重写完全部接口的全部抽象方法，否则这个类需要定义成抽象类。</li>
+</ul>
+<h3 id="注意事项">注意事项</h3>
+<p>新版本允许接口带有方法体的方法</p>
+<ul>
+<li>默认方法：必须用default修饰-实现类对象调用</li>
+<li>静态方法：必须用static修饰-必须用当前接口名调用</li>
+<li>私有方法：用private修饰，只能被接口内部方法访问</li>
+</ul>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -3694,6 +3694,44 @@ students<span class="token punctuation">[</span><span class="token number">2</sp
       </tags>
   </entry>
   <entry>
+    <title>学Java的准备工作</title>
+    <url>/posts/64268.html</url>
+    <content><![CDATA[<p>大学没有ssm框架的课程，找工作必须要会这个，那我自学。</p>
+<p>从最基础的开始，就当复习了。</p>
+<p>视频教程看b站狂神说，动力节点，尚硅谷，黑马的。</p>
+<h1>1.搭建环境</h1>
+<h2 id="1-1从eclipse到idea">1.1从eclipse到idea</h2>
+<p>idea确实比eclipse先进，按照教学选择用idea</p>
+<h3 id="1-1-1安装idea">1.1.1安装idea</h3>
+<p>去官网下载idea的最新版，不要下载社区版，后续社区版不能用spring</p>
+<h3 id="1-1-2安装无限试用插件">1.1.2安装无限试用插件</h3>
+<p>学生优惠只有一年，还是太贵了，现在也只是个人学习使用，等以后工作用上的时候再补票入正吧。</p>
+<h2 id="1-2安装Java环境">1.2安装Java环境</h2>
+<p>大一就安装好了</p>
+<h3 id="1-2-1安装jdk">1.2.1安装jdk</h3>
+<p>在官网下载的jdk13</p>
+<h3 id="1-2-2测试是否安装成功">1.2.2测试是否安装成功</h3>
+<p>win+R运行cmd</p>
+<p>输入java -version查看</p>
+<p><img src="https://cdn.jsdelivr.net/gh/limitlm/mypic/img/202111161659540.png" alt="安装成功"></p>
+<h1>2开始编程</h1>
+<h2 id="2-1写个hello-world吧">2.1写个hello world吧</h2>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong><code>Java入门到入土正式开始了</code></strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>markdown语法</title>
     <url>/posts/47193.html</url>
     <content><![CDATA[<h1>markdown基础教程</h1>
@@ -3850,44 +3888,6 @@ students<span class="token punctuation">[</span><span class="token number">2</sp
       </categories>
       <tags>
         <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学Java的准备工作</title>
-    <url>/posts/64268.html</url>
-    <content><![CDATA[<p>大学没有ssm框架的课程，找工作必须要会这个，那我自学。</p>
-<p>从最基础的开始，就当复习了。</p>
-<p>视频教程看b站狂神说，动力节点，尚硅谷，黑马的。</p>
-<h1>1.搭建环境</h1>
-<h2 id="1-1从eclipse到idea">1.1从eclipse到idea</h2>
-<p>idea确实比eclipse先进，按照教学选择用idea</p>
-<h3 id="1-1-1安装idea">1.1.1安装idea</h3>
-<p>去官网下载idea的最新版，不要下载社区版，后续社区版不能用spring</p>
-<h3 id="1-1-2安装无限试用插件">1.1.2安装无限试用插件</h3>
-<p>学生优惠只有一年，还是太贵了，现在也只是个人学习使用，等以后工作用上的时候再补票入正吧。</p>
-<h2 id="1-2安装Java环境">1.2安装Java环境</h2>
-<p>大一就安装好了</p>
-<h3 id="1-2-1安装jdk">1.2.1安装jdk</h3>
-<p>在官网下载的jdk13</p>
-<h3 id="1-2-2测试是否安装成功">1.2.2测试是否安装成功</h3>
-<p>win+R运行cmd</p>
-<p>输入java -version查看</p>
-<p><img src="https://cdn.jsdelivr.net/gh/limitlm/mypic/img/202111161659540.png" alt="安装成功"></p>
-<h1>2开始编程</h1>
-<h2 id="2-1写个hello-world吧">2.1写个hello world吧</h2>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong><code>Java入门到入土正式开始了</code></strong></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
