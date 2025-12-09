@@ -972,6 +972,107 @@ Unicode编码占2字节</p>
       </tags>
   </entry>
   <entry>
+    <title>学Java的第4天</title>
+    <url>/posts/43887.html</url>
+    <content><![CDATA[<h2 id="类型转换">类型转换</h2>
+<p>原则上是低----------&gt;高<br>
+byte,short,char-&gt;int-&gt;long-&gt;float-&gt;double<br>
+运算中，不同类型的数据先转化为同一类型，然后再进行运算<br>
+<strong>注意数据溢出问题</strong></p>
+<h3 id="强制类型转换">强制类型转换</h3>
+<p>高-----&gt;低<br>
+在数据前面加上(数据类型)</p>
+<h4 id="案例">案例</h4>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//可以用下划线_分割数字，不改变大小</span>
+<span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">10_0000_0000</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> b<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> c1<span class="token operator">=</span>a<span class="token operator">*</span>b<span class="token punctuation">;</span>
+<span class="token keyword">long</span> c2<span class="token operator">=</span>a<span class="token operator">*</span>b<span class="token punctuation">;</span>
+<span class="token keyword">long</span> c3<span class="token operator">=</span>a<span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span>b<span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//输出负数溢出了</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//输出还是负数</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//输出正常</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>说明是先计算再赋值，先计算结果溢出了，赋值给long类型的c还是溢出后的结果</p>
+<h3 id="自动类型转换">自动类型转换</h3>
+<p>低-----&gt;高<br>
+(int)1.1;<br>
+//输出1</p>
+<h2 id="变量">变量</h2>
+<p>变量就是可以变化的量<br>
+局部变量必须声明初始值</p>
+<h2 id="常量">常量</h2>
+<p>常量初始化后不能变化<br>
+final 常量名=值<br>
+常量名一般用大写</p>
+<h2 id="变量的命名规范">变量的命名规范</h2>
+<ol>
+<li>所有变量、方法、类名：用英语，见名知意</li>
+<li>类成员变量：首字母小写和驼峰原则：monthSalary</li>
+<li>局部变量：首字母小写和驼峰原则</li>
+<li>常量：大写字母和下划线：MAX_VALUE</li>
+<li>类名：首字母大写和驼峰原则：Man、GoodMan</li>
+<li>方法名：首字母小写和驼峰原则：run()，runRun()</li>
+</ol>
+<h2 id="运算符">运算符</h2>
+<ul>
+<li>算术运算符：+，-，*，/，%，++，–</li>
+<li>赋值运算符：=</li>
+<li>关系运算符：&gt;，&lt;，&gt;=，&lt;=，==，!=instanceof</li>
+<li>逻辑运算符：&amp;&amp;，||，!</li>
+<li>位运算符：&amp;，|，^，~，&gt;&gt;，&lt;&lt;，&gt;&gt;&gt;（了解）</li>
+<li>条件运算符?，:</li>
+<li>扩展赋值运算符：+=，-=，*=，/=</li>
+</ul>
+<h3 id="自增自减">自增自减</h3>
+<p>int a = 3;<br>
+int b = a++;<br>
+//先赋值再自增，此时a=4，b=3<br>
+int c = ++a;<br>
+//先自增再赋值，此时a=5，c=5</p>
+<h2 id="三元运算符">三元运算符</h2>
+<p>int a = 1;<br>
+int b = 2;<br>
+int c = a&gt;b?a:b;<br>
+//a&gt;b为true则c=a=1；否则c=b=2；</p>
+<h2 id="包机制">包机制</h2>
+<ul>
+<li>为了更好的组织类，Java提供了包机制，用于区别类名的命名空间</li>
+<li>包语句的语法格式为：</li>
+</ul>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">pkg1</span><span class="token punctuation">[</span><span class="token punctuation">.</span>pkg2<span class="token punctuation">[</span><span class="token punctuation">.</span>pkg3…<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li><strong><code>一般利用公司域名倒置作为包名：com.xxx.xxx</code></strong></li>
+<li>为了能够使用某一个包的成员，我们需要在Java程序中明确导入该包，使用import语句可完成此功能</li>
+</ul>
+<pre><code class="language-java">import pkg1[.pkg2…].(classname|*);
+</code></pre>
+<h2 id="JavaDoc">JavaDoc</h2>
+<ul>
+<li>javadoc命令是用来生成自己API文档的</li>
+<li>生成html文件</li>
+</ul>
+<h3 id="参数信息">参数信息</h3>
+<ul>
+<li>@author 作者名</li>
+<li>@version 版本号</li>
+<li>@since 指明需要最早使用的jdk版本</li>
+<li>@param 参数名</li>
+<li>@return 返回值情况</li>
+<li>@throws 异常抛出情况</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>学Java的第5天</title>
     <url>/posts/22382.html</url>
     <content><![CDATA[<h2 id="Scanner对象">Scanner对象</h2>
@@ -1145,107 +1246,6 @@ continue退出本次循环</p>
         <span class="token keyword">return</span> n <span class="token operator">*</span> <span class="token function">f</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>学Java的第4天</title>
-    <url>/posts/43887.html</url>
-    <content><![CDATA[<h2 id="类型转换">类型转换</h2>
-<p>原则上是低----------&gt;高<br>
-byte,short,char-&gt;int-&gt;long-&gt;float-&gt;double<br>
-运算中，不同类型的数据先转化为同一类型，然后再进行运算<br>
-<strong>注意数据溢出问题</strong></p>
-<h3 id="强制类型转换">强制类型转换</h3>
-<p>高-----&gt;低<br>
-在数据前面加上(数据类型)</p>
-<h4 id="案例">案例</h4>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token comment">//可以用下划线_分割数字，不改变大小</span>
-<span class="token keyword">int</span> a<span class="token operator">=</span><span class="token number">10_0000_0000</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> b<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> c1<span class="token operator">=</span>a<span class="token operator">*</span>b<span class="token punctuation">;</span>
-<span class="token keyword">long</span> c2<span class="token operator">=</span>a<span class="token operator">*</span>b<span class="token punctuation">;</span>
-<span class="token keyword">long</span> c3<span class="token operator">=</span>a<span class="token operator">*</span><span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span>b<span class="token punctuation">;</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//输出负数溢出了</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c2<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//输出还是负数</span>
-<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span>c3<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment">//输出正常</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>说明是先计算再赋值，先计算结果溢出了，赋值给long类型的c还是溢出后的结果</p>
-<h3 id="自动类型转换">自动类型转换</h3>
-<p>低-----&gt;高<br>
-(int)1.1;<br>
-//输出1</p>
-<h2 id="变量">变量</h2>
-<p>变量就是可以变化的量<br>
-局部变量必须声明初始值</p>
-<h2 id="常量">常量</h2>
-<p>常量初始化后不能变化<br>
-final 常量名=值<br>
-常量名一般用大写</p>
-<h2 id="变量的命名规范">变量的命名规范</h2>
-<ol>
-<li>所有变量、方法、类名：用英语，见名知意</li>
-<li>类成员变量：首字母小写和驼峰原则：monthSalary</li>
-<li>局部变量：首字母小写和驼峰原则</li>
-<li>常量：大写字母和下划线：MAX_VALUE</li>
-<li>类名：首字母大写和驼峰原则：Man、GoodMan</li>
-<li>方法名：首字母小写和驼峰原则：run()，runRun()</li>
-</ol>
-<h2 id="运算符">运算符</h2>
-<ul>
-<li>算术运算符：+，-，*，/，%，++，–</li>
-<li>赋值运算符：=</li>
-<li>关系运算符：&gt;，&lt;，&gt;=，&lt;=，==，!=instanceof</li>
-<li>逻辑运算符：&amp;&amp;，||，!</li>
-<li>位运算符：&amp;，|，^，~，&gt;&gt;，&lt;&lt;，&gt;&gt;&gt;（了解）</li>
-<li>条件运算符?，:</li>
-<li>扩展赋值运算符：+=，-=，*=，/=</li>
-</ul>
-<h3 id="自增自减">自增自减</h3>
-<p>int a = 3;<br>
-int b = a++;<br>
-//先赋值再自增，此时a=4，b=3<br>
-int c = ++a;<br>
-//先自增再赋值，此时a=5，c=5</p>
-<h2 id="三元运算符">三元运算符</h2>
-<p>int a = 1;<br>
-int b = 2;<br>
-int c = a&gt;b?a:b;<br>
-//a&gt;b为true则c=a=1；否则c=b=2；</p>
-<h2 id="包机制">包机制</h2>
-<ul>
-<li>为了更好的组织类，Java提供了包机制，用于区别类名的命名空间</li>
-<li>包语句的语法格式为：</li>
-</ul>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">package</span> <span class="token namespace">pkg1</span><span class="token punctuation">[</span><span class="token punctuation">.</span>pkg2<span class="token punctuation">[</span><span class="token punctuation">.</span>pkg3…<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<ul>
-<li><strong><code>一般利用公司域名倒置作为包名：com.xxx.xxx</code></strong></li>
-<li>为了能够使用某一个包的成员，我们需要在Java程序中明确导入该包，使用import语句可完成此功能</li>
-</ul>
-<pre><code class="language-java">import pkg1[.pkg2…].(classname|*);
-</code></pre>
-<h2 id="JavaDoc">JavaDoc</h2>
-<ul>
-<li>javadoc命令是用来生成自己API文档的</li>
-<li>生成html文件</li>
-</ul>
-<h3 id="参数信息">参数信息</h3>
-<ul>
-<li>@author 作者名</li>
-<li>@version 版本号</li>
-<li>@since 指明需要最早使用的jdk版本</li>
-<li>@param 参数名</li>
-<li>@return 返回值情况</li>
-<li>@throws 异常抛出情况</li>
-</ul>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -2312,6 +2312,68 @@ btn<span class="token punctuation">.</span><span class="token function">addActio
       </tags>
   </entry>
   <entry>
+    <title>常用API——Object和Objects</title>
+    <url>/posts/63919.html</url>
+    <content><![CDATA[<h2 id="Object类">Object类</h2>
+<p>Object类的作用：</p>
+<ul>
+<li>一个类要么默认继承了Object类，要么间接继承了Object类，Object类是Java中的祖宗类。</li>
+<li>Object类的方法是一切子类都可以直接使用的，所以我们要学习Object类的方法。</li>
+</ul>
+<h3 id="toString方法">toString方法</h3>
+<blockquote>
+<p>返回String类型<br>
+默认是返回当前对象在堆内存中的地址信息:类的全限名@内存地址</p>
+</blockquote>
+<p>toString存在的意义</p>
+<ul>
+<li>父类toString()方法存在的意义就是为了被子类重写，以便返回对象的内容信息，而不是地址信息！！</li>
+</ul>
+<hr>
+<p>重写toString方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">tostring</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">return</span> ………
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>可以直接用IDEA快捷键生成</p>
+<h3 id="equals方法">equals方法</h3>
+<blockquote>
+<p>返回Boolean类型<br>
+默认是比较当前对象与另一个对象的地址是否相同，相同返回true，不同返回false</p>
+</blockquote>
+<p>需要比较对象内容时<br>
+重写equals方法</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
+<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token comment">// 1、判断足否是同一个对象比较，如果是返回true。</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> o<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token comment">// 2、如果o是null返回false，如果o不是同类型页返回false</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>o <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> o<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token comment">//强制类型转换，把o从Object转为比较类型</span>
+<span class="token class-name">Student</span> student <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Student</span><span class="token punctuation">)</span> o<span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>sex<span class="token operator">==</span>student<span class="token punctuation">.</span>sex <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">==</span>student<span class="token punctuation">.</span>age <span class="token operator">&amp;&amp;</span> <span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span>student<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="Objects类">Objects类</h2>
+<p>Objects类与Object还是继承关系，Objects类是从JDK 1.7开始之后才有的。</p>
+<h3 id="equals-方法">equals 方法</h3>
+<p>Objects的equals方法比较的结果是一样的,但是更安全。</p>
+<blockquote>
+<p>普通的equals方法，如果某个对象的值是Null，写代码时不会报错，运行起来会有空指针错误，会留下隐患</p>
+<p>Objects.equals方法比较两个对象的，底层会先进行非空判断，从而可以避免空指针异常。再进行equals比较</p>
+</blockquote>
+<h3 id="isNull方法">isNull方法</h3>
+<blockquote>
+<p>判断变量是否为null ,为null返回true,反之返回false</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常用API——StringBuilder、Math、System、BigDecimal</title>
     <url>/posts/44906.html</url>
     <content><![CDATA[<h2 id="StringBuilder概述">StringBuilder概述</h2>
@@ -2859,68 +2921,6 @@ system<span class="token punctuation">.</span>out<span class="token punctuation"
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>duration<span class="token punctuation">.</span><span class="token function">toMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>两个时间差的毫秒数
 <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>duration<span class="token punctuation">.</span><span class="token function">toNanos</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//两个时间差的纳秒数</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>与Period区别：Duration每一个值都是总和，而Period是所有值加起来的总和</code></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用API——Object和Objects</title>
-    <url>/posts/63919.html</url>
-    <content><![CDATA[<h2 id="Object类">Object类</h2>
-<p>Object类的作用：</p>
-<ul>
-<li>一个类要么默认继承了Object类，要么间接继承了Object类，Object类是Java中的祖宗类。</li>
-<li>Object类的方法是一切子类都可以直接使用的，所以我们要学习Object类的方法。</li>
-</ul>
-<h3 id="toString方法">toString方法</h3>
-<blockquote>
-<p>返回String类型<br>
-默认是返回当前对象在堆内存中的地址信息:类的全限名@内存地址</p>
-</blockquote>
-<p>toString存在的意义</p>
-<ul>
-<li>父类toString()方法存在的意义就是为了被子类重写，以便返回对象的内容信息，而不是地址信息！！</li>
-</ul>
-<hr>
-<p>重写toString方法</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
-<span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">tostring</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token keyword">return</span> ………
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p>可以直接用IDEA快捷键生成</p>
-<h3 id="equals方法">equals方法</h3>
-<blockquote>
-<p>返回Boolean类型<br>
-默认是比较当前对象与另一个对象的地址是否相同，相同返回true，不同返回false</p>
-</blockquote>
-<p>需要比较对象内容时<br>
-重写equals方法</p>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
-<span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">equals</span><span class="token punctuation">(</span><span class="token class-name">Object</span> o<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-<span class="token comment">// 1、判断足否是同一个对象比较，如果是返回true。</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span> <span class="token operator">==</span> o<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
-<span class="token comment">// 2、如果o是null返回false，如果o不是同类型页返回false</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span>o <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> o<span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
-<span class="token comment">//强制类型转换，把o从Object转为比较类型</span>
-<span class="token class-name">Student</span> student <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token class-name">Student</span><span class="token punctuation">)</span> o<span class="token punctuation">;</span>
-<span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>sex<span class="token operator">==</span>student<span class="token punctuation">.</span>sex <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token operator">==</span>student<span class="token punctuation">.</span>age <span class="token operator">&amp;&amp;</span> <span class="token class-name">Objects</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span>student<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Objects类">Objects类</h2>
-<p>Objects类与Object还是继承关系，Objects类是从JDK 1.7开始之后才有的。</p>
-<h3 id="equals-方法">equals 方法</h3>
-<p>Objects的equals方法比较的结果是一样的,但是更安全。</p>
-<blockquote>
-<p>普通的equals方法，如果某个对象的值是Null，写代码时不会报错，运行起来会有空指针错误，会留下隐患</p>
-<p>Objects.equals方法比较两个对象的，底层会先进行非空判断，从而可以避免空指针异常。再进行equals比较</p>
-</blockquote>
-<h3 id="isNull方法">isNull方法</h3>
-<blockquote>
-<p>判断变量是否为null ,为null返回true,反之返回false</p>
-</blockquote>
 ]]></content>
       <categories>
         <category>Java</category>
@@ -3694,44 +3694,6 @@ students<span class="token punctuation">[</span><span class="token number">2</sp
       </tags>
   </entry>
   <entry>
-    <title>学Java的准备工作</title>
-    <url>/posts/64268.html</url>
-    <content><![CDATA[<p>大学没有ssm框架的课程，找工作必须要会这个，那我自学。</p>
-<p>从最基础的开始，就当复习了。</p>
-<p>视频教程看b站狂神说，动力节点，尚硅谷，黑马的。</p>
-<h1>1.搭建环境</h1>
-<h2 id="1-1从eclipse到idea">1.1从eclipse到idea</h2>
-<p>idea确实比eclipse先进，按照教学选择用idea</p>
-<h3 id="1-1-1安装idea">1.1.1安装idea</h3>
-<p>去官网下载idea的最新版，不要下载社区版，后续社区版不能用spring</p>
-<h3 id="1-1-2安装无限试用插件">1.1.2安装无限试用插件</h3>
-<p>学生优惠只有一年，还是太贵了，现在也只是个人学习使用，等以后工作用上的时候再补票入正吧。</p>
-<h2 id="1-2安装Java环境">1.2安装Java环境</h2>
-<p>大一就安装好了</p>
-<h3 id="1-2-1安装jdk">1.2.1安装jdk</h3>
-<p>在官网下载的jdk13</p>
-<h3 id="1-2-2测试是否安装成功">1.2.2测试是否安装成功</h3>
-<p>win+R运行cmd</p>
-<p>输入java -version查看</p>
-<p><img src="https://cdn.jsdelivr.net/gh/limitlm/mypic/img/202111161659540.png" alt="安装成功"></p>
-<h1>2开始编程</h1>
-<h2 id="2-1写个hello-world吧">2.1写个hello world吧</h2>
-<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong><code>Java入门到入土正式开始了</code></strong></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>markdown语法</title>
     <url>/posts/47193.html</url>
     <content><![CDATA[<h1>markdown基础教程</h1>
@@ -3888,6 +3850,44 @@ students<span class="token punctuation">[</span><span class="token number">2</sp
       </categories>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学Java的准备工作</title>
+    <url>/posts/64268.html</url>
+    <content><![CDATA[<p>大学没有ssm框架的课程，找工作必须要会这个，那我自学。</p>
+<p>从最基础的开始，就当复习了。</p>
+<p>视频教程看b站狂神说，动力节点，尚硅谷，黑马的。</p>
+<h1>1.搭建环境</h1>
+<h2 id="1-1从eclipse到idea">1.1从eclipse到idea</h2>
+<p>idea确实比eclipse先进，按照教学选择用idea</p>
+<h3 id="1-1-1安装idea">1.1.1安装idea</h3>
+<p>去官网下载idea的最新版，不要下载社区版，后续社区版不能用spring</p>
+<h3 id="1-1-2安装无限试用插件">1.1.2安装无限试用插件</h3>
+<p>学生优惠只有一年，还是太贵了，现在也只是个人学习使用，等以后工作用上的时候再补票入正吧。</p>
+<h2 id="1-2安装Java环境">1.2安装Java环境</h2>
+<p>大一就安装好了</p>
+<h3 id="1-2-1安装jdk">1.2.1安装jdk</h3>
+<p>在官网下载的jdk13</p>
+<h3 id="1-2-2测试是否安装成功">1.2.2测试是否安装成功</h3>
+<p>win+R运行cmd</p>
+<p>输入java -version查看</p>
+<p><img src="https://cdn.jsdelivr.net/gh/limitlm/mypic/img/202111161659540.png" alt="安装成功"></p>
+<h1>2开始编程</h1>
+<h2 id="2-1写个hello-world吧">2.1写个hello world吧</h2>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong><code>Java入门到入土正式开始了</code></strong></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
