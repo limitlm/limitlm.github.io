@@ -233,6 +233,8 @@ body.DarkMode .aplayer .aplayer-list ol li.aplayer-list-light {
 }
 body.DarkMode .aplayer .aplayer-list ol li:hover {
     background-color: #666666;
+}
+body.DarkMode .aplayer .aplayer-list ol li:hover > span {
     color: #42b983;
 }
 
